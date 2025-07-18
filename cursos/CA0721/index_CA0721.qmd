@@ -1,0 +1,10 @@
+---
+title: "CA0721: Probabilidad"
+format: html
+---
+
+Bienvenido a los apuntes del curso **CA0721**.
+
+## Temas
+
+- [Tema 1: Antecedentes](antecedentes_CA0721.qmd)

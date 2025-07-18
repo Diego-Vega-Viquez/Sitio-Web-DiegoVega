@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Diego Alberto Vega Víquez",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "cursos/CA0306/tema1.html",
+    "href": "cursos/CA0306/tema1.html",
+    "title": "tema1",
+    "section": "",
+    "text": "tema1 CA0306"
+  },
+  {
+    "objectID": "cursos/CA0306/index.html",
+    "href": "cursos/CA0306/index.html",
+    "title": "Curso CA0306",
+    "section": "",
+    "text": "Bienvenido a los apuntes del curso CA0306.\nAquí encontrarás los temas desarrollados durante el curso, organizados por unidad o semana.\n\n\n\nTema 1: Introducción al curso\nTema 2: Lógica y conjuntos\nTema 3: Funciones y relaciones\nTema 4: Inducción y recursión"
+  },
+  {
+    "objectID": "cursos/CA0306/index.html#temas",
+    "href": "cursos/CA0306/index.html#temas",
+    "title": "Curso CA0306",
+    "section": "",
+    "text": "Tema 1: Introducción al curso\nTema 2: Lógica y conjuntos\nTema 3: Funciones y relaciones\nTema 4: Inducción y recursión"
+  },
+  {
+    "objectID": "index_main.html",
+    "href": "index_main.html",
+    "title": "Diego Alberto Vega Víquez",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "cursos/CA0721/index.html",
+    "href": "cursos/CA0721/index.html",
+    "title": "Curso CA0721",
+    "section": "",
+    "text": "Bienvenido a los apuntes del curso CA0721.\n\n\n\nTema 1: Introducción\nTema 2: Probabilidad\nTema 3: Distribuciones"
+  },
+  {
+    "objectID": "cursos/CA0721/index.html#temas",
+    "href": "cursos/CA0721/index.html#temas",
+    "title": "Curso CA0721",
+    "section": "",
+    "text": "Tema 1: Introducción\nTema 2: Probabilidad\nTema 3: Distribuciones"
+  },
+  {
+    "objectID": "cursos/CA0306/index_CA0306.html",
+    "href": "cursos/CA0306/index_CA0306.html",
+    "title": "Curso CA0306",
+    "section": "",
+    "text": "Bienvenido a los apuntes del curso CA0306.\nAquí encontrarás los temas desarrollados durante el curso, organizados por unidad o semana."
+  },
+  {
+    "objectID": "cursos/CA0306/index_CA0306.html#temas",
+    "href": "cursos/CA0306/index_CA0306.html#temas",
+    "title": "Curso CA0306",
+    "section": "Temas",
+    "text": "Temas\n\nTema 1: Distribuciones de Sobrevivencia"
+  },
+  {
+    "objectID": "cursos/CA0306/distribuciones_sobrevivencia_CA0306.html",
+    "href": "cursos/CA0306/distribuciones_sobrevivencia_CA0306.html",
+    "title": "tema1",
+    "section": "",
+    "text": "tema1 CA0306"
+  },
+  {
+    "objectID": "cursos/CA0721/antecedentes_CA0721.html",
+    "href": "cursos/CA0721/antecedentes_CA0721.html",
+    "title": "Antecedentes",
+    "section": "",
+    "text": "Tema1 CA0721"
+  },
+  {
+    "objectID": "cursos/CA0721/index_CA0721.html",
+    "href": "cursos/CA0721/index_CA0721.html",
+    "title": "Curso CA0721",
+    "section": "",
+    "text": "Bienvenido a los apuntes del curso CA0721."
+  },
+  {
+    "objectID": "cursos/CA0721/index_CA0721.html#temas",
+    "href": "cursos/CA0721/index_CA0721.html#temas",
+    "title": "Curso CA0721",
+    "section": "Temas",
+    "text": "Temas\n\nTema 1: Antecedentes"
+  }
+]

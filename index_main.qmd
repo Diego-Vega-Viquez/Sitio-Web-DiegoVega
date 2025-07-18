@@ -1,5 +1,5 @@
 ---
-title: "Sitio Web DiegoVega"
+title: "Diego Alberto Vega Víquez"
 ---
 
 This is a Quarto website.

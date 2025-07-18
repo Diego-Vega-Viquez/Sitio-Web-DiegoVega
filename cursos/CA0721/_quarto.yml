@@ -1,0 +1,16 @@
+project:
+  type: website
+
+website:
+  title: "CA0721: Probabilidad"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - index_CA0721.qmd
+      - antecedentes_CA0721.qmd
+
+format:
+  html:
+    theme: lux
+    toc: true
