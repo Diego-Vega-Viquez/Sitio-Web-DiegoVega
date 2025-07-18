@@ -58,14 +58,14 @@
   {
     "objectID": "cursos/CA0306/index_CA0306.html",
     "href": "cursos/CA0306/index_CA0306.html",
-    "title": "Curso CA0306",
+    "title": "CA0306: Contingencias de Vida I",
     "section": "",
     "text": "Bienvenido a los apuntes del curso CA0306.\nAquí encontrarás los temas desarrollados durante el curso, organizados por unidad o semana."
   },
   {
     "objectID": "cursos/CA0306/index_CA0306.html#temas",
     "href": "cursos/CA0306/index_CA0306.html#temas",
-    "title": "Curso CA0306",
+    "title": "CA0306: Contingencias de Vida I",
     "section": "Temas",
     "text": "Temas\n\nTema 1: Distribuciones de Sobrevivencia"
   },
@@ -79,22 +79,141 @@
   {
     "objectID": "cursos/CA0721/antecedentes_CA0721.html",
     "href": "cursos/CA0721/antecedentes_CA0721.html",
-    "title": "Antecedentes",
+    "title": "Preliminares",
     "section": "",
-    "text": "Tema1 CA0721"
+    "text": "Dada una sucesión \\(\\{a_k\\}\\), definimos la suma finita desde \\(k = m\\) hasta \\(k = n\\) como:\n\\[\n\\sum_{k=m}^n a_k = a_m + a_{m+1} + \\cdots + a_n\n\\]\n\n\n\nLinealidad por constante: \\[\n\\sum_{k=1}^n c a_k = c \\sum_{k=1}^n a_k \\quad \\text{para todo } c \\in \\mathbb{R}\n\\]\nSuma término a término: \\[\n\\sum_{k=1}^n (a_k + b_k) = \\sum_{k=1}^n a_k + \\sum_{k=1}^n b_k\n\\]\nCambio de índice: \\[\n\\sum_{k=0}^n a_{k+1} = \\sum_{k=1}^{n+1} a_k\n\\]\n\n\n\n\nSi \\(a_k = b_k - b_{k+1}\\), entonces se tiene:\n\\[\n\\sum_{k=m}^n (b_k - b_{k+1}) = b_m - b_{n+1}\n\\]\nSi la suma es infinita y el límite existe:\n\\[\n\\sum_{k=m}^\\infty (b_k - b_{k+1}) = b_m - \\lim_{j \\to \\infty} b_{j+1}\n\\]\n\n\n\nLa suma de una progresión geométrica de razón \\(r \\ne 1\\) es:\n\\[\n\\sum_{k=m}^n r^k = \\frac{r^m - r^{n+1}}{1 - r}\n\\]"
   },
   {
     "objectID": "cursos/CA0721/index_CA0721.html",
     "href": "cursos/CA0721/index_CA0721.html",
-    "title": "Curso CA0721",
+    "title": "CA0721: Probabilidad",
     "section": "",
     "text": "Bienvenido a los apuntes del curso CA0721."
   },
   {
     "objectID": "cursos/CA0721/index_CA0721.html#temas",
     "href": "cursos/CA0721/index_CA0721.html#temas",
-    "title": "Curso CA0721",
+    "title": "CA0721: Probabilidad",
     "section": "Temas",
-    "text": "Temas\n\nTema 1: Antecedentes"
+    "text": "Temas\n\nTema 1: Preliminares\nTema 2: Introducción a la Probabilidad\nTema 3: Teoría General de la Probabilidad"
+  },
+  {
+    "objectID": "cursos/CA0721/antecedentes_CA0721.html#sumas-finitas",
+    "href": "cursos/CA0721/antecedentes_CA0721.html#sumas-finitas",
+    "title": "Preliminares",
+    "section": "",
+    "text": "Dada una sucesión \\(\\{a_k\\}\\), definimos la suma finita desde \\(k = m\\) hasta \\(k = n\\) como:\n\\[\n\\sum_{k=m}^n a_k = a_m + a_{m+1} + \\cdots + a_n\n\\]\n\n\n\nLinealidad por constante: \\[\n\\sum_{k=1}^n c a_k = c \\sum_{k=1}^n a_k \\quad \\text{para todo } c \\in \\mathbb{R}\n\\]\nSuma término a término: \\[\n\\sum_{k=1}^n (a_k + b_k) = \\sum_{k=1}^n a_k + \\sum_{k=1}^n b_k\n\\]\nCambio de índice: \\[\n\\sum_{k=0}^n a_{k+1} = \\sum_{k=1}^{n+1} a_k\n\\]\n\n\n\n\nSi \\(a_k = b_k - b_{k+1}\\), entonces se tiene:\n\\[\n\\sum_{k=m}^n (b_k - b_{k+1}) = b_m - b_{n+1}\n\\]\nSi la suma es infinita y el límite existe:\n\\[\n\\sum_{k=m}^\\infty (b_k - b_{k+1}) = b_m - \\lim_{j \\to \\infty} b_{j+1}\n\\]\n\n\n\nLa suma de una progresión geométrica de razón \\(r \\ne 1\\) es:\n\\[\n\\sum_{k=m}^n r^k = \\frac{r^m - r^{n+1}}{1 - r}\n\\]"
+  },
+  {
+    "objectID": "cursos/CA0721/antecedentes_CA0721.html#principios-de-combinatoria",
+    "href": "cursos/CA0721/antecedentes_CA0721.html#principios-de-combinatoria",
+    "title": "Preliminares",
+    "section": "Principios de combinatoria",
+    "text": "Principios de combinatoria\nSea \\(\\Omega_1\\) y \\(\\Omega_2\\) dos conjuntos finitos no vacíos. El número de formas de formar pares \\((a, b)\\) con \\(a \\in \\Omega_1\\) y \\(b \\in \\Omega_2\\) es:\n\\[\n|\\Omega_1 \\times \\Omega_2| = |\\Omega_1| \\cdot |\\Omega_2|\n\\]\ndonde \\(\\times\\) denota el producto cartesiano de conjuntos. Este resultado es un caso del principio de multiplicación.\nUna aplicación importante de este principio es el conteo de permutaciones. Si un conjunto \\(\\Omega\\) tiene \\(n\\) elementos, entonces existen:\n\\[\nn! := 1 \\cdot 2 \\cdot 3 \\cdots (n-1)\\cdot n\n\\]\nformas distintas de ordenarlos. Este número se llama el factorial de \\(n\\), y representa la cantidad total de permutaciones posibles de los elementos del conjunto.\n\nIntuitivamente, una permutación es una forma de reorganizar (ordenar) todos los elementos del conjunto.\n\n\nPermutaciones\nNúmero de formas de seleccionar \\(k\\) objetos ordenadamente de un total de \\(n\\):\n\\[\nP(n,k) = \\frac{n!}{(n-k)!}\n\\]\n\n\nCombinaciones\nNúmero de formas de elegir \\(k\\) objetos sin importar el orden:\n\\[\n\\binom{n}{k} = \\frac{n!}{k! (n-k)!}\n\\]\n\n\nCoeficiente multinomial\nNúmero de formas de dividir \\(n\\) objetos en \\(r\\) grupos de tamaños \\(n_1, n_2, \\ldots, n_r\\) con \\(n_1 + \\cdots + n_r = n\\):\n\\[\n\\binom{n}{n_1\\, n_2\\, \\cdots\\, n_r} = \\frac{n!}{n_1! \\, n_2! \\cdots n_r!}\n\\]\n\n\nFórmula del binomio\nExpansión de \\((a + b)^n\\) usando combinatoria:\n\\[\n(a + b)^n = \\sum_{k=0}^n \\binom{n}{k} a^{n-k} b^k\n\\]"
+  },
+  {
+    "objectID": "cursos/CA0721/antecedentes_CA0721.html#algunos-recordatorios-de-teoría-de-conjuntos",
+    "href": "cursos/CA0721/antecedentes_CA0721.html#algunos-recordatorios-de-teoría-de-conjuntos",
+    "title": "Preliminares",
+    "section": "Algunos recordatorios de Teoría de Conjuntos",
+    "text": "Algunos recordatorios de Teoría de Conjuntos\nDado un conjunto \\(\\Omega\\), los subconjuntos \\(A, B, C, D \\subseteq \\Omega\\) pueden relacionarse mediante las siguientes operaciones y propiedades:\n\nPertenencia\nUn elemento \\(a\\) pertenece a un conjunto \\(A\\) si:\n\\[\na \\in A\n\\]\n\n\n\nIntersección de conjuntos\nLa intersección de dos conjuntos \\(A\\) y \\(B\\) se define como:\n\\[\nA \\cap B = \\{x \\in \\Omega \\mid x \\in A \\text{ y } x \\in B\\}\n\\]\nPropiedades:\n\nConmutatividad: \\(A \\cap B = B \\cap A\\)\nAsociatividad: \\(A \\cap (B \\cap C) = (A \\cap B) \\cap C\\)\nInclusión: \\(A \\subseteq B \\Rightarrow A \\cap B = A\\)\nSi \\(D \\subseteq A\\) y \\(D \\subseteq B \\Rightarrow D \\subseteq A \\cap B\\)\n\n\n\n\nUnión de conjuntos\nLa unión de dos conjuntos \\(A\\) y \\(B\\) se define como:\n\\[\nA \\cup B = \\{x \\in \\Omega \\mid x \\in A \\text{ o } x \\in B\\}\n\\]\nPropiedades:\n\nConmutatividad: \\(A \\cup B = B \\cup A\\)\nAsociatividad: \\(A \\cup (B \\cup C) = (A \\cup B) \\cup C\\)\nInclusión: \\(A \\subseteq B \\Rightarrow A \\cup B = B\\)\nSi \\(A \\subseteq D\\) y \\(B \\subseteq D \\Rightarrow A \\cup B \\subseteq D\\)\n\n\n\n\nDiferencia de conjuntos\nLa diferencia de conjuntos se define como:\n\\[\nB - A = \\{x \\in B \\mid x \\notin A\\}\n\\]\nEl complemento de un conjunto \\(A\\) respecto al universo \\(\\Omega\\) es:\n\\[\nA^c = \\Omega - A = \\{x \\in \\Omega \\mid x \\notin A\\}\n\\]\n\n\n\nLeyes de De Morgan\nSean \\(\\{A_i\\}_{i \\in I}\\) una familia de conjuntos, se tiene:\n\n$ ( {i I} A_i )^c = {i I} A_i^c $\n$ ( {i I} A_i )^c = {i I} A_i^c $\n\nEn particular, para \\(A\\) y \\(B\\) arbitrarios:\n\n\\(E \\setminus (A \\cup B) = (E \\setminus A) \\cap (E \\setminus B)\\)\n\\(E \\setminus (A \\cap B) = (E \\setminus A) \\cup (E \\setminus B)\\)\n\\(A \\cap B = A \\setminus B^c\\)"
+  },
+  {
+    "objectID": "cursos/CA0721/intro_proba_CA0721.html",
+    "href": "cursos/CA0721/intro_proba_CA0721.html",
+    "title": "Introducción a la Probabilidad",
+    "section": "",
+    "text": "Sea \\(\\Omega\\) un conjunto finito al que llamamos espacio muestral. Sus elementos representan todos los posibles resultados de un experimento aleatorio.\nSean \\(A, B \\subseteq \\Omega\\) subconjuntos del espacio muestral. Estos subconjuntos se denominan eventos.\nUn elemento \\(a\\) pertenece a un evento \\(A\\) si:\n\\[\na \\in A\n\\]\n\n\n\n\nEn el contexto de la probabilidad, un experimento aleatorio es un proceso que genera un resultado que no puede preverse con certeza. El conjunto \\(\\Omega\\) representa el conjunto de todos los posibles resultados de ese experimento.\nPor ejemplo:\n\nAl lanzar un dado: \\(\\Omega = \\{1,2,3,4,5,6\\}\\)\nAl lanzar una moneda: \\(\\Omega = \\{\\text{cara}, \\text{cruz}\\}\\)\n\n\n\n\n\nUn evento es cualquier subconjunto del espacio muestral. Esto incluye desde el conjunto vacío hasta el conjunto total \\(\\Omega\\). Notamos que:\n\nNota: Como los eventos son conjuntos, todas las operaciones entre conjuntos (unión, intersección, complemento, etc.) también se aplican a los eventos. Puedes consultar la sección Algunos recordatorios de Teoría de Conjuntos para ver esas propiedades en detalle.\n\nPodemos construir nuevos eventos combinando otros mediante operaciones de conjuntos:\n\nIntersección \\((A \\cap B\\,)\\): elementos que están en ambos eventos.\nUnión \\((A \\cup B\\,)\\): elementos que están en al menos uno de los eventos.\nComplemento \\((A^c)\\): elementos que no están en el evento \\(A\\).\n\n\n\n\n\nLa probabilidad es una función que asigna un número entre 0 y 1 a cada evento, representando cuán probable es que ese evento ocurra.\nProvisionalmente, podemos pensar en la probabilidad como una función:\n\\[\nP : \\mathcal{F} \\to [0,1]\n\\]\ndonde \\(\\mathcal{F}\\) es una colección de subconjuntos de \\(\\Omega\\) (es decir, eventos), y \\(P(A)\\) nos da la probabilidad de que ocurra el evento \\(A\\).\nMás adelante, formalizaremos los axiomas que esta función debe cumplir."
+  },
+  {
+    "objectID": "cursos/CA0721/intro_proba_CA0721.html#introducción-a-la-notación-y-conceptos-básicos-de-probabilidad",
+    "href": "cursos/CA0721/intro_proba_CA0721.html#introducción-a-la-notación-y-conceptos-básicos-de-probabilidad",
+    "title": "Introducción a la Probabilidad",
+    "section": "",
+    "text": "Sea \\(\\Omega\\) un conjunto finito al que llamamos espacio muestral. Sus elementos representan todos los posibles resultados de un experimento aleatorio.\nSean \\(A, B \\subseteq \\Omega\\) subconjuntos del espacio muestral. Estos subconjuntos se denominan eventos.\nUn elemento \\(a\\) pertenece a un evento \\(A\\) si:\n\\[\na \\in A\n\\]\n\n\n\n\nEn el contexto de la probabilidad, un experimento aleatorio es un proceso que genera un resultado que no puede preverse con certeza. El conjunto \\(\\Omega\\) representa el conjunto de todos los posibles resultados de ese experimento.\nPor ejemplo:\n\nAl lanzar un dado: \\(\\Omega = \\{1,2,3,4,5,6\\}\\)\nAl lanzar una moneda: \\(\\Omega = \\{\\text{cara}, \\text{cruz}\\}\\)\n\n\n\n\n\nUn evento es cualquier subconjunto del espacio muestral. Esto incluye desde el conjunto vacío hasta el conjunto total \\(\\Omega\\). Notamos que:\n\nNota: Como los eventos son conjuntos, todas las operaciones entre conjuntos (unión, intersección, complemento, etc.) también se aplican a los eventos. Puedes consultar la sección Algunos recordatorios de Teoría de Conjuntos para ver esas propiedades en detalle.\n\nPodemos construir nuevos eventos combinando otros mediante operaciones de conjuntos:\n\nIntersección \\((A \\cap B\\,)\\): elementos que están en ambos eventos.\nUnión \\((A \\cup B\\,)\\): elementos que están en al menos uno de los eventos.\nComplemento \\((A^c)\\): elementos que no están en el evento \\(A\\).\n\n\n\n\n\nLa probabilidad es una función que asigna un número entre 0 y 1 a cada evento, representando cuán probable es que ese evento ocurra.\nProvisionalmente, podemos pensar en la probabilidad como una función:\n\\[\nP : \\mathcal{F} \\to [0,1]\n\\]\ndonde \\(\\mathcal{F}\\) es una colección de subconjuntos de \\(\\Omega\\) (es decir, eventos), y \\(P(A)\\) nos da la probabilidad de que ocurra el evento \\(A\\).\nMás adelante, formalizaremos los axiomas que esta función debe cumplir."
+  },
+  {
+    "objectID": "cursos/CA0721/antecedentes_CA0721.html#sec-conjuntos",
+    "href": "cursos/CA0721/antecedentes_CA0721.html#sec-conjuntos",
+    "title": "Preliminares",
+    "section": "Algunos recordatorios de Teoría de Conjuntos",
+    "text": "Algunos recordatorios de Teoría de Conjuntos\nDado un conjunto \\(\\Omega\\), los subconjuntos \\(A, B, C, D \\subseteq \\Omega\\) pueden relacionarse mediante las siguientes operaciones y propiedades:\n\nPertenencia\nUn elemento \\(a\\) pertenece a un conjunto \\(A\\) si:\n\\[\na \\in A\n\\]\n\n\n\nIntersección de conjuntos\nLa intersección de dos conjuntos \\(A\\) y \\(B\\) se define como:\n\\[\nA \\cap B = \\{x \\in \\Omega \\mid x \\in A \\text{ y } x \\in B\\}\n\\]\nPropiedades:\n\nConmutatividad: \\(A \\cap B = B \\cap A\\)\nAsociatividad: \\(A \\cap (B \\cap C) = (A \\cap B) \\cap C\\)\nInclusión: \\(A \\subseteq B \\Rightarrow A \\cap B = A\\)\nSi \\(D \\subseteq A\\) y \\(D \\subseteq B \\Rightarrow D \\subseteq A \\cap B\\)\n\n\n\n\nUnión de conjuntos\nLa unión de dos conjuntos \\(A\\) y \\(B\\) se define como:\n\\[\nA \\cup B = \\{x \\in \\Omega \\mid x \\in A \\text{ o } x \\in B\\}\n\\]\nPropiedades:\n\nConmutatividad: \\(A \\cup B = B \\cup A\\)\nAsociatividad: \\(A \\cup (B \\cup C) = (A \\cup B) \\cup C\\)\nInclusión: \\(A \\subseteq B \\Rightarrow A \\cup B = B\\)\nSi \\(A \\subseteq D\\) y \\(B \\subseteq D \\Rightarrow A \\cup B \\subseteq D\\)\n\n\n\n\nDiferencia de conjuntos\nLa diferencia de conjuntos se define como:\n\\[\nB - A = \\{x \\in B \\mid x \\notin A\\}\n\\]\nEl complemento de un conjunto \\(A\\) respecto al universo \\(\\Omega\\) es:\n\\[\nA^c = \\Omega - A = \\{x \\in \\Omega \\mid x \\notin A\\}\n\\]\n\n\n\nLeyes de De Morgan\nSean \\(\\{A_i\\}_{i \\in I}\\) una familia de conjuntos, se tiene:\n\n\\(\\left( \\bigcap\\limits_{i \\in I} A_i \\right)^c = \\bigcup\\limits_{i \\in I} A_i^c\\)\n\\(\\left( \\bigcup\\limits_{i \\in I} A_i \\right)^c = \\bigcap\\limits_{i \\in I} A_i^c\\)\n\nEn particular, para \\(A\\) y \\(B\\) arbitrarios:\n\n\\(E \\setminus (A \\cup B) = (E \\setminus A) \\cap (E \\setminus B)\\)\n\\(E \\setminus (A \\cap B) = (E \\setminus A) \\cup (E \\setminus B)\\)\n\\(A \\cap B = A \\setminus B^c\\)"
+  },
+  {
+    "objectID": "cursos/CA0721/teoria_general_proba_CA0721.html",
+    "href": "cursos/CA0721/teoria_general_proba_CA0721.html",
+    "title": "Teoría General de Probabilidades",
+    "section": "",
+    "text": "XD"
+  },
+  {
+    "objectID": "cursos/CA0721/intro_proba_CA0721.html#probabilidad-clásica",
+    "href": "cursos/CA0721/intro_proba_CA0721.html#probabilidad-clásica",
+    "title": "intro_proba_CA0721",
+    "section": "Probabilidad clásica",
+    "text": "Probabilidad clásica\nSi \\(A\\) es un evento, se define la probabilidad clásica de \\(A\\) como:\n\\[\nP(A) = \\frac{|A|}{|\\Omega|}\n\\]\ndonde \\(|A|\\) representa el número de elementos del conjunto \\(A\\).\n\n\nPropiedades fundamentales\nSupongamos que \\(|\\Omega| = N\\). Entonces:\n\n\\(P(\\Omega) = 1\\), \\(P(\\emptyset) = 0\\)\nSi \\(A \\subseteq \\Omega\\) y \\(|A| = N - n\\), entonces \\(|A^c| = n\\) y \\(P(A^c) = 1 - P(A)\\)\nSi \\(A \\cap B = \\emptyset\\), se cumple:\n\\[\n|A \\cup B| = |A| + |B| \\quad \\Rightarrow \\quad P(A \\cup B) = P(A) + P(B)\n\\]\nEn general, si \\(A_1, A_2, \\ldots, A_n\\) son disjuntos dos a dos:\n\\[\nP\\left(\\bigcup_{i=1}^n A_i\\right) = \\sum_{i=1}^n P(A_i)\n\\]\n\n\nEsta propiedad se conoce como aditividad finita."
+  },
+  {
+    "objectID": "cursos/CA0721/intro_proba_CA0721.html#espacios-finitos-y-medidas-de-probabilidad",
+    "href": "cursos/CA0721/intro_proba_CA0721.html#espacios-finitos-y-medidas-de-probabilidad",
+    "title": "Introducción a la Probabilidad",
+    "section": "Espacios finitos y medidas de probabilidad",
+    "text": "Espacios finitos y medidas de probabilidad\nUna medida de probabilidad sobre un espacio finito es una función \\(P\\) definida en subconjuntos de \\(\\Omega\\), tal que:\n\n\\(P(\\Omega) = 1\\)\nSi \\(A, B \\subseteq \\Omega\\) y \\(A \\cap B = \\emptyset\\), entonces:\n\\[\nP(A \\cup B) = P(A) + P(B) - P(A \\cap B)\n\\]\n\n\n\nPrincipio de inclusión-exclusión\nPara eventos \\(A_1, \\ldots, A_n\\), se tiene:\n\\[\nP\\left(\\bigcup_{i=1}^n A_i\\right) = \\sum_{i=1}^n P(A_i)\n- \\sum_{i_1&lt;i_2} P(A_{i_1} \\cap A_{i_2})\n+ \\sum_{i_1&lt;i_2&lt;i_3} P(A_{i_1} \\cap A_{i_2} \\cap A_{i_3})\n- \\cdots + (-1)^{n-1} P\\left(\\bigcap_{j=1}^n A_j\\right)\n\\]"
+  },
+  {
+    "objectID": "cursos/CA0721/intro_proba_CA0721.html#probabilidad-condicional-e-independencia",
+    "href": "cursos/CA0721/intro_proba_CA0721.html#probabilidad-condicional-e-independencia",
+    "title": "Introducción a la Probabilidad",
+    "section": "Probabilidad condicional e independencia",
+    "text": "Probabilidad condicional e independencia\n\nProbabilidad condicional\nDado un evento \\(B\\) tal que \\(P(B) &gt; 0\\), se define la probabilidad de \\(A\\) dado \\(B\\) como:\n\\[\nP(A \\mid B) = \\frac{P(A \\cap B)}{P(B)}\n\\]\nTambién se tiene:\n\\[\nP(B \\mid A) = \\frac{P(B \\cap A)}{P(A)} = \\frac{P(A \\cap B)}{P(A)}\n\\]\n\n\n\nIndependencia de eventos\nSe dice que dos eventos \\(A\\) y \\(B\\) son independientes si:\n\\[\nP(A \\cap B) = P(A) \\cdot P(B)\n\\]\n\nSi no se cumple la propiedad anterior, los eventos se dicen dependientes.\n\nTambién se define independencia de una familia de eventos \\((A_i)_{i \\in I}\\) como:\n\\[\nP\\left(\\bigcap_{j \\in J} A_j\\right) = \\prod_{j \\in J} P(A_j)\n\\]\npara todo subconjunto finito no vacío \\(J \\subseteq I\\)."
+  },
+  {
+    "objectID": "cursos/CA0721/intro_proba_CA0721.html#fórmulas-fundamentales",
+    "href": "cursos/CA0721/intro_proba_CA0721.html#fórmulas-fundamentales",
+    "title": "Introducción a la Probabilidad",
+    "section": "Fórmulas fundamentales",
+    "text": "Fórmulas fundamentales\n\nTeorema de la probabilidad total\nSi \\(\\{E_1, \\ldots, E_n\\}\\) es una partición del espacio muestral \\(\\Omega\\) (eventos mutuamente excluyentes y exhaustivos), entonces:\n\\[\nP(A) = \\sum_{i=1}^n P(A \\cap E_i) = \\sum_{i=1}^n P(A \\mid E_i) P(E_i)\n\\]\n\n\n\nFórmula de Bayes\nPara calcular la probabilidad de un evento \\(E_i\\) dado que ocurrió \\(A\\):\n\\[\nP(E_i \\mid A) = \\frac{P(E_i \\cap A)}{P(A)} = \\frac{P(A \\mid E_i) P(E_i)}{\\sum_{k=1}^n P(A \\mid E_k) P(E_k)}\n\\]"
+  },
+  {
+    "objectID": "cursos/CA0721/intro_proba_CA0721.html#modelo-de-probabilidad-de-laplace",
+    "href": "cursos/CA0721/intro_proba_CA0721.html#modelo-de-probabilidad-de-laplace",
+    "title": "Introducción a la Probabilidad",
+    "section": "Modelo de probabilidad de Laplace",
+    "text": "Modelo de probabilidad de Laplace\nCuando el espacio muestral \\(\\Omega\\) es finito, se puede considerar que todos los resultados son igualmente probables. A este modelo se le conoce como modelo de probabilidad de Laplace o también como probabilidad clásica.\nEn este contexto, se asigna la misma probabilidad a cada resultado \\(\\omega \\in \\Omega\\), de modo que:\n\\[\nP(\\{\\omega\\}) = \\frac{1}{|\\Omega|}\n\\]\ndonde \\(|\\Omega|\\) denota la cantidad total de posibles resultados.\n\nDe forma general, si \\(A\\) es un evento (es decir, un subconjunto de \\(\\Omega\\)), su probabilidad se define como el cociente entre la cantidad de resultados favorables (elementos de \\(A\\)) y la cantidad total de posibles resultados:\n\\[\nP(A) = \\frac{|A|}{|\\Omega|}\n\\]\nEsta definición supone que todos los resultados tienen la misma probabilidad y es válida únicamente cuando el número de resultados posibles es finito y equiprobable.\n\n\nNota: Este modelo es un caso particular de lo que más adelante definiremos como una medida de probabilidad sobre una colección de eventos \\(\\mathcal{F}\\). Por ahora, basta con tener una comprensión intuitiva: el modelo de Laplace asigna igual peso a todos los elementos de \\(\\Omega\\) y calcula la probabilidad de un evento \\(A\\) como la proporción de casos favorables respecto al total."
+  },
+  {
+    "objectID": "cursos/CA0721/teoria_general_proba_CA0721.html#espacios-finitos-y-medidas-de-probabilidad",
+    "href": "cursos/CA0721/teoria_general_proba_CA0721.html#espacios-finitos-y-medidas-de-probabilidad",
+    "title": "Teoría General de Probabilidades",
+    "section": "Espacios finitos y medidas de probabilidad",
+    "text": "Espacios finitos y medidas de probabilidad\nUna medida de probabilidad sobre un espacio finito es una función \\(P\\) definida en subconjuntos de \\(\\Omega\\), tal que:\n\n\\(P(\\Omega) = 1\\)\nSi \\(A, B \\subseteq \\Omega\\) y \\(A \\cap B = \\emptyset\\), entonces:\n\\[\nP(A \\cup B) = P(A) + P(B) - P(A \\cap B)\n\\]\n\n\nPrincipio de inclusión-exclusión\nPara eventos \\(A_1, \\ldots, A_n\\), se tiene:\n\\[\nP\\left(\\bigcup_{i=1}^n A_i\\right) = \\sum_{i=1}^n P(A_i)\n- \\sum_{i_1&lt;i_2} P(A_{i_1} \\cap A_{i_2})\n+ \\sum_{i_1&lt;i_2&lt;i_3} P(A_{i_1} \\cap A_{i_2} \\cap A_{i_3})\n- \\cdots + (-1)^{n-1} P\\left(\\bigcap_{j=1}^n A_j\\right)\n\\]"
+  },
+  {
+    "objectID": "cursos/CA0721/teoria_general_proba_CA0721.html#probabilidad-condicional-e-independencia",
+    "href": "cursos/CA0721/teoria_general_proba_CA0721.html#probabilidad-condicional-e-independencia",
+    "title": "Teoría General de Probabilidades",
+    "section": "Probabilidad condicional e independencia",
+    "text": "Probabilidad condicional e independencia\n\nProbabilidad condicional\nDado un evento \\(B\\) tal que \\(P(B) &gt; 0\\), se define la probabilidad de \\(A\\) dado \\(B\\) como:\n\\[\nP(A \\mid B) = \\frac{P(A \\cap B)}{P(B)}\n\\]\nTambién se tiene:\n\\[\nP(B \\mid A) = \\frac{P(B \\cap A)}{P(A)} = \\frac{P(A \\cap B)}{P(A)}\n\\]\n\n\nIndependencia de eventos\nSe dice que dos eventos \\(A\\) y \\(B\\) son independientes si:\n\\[\nP(A \\cap B) = P(A) \\cdot P(B)\n\\]\n\nSi no se cumple la propiedad anterior, los eventos se dicen dependientes.\n\nTambién se define independencia de una familia de eventos \\((A_i)_{i \\in I}\\) como:\n\\[\nP\\left(\\bigcap_{j \\in J} A_j\\right) = \\prod_{j \\in J} P(A_j)\n\\]\npara todo subconjunto finito no vacío \\(J \\subseteq I\\)."
+  },
+  {
+    "objectID": "cursos/CA0721/intro_proba_CA0721.html#independencia-de-eventos",
+    "href": "cursos/CA0721/intro_proba_CA0721.html#independencia-de-eventos",
+    "title": "Introducción a la Probabilidad",
+    "section": "Independencia de eventos",
+    "text": "Independencia de eventos\nSe dice que dos eventos \\(A\\) y \\(B\\) son independientes si:\n\\[\nP(A \\cap B) = P(A) \\cdot P(B)\n\\]\n\nSi no se cumple la propiedad anterior, los eventos se dicen dependientes.\n\nTambién se define independencia de una familia de eventos \\((A_i)_{i \\in I}\\) como:\n\\[\nP\\left(\\bigcap_{j \\in J} A_j\\right) = \\prod_{j \\in J} P(A_j)\n\\]\npara todo subconjunto finito no vacío \\(J \\subseteq I\\)."
+  },
+  {
+    "objectID": "cursos/CA0721/teoria_general_proba_CA0721.html#experimentos-aleatorios-y-espacio-de-probabilidad",
+    "href": "cursos/CA0721/teoria_general_proba_CA0721.html#experimentos-aleatorios-y-espacio-de-probabilidad",
+    "title": "Teoría General de Probabilidades",
+    "section": "Experimentos aleatorios y espacio de probabilidad",
+    "text": "Experimentos aleatorios y espacio de probabilidad\nHasta ahora hemos trabajado con la probabilidad en contextos finitos y simples, donde todos los resultados son igualmente probables (modelo de Laplace). Sin embargo, para desarrollar una teoría más general de la probabilidad, necesitamos una base más formal.\nUn experimento aleatorio es un proceso cuyo resultado no se puede predecir con certeza, pero cuyo conjunto de resultados posibles puede describirse. A cada experimento aleatorio le asociamos tres componentes fundamentales:\n\nUn espacio muestral \\(\\Omega\\): el conjunto de todos los posibles resultados del experimento.\nUn conjunto de eventos \\(\\mathcal{F}\\): una colección de subconjuntos de \\(\\Omega\\), considerados como los eventos del experimento.\nUna función de probabilidad \\(P\\): que asigna a cada evento \\(A \\in \\mathcal{F}\\) un número entre \\(0\\) y \\(1\\), representando la probabilidad de que ese evento ocurra.\n\n\n\nEl espacio de eventos: \\(\\boldsymbol{\\sigma}\\)-álgebra\nPara que el conjunto de eventos \\(\\mathcal{F}\\) sea adecuado, debe cumplir ciertas propiedades. A esto se le llama una \\(\\sigma\\)-álgebra de subconjuntos, y garantiza que podamos hacer operaciones como complementos, uniones y demás, sin salirnos del conjunto de eventos válidos.\nFormalmente, \\(\\mathcal{F}\\) es una \\(\\sigma\\)-álgebra sobre \\(\\Omega\\) si:\n\n\\(\\mathcal{F}\\) no es vacío.\nSi \\(A \\in \\mathcal{F}\\), entonces su complemento también está en \\(\\mathcal{F}\\): \\[\nA^c = \\Omega \\setminus A \\in \\mathcal{F}\n\\]\nSi \\(A_1, A_2, A_3, \\dots \\in \\mathcal{F}\\), entonces la unión infinita también pertenece a \\(\\mathcal{F}\\): \\[\n\\bigcup_{j \\in \\mathbb{N}} A_j \\in \\mathcal{F}\n\\]\n\n\n\n\nMedida de probabilidad\nLa función \\(P : \\mathcal{F} \\to [0,1]\\) se llama medida de probabilidad, y debe cumplir con las siguientes propiedades:\n\nNo negatividad y normalización: \\[\nP(A) \\geq 0 \\quad \\text{para todo } A \\in \\mathcal{F}, \\quad \\text{y} \\quad P(\\Omega) = 1\n\\]\nAditividad numerable: Si \\(\\{A_j\\}_{j \\in \\mathbb{N}}\\) es una familia de eventos disjuntos dos a dos (es decir, \\(A_i \\cap A_j = \\emptyset\\) si \\(i \\neq j\\)), entonces: \\[\nP\\left( \\bigcup_{j \\in \\mathbb{N}} A_j \\right) = \\sum_{j \\in \\mathbb{N}} P(A_j)\n\\]\n\nEste conjunto \\((\\Omega, \\mathcal{F}, P)\\) es lo que se conoce como un espacio de probabilidad. A partir de esta estructura, se puede desarrollar toda la teoría moderna de la probabilidad, tanto para espacios finitos como infinitos."
+  },
+  {
+    "objectID": "cursos/CA0721/teoria_general_proba_CA0721.html#fórmulas-fundamentales",
+    "href": "cursos/CA0721/teoria_general_proba_CA0721.html#fórmulas-fundamentales",
+    "title": "Teoría General de Probabilidades",
+    "section": "Fórmulas fundamentales",
+    "text": "Fórmulas fundamentales\n\nTeorema de la probabilidad total\nSi \\(\\{E_1, \\ldots, E_n\\}\\) es una partición del espacio muestral \\(\\Omega\\) (eventos mutuamente excluyentes y exhaustivos), entonces:\n\\[\nP(A) = \\sum_{i=1}^n P(A \\cap E_i) = \\sum_{i=1}^n P(A \\mid E_i) P(E_i)\n\\]\n\n\n\nFórmula de Bayes\nPara calcular la probabilidad de un evento \\(E_i\\) dado que ocurrió \\(A\\):\n\\[\nP(E_i \\mid A) = \\frac{P(E_i \\cap A)}{P(A)} = \\frac{P(A \\mid E_i) P(E_i)}{\\sum_{k=1}^n P(A \\mid E_k) P(E_k)}\n\\]"
   }
 ]

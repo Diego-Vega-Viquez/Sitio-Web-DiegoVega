@@ -1,0 +1,348 @@
+---
+title: "Variables Aleatorias"
+format: html
+---
+
+## Definición
+
+Una **variable aleatoria** (v.a.) en un espacio de probabilidad $(\Omega, \mathcal{F}, P)$ es una función
+
+$$
+X : \Omega \to \mathbb{R} \quad \text{tal que} \quad X^{-1}(B) \in \mathcal{F} \quad \text{para todo } B \in \mathcal{B}(\mathbb{R})
+$$
+
+donde $\mathcal{B}(\mathbb{R})$ denota la **$\sigma$-álgebra de Borel** en $\mathbb{R}$, es decir, la $\sigma$-álgebra generada por todos los conjuntos abiertos de $\mathbb{R}$.
+
+> **Nota:** La escogencia de la $\sigma$-álgebra de Borel puede parecer extraña, pero gracias a ella se podrán calcular probabilidades de eventos de interés. En efecto, como consecuencia de esta definición de variable aleatoria se tiene que:
+>
+> - $\{X < a\} = \{\omega \in \Omega : X(\omega) < a\} \in \mathcal{F}$ para todo $a \in \mathbb{R}$
+> - $\{X \leq a\} \in \mathcal{F}$ para todo $a \in \mathbb{R}$
+> - Para todo $a < b$, los siguientes eventos también están en $\mathcal{F}$:
+>   $$
+>   \{a < X \leq b\},\quad \{a < X < b\},\quad \{a \leq X < b\},\quad \{a \leq X \leq b\}
+>   $$
+
+### Condición suficiente y necesaria
+
+Para que $X$ sea una variable aleatoria, basta que:
+
+$$
+\{X < a\} \in \mathcal{F} \quad \text{para todo } a \in \mathbb{R}
+$$
+
+Esta condición es suficiente y también necesaria. Además, puede reemplazarse $\{X < a\}$ por cualquiera de los siguientes conjuntos sin cambiar la validez del resultado:
+
+- $\{X \leq a\}$, $\{X > a\}$, $\{X \geq a\}$
+
+### Operaciones con variables aleatorias
+
+Sean $X$ y $Y$ variables aleatorias reales sobre $(\Omega, \mathcal{F}, P)$. Entonces:
+
+- Para todo $a, b \in \mathbb{R}$, $aX + bY$ es una variable aleatoria.
+- $\min\{X, Y\}$ y $\max\{X, Y\}$ son variables aleatorias.
+- Si $g : \mathbb{R} \to \mathbb{R}$ es continua, entonces $g(X)$ también es una variable aleatoria.
+
+### Sucesiones de variables aleatorias
+
+Si $\{X_n\}_{n \in \mathbb{N}}$ es una sucesión de variables aleatorias, entonces:
+
+- $\inf\limits_{n \in \mathbb{N}} X_n$, $\sup\limits_{n \in \mathbb{N}} X_n$ son variables aleatorias.
+- $\liminf X_n$, $\limsup X_n$ también son variables aleatorias.
+
+## Funciones de distribución
+
+Sea $X$ una variable aleatoria real en un espacio $(\Omega, \mathcal{F}, P)$. 
+
+La **función de distribución** (acumulada) de $X$ es la función $F_X : \mathbb{R} \to [0,1]$ definida por:
+
+$$
+F_X(t) = P(X \leq t)
+$$
+
+### Propiedades
+
+- $F_X(t) \in [0, 1]$ para todo $t \in \mathbb{R}$
+
+- $F_X$ es **monótona creciente** y en particular $\forall t \in \mathbb{R}$
+
+  $$F_X(t^-) = \lim\limits_{x \to t^-}F_X(x)$$
+  $$F_X(t^+) = \lim\limits_{x \to t^+}F_X(x)$$
+  $$
+  P [X<t] = F_X(t^-) \leq F_X(t) \leq F_X(t^+)
+  $$
+
+- Además:
+
+  $$
+  \lim_{t \to -\infty} F_X(t) = 0 \quad \text{y} \quad \lim_{t \to +\infty} F_X(t) = 1
+  $$
+  
+## Variables aleatorias discretas
+
+Una variable aleatoria $X$ es **discreta** si existe un subconjunto numerable $N \subseteq \mathbb{R}$ tal que:
+
+$$
+P(\Omega) = \sum_{n \in N} P(X = n)
+$$
+
+Para estas variables, la función:
+
+$$
+p_X(n) = P(X = n), \quad n \in \mathbb{N}
+$$
+
+se llama **función de masa de probabilidad** de $X$.
+
+::: {.callout-note title="Teorema: Existencia de variables aleatorias discretas"}
+Sea $S = \{s_j : j \in I\}$ un conjunto finito o numerable, y sea $\{\pi_j : j \in I\}$ una colección de números reales tal que:
+
+- $\pi_j \geq 0$ para todo $j \in I$
+- $\displaystyle \sum_{j \in I} \pi_j = 1$
+
+Entonces existe un espacio de probabilidad $(\Omega, \mathcal{F}, P)$ y una variable aleatoria $X$ en $(\Omega, \mathcal{F}, P)$ tal que la función de masa de probabilidad de $X$ cumple:
+
+$$
+P(X = s_j) = \pi_j \quad \text{si } j \in I, \qquad
+P(X = s) = 0 \quad \text{si } s \notin S
+$$
+:::
+
+### Función de distribución
+
+Si $X$ es una variable aleatoria discreta con función de probabilidad $f_X(x)$, entonces la función de distribución acumulada se calcula como:
+
+$$
+F_X(x) = P[X \leq x] = \sum_{u \leq x} P[X = u]
+$$
+
+### Transformaciones
+
+Sea $X$ una v.a. discreta en un e.p $(\Omega, \mathcal{F}, P)$ y sea $g : \mathbb{R} \to \mathbb{R}$ una función. $Y = g(X)$ es una v.a. La función de masa de $Y$ se calcula de la siguiente manera:
+
+\begin{align*}
+P_Y(y) &= P_X(g(X) = y) \\
+&= P_X(X \in g^{-1}(y)) \\
+&=
+\begin{cases}
+0 & \text{si } y \notin \text{Im}(g(X)) \\
+\sum\limits_{x \in g^{-1}(y)} P[X = x] & \text{si } y \in \text{Im}(g(X))
+\end{cases}
+\end{align*}
+
+### Esperanza
+
+Sean $n$ los valores que toma $X$. Se define:
+
+$$
+\mathbb{E}[X] = \sum_{n \in \text{Im}(X)} n \cdot P[X = n]
+$$
+
+Siempre y cuando la anterior suma, en caso de ser una serie, converja absolutamente.
+
+#### Propiedades
+
+Si $X, Y$ son variables aleatorias en un espacio de probabilidad $(\Omega, \mathcal{F}, P)$ y $a, b \in \mathbb{R}$:
+
+- Linealidad de la esperanza:
+
+$$
+\mathbb{E}[aX + bY] = a \cdot \mathbb{E}[X] + b \cdot \mathbb{E}[Y]
+$$
+
+- Si $g(X)$ y $h(Y)$ son funciones de $X$ y $Y$ respectivamente, entonces:
+
+$$
+\mathbb{E}[g(X) + h(Y)] = \mathbb{E}[g(X)] + \mathbb{E}[h(Y)]
+$$
+
+### Ley del estadístico inconsciente
+
+Si $X$ es una v.a. discreta en un e.p. $(\Omega, \mathcal{F}, P)$ y sea $g : \mathbb{R} \to \mathbb{R}$ una función tal que
+
+$$
+\sum_{n \in \text{Im}(X)} \left| g(n) \right| \cdot P[X = n]
+$$
+
+es finita, entonces
+
+$$
+\mathbb{E}[g(x)] = \sum_{n \in \text{Im}(X)} g(n) \cdot P[X = n]
+$$
+
+> **Nota**: No ocupa la función de masa de $g(x)$ para calcular $\mathbb{E}[g(x)]$
+
+### Momentos y Varianza
+
+Sea $X$ una v.a. discreta en un e.p $(\Omega, \mathcal{F}, P)$ y sea $n > 0$:
+
+- El **$n$–ésimo momento** de $X$ se define como $\mathbb{E}[X^n]$
+- Si $\mu = \mathbb{E}[X]$, el $n$–ésimo momento centrado se define como:
+
+$$
+\mathbb{E}\left[(X - \mu)^n\right]
+$$
+
+- El segundo momento centrado es particularmente importante: 
+  - La **varianza** de $X$, denotada $\operatorname{Var}[X]$, se calcula así:
+
+\begin{align*}
+\operatorname{Var}[X] &= \mathbb{E} \left[(X - \mu)^2 \right]\\
+&= \sum_{n \in \mathbb{N}} (n - \mu)^2 \cdot P_X(X = n)
+\end{align*}
+
+
+Siempre que la anterior suma sea finita.
+
+> **Nota**: Es posible mostrar que si $\mathbb{E}[X^2] < \infty$, entonces:
+
+$$
+\operatorname{Var}[X] = \mathbb{E}[X^2] - \mu^2
+$$
+
+#### Propiedades de la varianza
+
+Sean $X$ e $Y$ dos variables aleatorias y sea $c$ una constante, entonces:
+
+1. $\operatorname{Var}(c) = 0$
+
+2. $\operatorname{Var}(X + c) = \operatorname{Var}(X)$
+
+3. $\operatorname{Var}(cX) = c^2 \cdot \operatorname{Var}(X)$
+
+4. Si $X$ e $Y$ son variables aleatorias independientes, entonces:
+
+$$
+\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)
+$$
+
+### Desviación estándar
+
+Sea $X$ una variable aleatoria discreta, se define la **desviación estándar** o **típica** de $X$ por:
+
+$$
+\sigma_X = \sqrt{\operatorname{Var}(X)}
+$$
+
+
+### Fórmula de convolución discreta
+
+Sean $X, Y$ (v.a) discretas e independientes en un e.p $(\Omega, \mathcal{F}, P)$.
+
+Entonces, la función de probabilidad de masa de la v.a $Z = X + Y$ viene dada por:
+
+$$
+P_Z(z) = \sum_{x \in \text{Im}(X)} P_X(x) P_Y(z - x)
+$$
+
+Y además:
+
+$$
+\varphi_{X + Y}(t) = \varphi_X(t) \varphi_Y(t) \quad \forall t \in \mathbb{R}
+$$
+
+De hecho, una fórmula similar aplica para las funciones generadoras de momentos y generadoras de probabilidades. Aunque en estos casos dicha fórmula solo sería válida para todos los valores de $t$ donde estas funciones estén definidas.
+
+### Funciones importantes
+
+Sea $X$ una (v.a) discreta en un e.p $(\Omega, \mathcal{F}, P)$
+
+::: {.callout-note appearance="default"}
+#### Función característica
+$$
+\varphi_X(t) = \mathbb{E}[e^{itX}] = \sum_{n \in \text{Im}(X)} e^{itn} \cdot P[X = n]
+$$
+Esta está definida para todo $t \in \mathbb{R}$.
+:::
+
+::: {.callout-note appearance="default"}
+#### Función generadora de momentos
+$$
+M_X(t) = \mathbb{E}[e^{tX}] = \sum_{n \in \text{Im}(X)} e^{tn} \cdot P[X = n]
+$$
+Para todos aquellos valores de $t$ donde dicho valor esperado exista.
+:::
+
+::: {.callout-note appearance="default"}
+#### Función generadora de probabilidades
+$$
+G_X(t) = \mathbb{E}[t^X] = \sum_{n \in \text{Im}(X)} t^n \cdot P[X = n]
+$$
+Para todos aquellos valores de $t$ donde dicho valor esperado exista.
+:::
+
+> **Nota**:  No lo vamos a probar, pero existe un teorema que dice que dos variables aleatorias $X, Y$ tienen la misma distribución si y solo si $\varphi_X = \varphi_Y$. Esto nos permite reconocer variables aleatorias.
+
+
+
+---
+
+### Distribuciones discretas comunes
+
+::: {.callout-note title="Bernoulli"}
+$$X \sim \text{Bernoulli}(p)$$
+
+- $\begin{cases}P(X = 0) = 1 - p \\P(X = 1) = p\end{cases}$
+- $\mathbb{E}[X] = p$
+- $\operatorname{Var}(X) = p(1 - p)$
+
+Este tipo de variable se suele usar en experimentos Bernoulli donde los resultados
+pueden etiquetarse como éxito o fracaso
+:::
+
+::: {.callout-note title="Binomial"}
+$$X \sim \text{Bin}(n, p)$$
+
+- $P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k}$
+- $\mathbb{E}[X] = n p$
+- $\operatorname{Var}(X) = n p (1 - p)$
+
+Se usa para modelar el número de éxitos en $n$ ensayos independientes con probabilidad de éxito $p$.
+:::
+
+::: {.callout-note title="Binomial negativa"}
+$$X \sim \text{BN}(r, p)$$
+
+- $P(X = k) = \binom{k + r - 1}{k} p^r (1 - p)^k$, $k = 0, 1, 2, \dots$
+- $\mathbb{E}[X] = \dfrac{r(1 - p)}{p}$
+- $\operatorname{Var}(X) = \dfrac{r(1 - p)}{p^2}$
+
+Se usa cuando se conoce el número de éxitos deseados ($r$) y se desea modelar el número de fracasos antes de lograrlos.
+:::
+
+::: {.callout-note title="Geométrica"}
+$$X \sim \text{Geom}(p)$$
+
+- $P(X = n) = (1 - p)^{n - 1} p$, $n = 1, 2, 3, \dots$
+- $\mathbb{E}[X] = \dfrac{1}{p}$
+- $\operatorname{Var}(X) = \dfrac{1 - p}{p^2}$
+
+Modela el número de intentos necesarios para obtener el primer éxito.
+:::
+
+Condición necesaria, note que:
+    \begin{align*}
+        \displaystyle\sum^\infty_{n=1}p_n &= p\displaystyle\sum^\infty_{n=1}({1-p})^{n-1} = p\displaystyle\sum^\infty_{k=0}({1-p})^k \\ &= \frac{p}{1-({1-p})}=1
+    \end{align*}
+
+::: {.callout-note title="Poisson"}
+$$X \sim \text{Poisson}(\lambda)$$
+
+- $P(X = n) = \dfrac{\lambda^n e^{-\lambda}}{n!}$, $n = 0, 1, 2, \dots$
+- $\mathbb{E}[X] = \lambda$
+- $\operatorname{Var}(X) = \lambda$
+
+Se usa para modelar el número de ocurrencias de un evento raro en un intervalo fijo de tiempo o espacio.
+:::
+
+::: {.callout-note title="Hipergeométrica"}
+
+$$X \sim \text{HG}(m + n, m, r)$$
+
+Una variable $X$ se llama **hipergeométrica** de parámetros $n$, $m$ y $r$ si su distribución está dada por:
+
+- $P[X = k] = \frac{\dbinom{m}{k} \dbinom{n}{r - k}}{\dbinom{m + n}{r}}$
+- $\mathbb{E}[X] = r \cdot \dfrac{m}{m + n}$
+- $\operatorname{Var}(X) = r \cdot \dfrac{m}{m + n} \cdot \dfrac{n}{m + n} \cdot \dfrac{m + n - r}{m + n - 1}$
+
+
+:::

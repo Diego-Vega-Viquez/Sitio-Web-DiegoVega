@@ -1,5 +1,7 @@
 project:
   type: website
+  
+lang: es
 
 website:
   title: "CA0721: Probabilidad"
@@ -9,8 +11,11 @@ website:
     contents:
       - index_CA0721.qmd
       - antecedentes_CA0721.qmd
+      - intro_proba_CA0721.qmd
+      - teoria_general_proba_CA0721.qmd
+      - variables_aleatorias_CA0721.qmd
 
 format:
   html:
-    theme: lux
+    theme: flatly
     toc: true

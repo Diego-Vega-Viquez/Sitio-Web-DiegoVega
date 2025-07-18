@@ -1,0 +1,245 @@
+---
+title: "Teoría General de Probabilidades"
+format: html
+---
+
+## Experimentos aleatorios y espacio de probabilidad
+
+Hasta ahora hemos trabajado con la probabilidad en contextos finitos y simples, donde todos los resultados son igualmente probables (modelo de Laplace). Sin embargo, para desarrollar una teoría más general de la probabilidad, necesitamos una base más formal.
+
+Un **experimento aleatorio** es un proceso cuyo resultado no se puede predecir con certeza, pero cuyo conjunto de resultados posibles puede describirse. A cada experimento aleatorio le asociamos tres componentes fundamentales:
+
+- Un **espacio muestral** $\Omega$: el conjunto de todos los posibles resultados del experimento.
+- Un **conjunto de eventos** $\mathcal{F}$: una colección de subconjuntos de $\Omega$, considerados como los eventos del experimento.
+- Una **función de probabilidad** $P$: que asigna a cada evento $A \in \mathcal{F}$ un número entre $0$ y $1$, representando la probabilidad de que ese evento ocurra.
+
+### El espacio de eventos: $\boldsymbol{\sigma}-$álgebra
+
+Para que el conjunto de eventos $\mathcal{F}$ sea adecuado, debe cumplir ciertas propiedades. A esto se le llama una **$\sigma$-álgebra** de subconjuntos, y garantiza que podamos hacer operaciones como complementos, uniones y demás, sin salirnos del conjunto de eventos válidos.
+
+Formalmente, $\mathcal{F}$ es una $\sigma-$álgebra sobre $\Omega$ si:
+
+1. $\mathcal{F}$ no es vacío.
+2. Si $A \in \mathcal{F}$, entonces su complemento también está en $\mathcal{F}$:
+   $$
+   A^c = \Omega \setminus A \in \mathcal{F}
+   $$
+3. Si $A_1, A_2, A_3, \dots \in \mathcal{F}$, entonces la unión infinita también pertenece a $\mathcal{F}$:
+   $$
+   \bigcup_{j \in \mathbb{N}} A_j \in \mathcal{F}
+   $$
+   
+#### Propiedades básicas de $\boldsymbol{\sigma}-$álgebras
+
+Recurriendo a propiedades básicas de conjuntos, no es difícil probar que si $\mathcal{F}$ es una $\sigma-$álgebra tomada de un espacio muestral $\Omega$, entonces:
+
+- $\emptyset \in \mathcal{F}$ y $\Omega \in \mathcal{F}$.
+
+- Si $A, B \in \mathcal{F}$, entonces $A \cup B \in \mathcal{F}$  
+  (de hecho, puede verse también que $\mathcal{F}$ es cerrado bajo un número finito de uniones).
+
+- Si $A, B \in \mathcal{F}$, entonces $A \cap B \in \mathcal{F}$  
+  (de hecho, puede verse también que $\mathcal{F}$ es cerrado bajo un número finito de intersecciones).
+
+- Si $A, B \in \mathcal{F}$, entonces $A \setminus B \in \mathcal{F}$.
+
+- Si $A_j \in \mathcal{F}$ para todo $j \in \mathbb{N}$, entonces  
+  $$
+  \bigcap_{j \in \mathbb{N}} A_j \in \mathcal{F}.
+  $$
+
+### Medida de probabilidad
+
+La función $P : \mathcal{F} \to [0,1]$ se llama **medida de probabilidad** sobre $(\Omega,\mathcal{F})$, y debe cumplir con las siguientes propiedades:
+
+- **No negatividad y normalización**:
+  $$
+  P(A) \geq 0 \quad \text{para todo } A \in \mathcal{F}, \quad \text{y} \quad P(\Omega) = 1
+  $$
+
+- **Aditividad numerable**: Si $\{A_j\}_{j \in \mathbb{N}}$ es una familia de eventos disjuntos dos a dos (es decir, $A_i \cap A_j = \emptyset$ si $i \neq j$), entonces:
+  $$
+  P\left( \bigcup_{j \in \mathbb{N}} A_j \right) = \sum_{j \in \mathbb{N}} P(A_j)
+  $$
+
+#### Propiedades básicas de medidas de probabilidad
+
+Sea $P$ una medida de probabilidad definida sobre $(\Omega, \mathcal{F})$. Entonces se cumple que:
+
+- $P(\emptyset) = 0$
+
+- Si $A_1, A_2, \ldots, A_n \in \mathcal{F}$ y son disjuntos dos a dos, entonces:
+
+  $$
+  P\left( \bigcup_{j=1}^n A_j \right) = \sum_{j=1}^n P(A_j)
+  $$
+
+- Si $A \in \mathcal{F}$, entonces:
+
+  $$
+  P(A) + P(A^c) = 1
+  $$
+
+- Si $A, B \in \mathcal{F}$, entonces:
+
+  $$
+  P(A) + P(B) = P(A \cup B) + P(A \cap B)
+  $$
+
+  En particular:
+
+  $$
+  P(A \cup B) \leq P(A) + P(B)
+  $$
+
+- Si $A, B \in \mathcal{F}$ y $A \subseteq B$, entonces:
+
+  $$
+  P(A) \leq P(B)
+  $$
+
+- Para eventos arbitrarios $A_1, \ldots, A_n \in \mathcal{F}$ (no necesariamente disjuntos), se cumple el **principio de inclusión-exclusión**:
+
+  $$
+  P\left( \bigcup_{i=1}^n A_i \right) =
+  \sum_{i=1}^n P(A_i)
+  - \sum_{i_1 < i_2} P(A_{i_1} \cap A_{i_2})
+  + \sum_{i_1 < i_2 < i_3} P(A_{i_1} \cap A_{i_2} \cap A_{i_3})
+  - \cdots + (-1)^{n-1} P\left( \bigcap_{j=1}^n A_j \right)
+  $$
+  
+### Espacios de probabilidad
+
+Sea $(\Omega, \mathcal{F}, P)$ una tripleta donde:
+
+- $\Omega$ es un conjunto no vacío.
+
+- $\mathcal{F}$ es una $\sigma$-álgebra de subconjuntos de $\Omega$.
+
+- $P : \mathcal{F} \to [0,1]$ es una **medida de probabilidad** sobre $(\Omega, \mathcal{F})$.
+
+Este conjunto $(\Omega, \mathcal{F}, P)$ es lo que se conoce como un **espacio de probabilidad**. A partir de esta estructura, se puede desarrollar toda la teoría moderna de la probabilidad, tanto para espacios finitos como infinitos.
+
+---
+
+## Probabilidad condicional e independencia
+
+### Probabilidad condicional
+
+
+Sean $A, B$ dos eventos en un espacio de probabilidad $(\Omega, \mathcal{F}, P)$ con $P(B) > 0$. La **probabilidad condicional de $A$ dado $B$** viene dada por:
+
+$$
+P(A \mid B) = \frac{P(A \cap B)}{P(B)}
+$$
+
+También se tiene:
+
+$$
+P(B \mid A) = \frac{P(B \cap A)}{P(A)} = \frac{P(A \cap B)}{P(A)}
+$$
+
+### Independencia de eventos
+
+Sean $A, B$ dos eventos en un espacio de probabilidad $(\Omega, \mathcal{F}, P)$. Se dice que $A$ y $B$ son **independientes** si:
+
+$$
+P(A \cap B) = P(A) \cdot P(B)
+$$
+
+> Si no se cumple la propiedad anterior, los eventos se dicen **dependientes**.
+
+También se define independencia de una **familia de eventos** $(A_i)_{i \in I}$ en un espacio de probabilidad $(\Omega, \mathcal{F}, P)$ como:
+
+$$
+P\left(\bigcap_{j \in J} A_j\right) = \prod_{j \in J} P(A_j)
+$$
+
+para todo subconjunto finito no vacío $J \subseteq I$.
+---
+
+## Fórmulas fundamentales
+
+Sea $(\Omega, \mathcal{F}, P)$ un espacio de probabilidad.
+
+Decimos que una colección $\{E_i\}_{i \in \mathbb{N}} \subseteq \mathcal{F}$ es una **partición** de $\Omega$ si cumple que:
+
+- $\displaystyle \bigcup_{i \in \mathbb{N}} E_i = \Omega$
+- $E_i \cap E_j = \emptyset$ para todo $i \ne j$
+
+### Teorema de la probabilidad total
+
+Si $\{E_i\}_{i \in \mathbb{N}}$ es una partición de $(\Omega, \mathcal{F}, P)$ y $B \in \mathcal{F}$, entonces:
+
+$$
+P(B) = \sum_{i \in \mathbb{N}} P(B \cap E_i)
+$$
+
+Si además $P(E_i) > 0$ para todo $i$, se tiene la versión condicional:
+
+$$
+P(B) = \sum_{i \in \mathbb{N}} P(B \mid E_i) \, P(E_i)
+$$
+
+### Fórmula de Bayes
+
+Sean $A, B \in \mathcal{F}$ con $P(A), P(B) > 0$. Entonces:
+
+$$
+P(B \mid A) = \frac{P(B)}{P(A)} \cdot P(A \mid B)
+$$
+
+Más generalmente, si $\{E_i\}_{i \in \mathbb{N}}$ es una partición de $\Omega$ con $P(E_i) > 0$ y $B \in \mathcal{F}$ tal que $P(B) > 0$, se cumple:
+
+$$
+P(E_k \mid B) = \frac{P(B \mid E_k) \, P(E_k)}{\sum\limits_{i \in \mathbb{N}} P(B \mid E_i) \, P(E_i)}
+$$
+
+### Desigualdad de Boole
+
+Si $\{A_n\}_{n \in \mathbb{N}}$ es una familia de eventos en $(\Omega, \mathcal{F}, P)$, entonces:
+
+$$
+P\left( \bigcup_{n \in \mathbb{N}} A_n \right) \leq \sum_{n \in \mathbb{N}} P(A_n)
+$$
+
+### Continuidad de la probabilidad
+
+Sea $\{A_n\}_{n \in \mathbb{N}}$ una sucesión de eventos en $(\Omega, \mathcal{F}, P)$.
+
+- **Creciente**
+
+  $$
+  A_n \subseteq A_{n+1} \;\;\forall n\quad\implies\quad P\left( \bigcup_{n \in \mathbb{N}} A_n \right) = \lim_{n \to \infty} P(A_n)
+  $$
+
+- **Decreciente**
+
+  $$
+  A_{n+1} \subseteq A_n\;\;\forall n\quad\implies\quad P\left( \bigcap_{n \in \mathbb{N}} A_n \right) = \lim_{n \to \infty} P(A_n)
+  $$
+
+### Lemas de Borel–Cantelli
+
+Sea $\{A_n\}_{n \in \mathbb{N}}$ una sucesión de eventos en $(\Omega, \mathcal{F}, P)$. Denotamos:
+
+$$
+\{A_n \text{ i.o.}\} := \bigcap_{n=1}^{\infty} \bigcup_{k = n}^{\infty} A_k
+$$
+
+> **Nota:** La notación "$A_n$ i.o." proviene del inglés *infinitely often*, y se refiere al evento de que **ocurran infinitamente muchos** de los eventos $A_n$. Es decir, que sin importar cuán lejos avancemos en la sucesión, siempre habrá algunos $A_k$ con $k > n$ que se cumplan.
+>
+> Intuitivamente, $A_n$ ocurre *infinitas veces* si, a partir de cierto punto, sigue ocurriendo de forma repetida (aunque no necesariamente de forma continua).
+
+1. **Primer lema de Borel–Cantelli:**  
+  
+   $$
+   \sum\limits_{n=1}^\infty P(A_n) < \infty \quad\implies\quad P(A_n \text{ i.o.}) = 0
+   $$
+
+2. **Segundo lema de Borel–Cantelli:**  
+
+   $$
+   \left.\begin{array} AA_n \text{ son independientes} \\ \sum\limits_{n=1}^\infty P(A_n) = \infty \end{array}\right\}\quad\implies\quad P(A_n \text{ i.o.}) = 1
+   $$
+

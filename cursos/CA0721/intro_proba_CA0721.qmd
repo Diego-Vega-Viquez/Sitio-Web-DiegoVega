@@ -1,0 +1,90 @@
+---
+title: "Introducción a la Probabilidad"
+format: html
+---
+
+
+## Introducción a la Notación y Conceptos Básicos de Probabilidad
+
+### Notación inicial
+
+Sea $\Omega$ un conjunto finito al que llamamos **espacio muestral**. Sus elementos representan todos los posibles resultados de un experimento aleatorio.
+
+Sean $A, B \subseteq \Omega$ subconjuntos del espacio muestral. Estos subconjuntos se denominan **eventos**.
+
+Un elemento $a$ pertenece a un evento $A$ si:
+
+$$
+a \in A
+$$
+
+---
+
+### El espacio muestral
+
+En el contexto de la probabilidad, un **experimento aleatorio** es un proceso que genera un resultado que no puede preverse con certeza. El conjunto $\Omega$ representa el **conjunto de todos los posibles resultados** de ese experimento.
+
+Por ejemplo:
+
+- Al lanzar un dado: $\Omega = \{1,2,3,4,5,6\}$
+- Al lanzar una moneda: $\Omega = \{\text{cara}, \text{cruz}\}$
+
+---
+
+### Eventos como subconjuntos
+
+Un **evento** es cualquier subconjunto del espacio muestral. Esto incluye desde el conjunto vacío hasta el conjunto total $\Omega$. Notamos que:
+
+> **Nota:** Como los eventos son conjuntos, **todas las operaciones entre conjuntos (unión, intersección, complemento, etc.) también se aplican a los eventos**. Puedes consultar la sección [Algunos recordatorios de Teoría de Conjuntos](antecedentes_CA0721.qmd#sec-conjuntos) para ver esas propiedades en detalle.
+
+Podemos construir nuevos eventos combinando otros mediante operaciones de conjuntos:
+
+- **Intersección** $(A \cap B\,)$: elementos que están en ambos eventos.
+- **Unión** $(A \cup B\,)$: elementos que están en al menos uno de los eventos.
+- **Complemento** $(A^c)$: elementos que no están en el evento $A$.
+
+---
+
+### Una primera definición intuitiva de probabilidad
+
+La probabilidad es una función que asigna un número entre 0 y 1 a cada evento, representando **cuán probable es que ese evento ocurra**.
+
+Provisionalmente, podemos pensar en la probabilidad como una función:
+
+$$
+P : \mathcal{F} \to [0,1]
+$$
+
+donde $\mathcal{F}$ es una colección de subconjuntos de $\Omega$ (es decir, eventos), y $P(A)$ nos da la **probabilidad** de que ocurra el evento $A$.
+
+Más adelante, formalizaremos los axiomas que esta función debe cumplir.
+
+---
+
+## Modelo de probabilidad de Laplace
+
+Cuando el espacio muestral $\Omega$ es finito, se puede considerar que todos los resultados son igualmente probables. A este modelo se le conoce como **modelo de probabilidad de Laplace** o también como **probabilidad clásica**.
+
+En este contexto, se asigna la misma probabilidad a cada resultado $\omega \in \Omega$, de modo que:
+
+$$
+P(\{\omega\}) = \frac{1}{|\Omega|}
+$$
+
+donde $|\Omega|$ denota la cantidad total de posibles resultados.
+
+---
+
+De forma general, si $A$ es un evento (es decir, un subconjunto de $\Omega$), su probabilidad se define como el cociente entre la cantidad de resultados favorables (elementos de $A$) y la cantidad total de posibles resultados:
+
+$$
+P(A) = \frac{|A|}{|\Omega|}
+$$
+
+Esta definición supone que **todos los resultados tienen la misma probabilidad** y es válida únicamente cuando el número de resultados posibles es finito y equiprobable.
+
+---
+
+> **Nota:** Este modelo es un caso particular de lo que más adelante definiremos como una **medida de probabilidad** sobre una colección de eventos $\mathcal{F}$. Por ahora, basta con tener una comprensión intuitiva: el modelo de Laplace asigna igual peso a todos los elementos de $\Omega$ y calcula la probabilidad de un evento $A$ como la proporción de casos favorables respecto al total.
+
+

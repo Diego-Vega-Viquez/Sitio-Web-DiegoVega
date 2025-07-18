@@ -1,6 +1,183 @@
 ---
-title: "Antecedentes"
+title: "Preliminares"
 format: html
 ---
 
-Tema1 CA0721
+## Sumas finitas
+
+Dada una sucesión $\{a_k\}$, definimos la suma finita desde $k = m$ hasta $k = n$ como:
+
+$$
+\sum_{k=m}^n a_k = a_m + a_{m+1} + \cdots + a_n
+$$
+
+### Propiedades de las sumatorias
+
+- Linealidad por constante:
+  $$
+  \sum_{k=1}^n c a_k = c \sum_{k=1}^n a_k \quad \text{para todo } c \in \mathbb{R}
+  $$
+
+- Suma término a término:
+  $$
+  \sum_{k=1}^n (a_k + b_k) = \sum_{k=1}^n a_k + \sum_{k=1}^n b_k
+  $$
+
+- Cambio de índice:
+  $$
+  \sum_{k=0}^n a_{k+1} = \sum_{k=1}^{n+1} a_k
+  $$
+
+### Suma telescópica
+
+Si $a_k = b_k - b_{k+1}$, entonces se tiene:
+
+$$
+\sum_{k=m}^n (b_k - b_{k+1}) = b_m - b_{n+1}
+$$
+
+Si la suma es infinita y el límite existe:
+
+$$
+\sum_{k=m}^\infty (b_k - b_{k+1}) = b_m - \lim_{j \to \infty} b_{j+1}
+$$
+
+### Suma geométrica
+
+La suma de una progresión geométrica de razón $r \ne 1$ es:
+
+$$
+\sum_{k=m}^n r^k = \frac{r^m - r^{n+1}}{1 - r}
+$$
+
+---
+
+## Principios de combinatoria
+
+Sea $\Omega_1$ y $\Omega_2$ dos conjuntos finitos no vacíos. El número de formas de formar pares $(a, b)$ con $a \in \Omega_1$ y $b \in \Omega_2$ es:
+
+$$
+|\Omega_1 \times \Omega_2| = |\Omega_1| \cdot |\Omega_2|
+$$
+
+donde $\times$ denota el **producto cartesiano** de conjuntos. Este resultado es un caso del **principio de multiplicación**.
+
+Una aplicación importante de este principio es el conteo de permutaciones. Si un conjunto $\Omega$ tiene $n$ elementos, entonces existen:
+
+$$
+n! := 1 \cdot 2 \cdot 3 \cdots (n-1)\cdot n
+$$
+
+formas distintas de ordenarlos. Este número se llama el **factorial de $n$**, y representa la cantidad total de permutaciones posibles de los elementos del conjunto.
+
+> Intuitivamente, una permutación es una forma de reorganizar (ordenar) todos los elementos del conjunto.
+
+### Permutaciones
+
+Número de formas de seleccionar $k$ objetos **ordenadamente** de un total de $n$:
+
+$$
+P(n,k) = \frac{n!}{(n-k)!}
+$$
+
+### Combinaciones
+
+Número de formas de elegir $k$ objetos **sin importar el orden**:
+
+$$
+\binom{n}{k} = \frac{n!}{k! (n-k)!}
+$$
+
+### Coeficiente multinomial
+
+Número de formas de dividir $n$ objetos en $r$ grupos de tamaños $n_1, n_2, \ldots, n_r$ con $n_1 + \cdots + n_r = n$:
+
+$$
+\binom{n}{n_1\, n_2\, \cdots\, n_r} = \frac{n!}{n_1! \, n_2! \cdots n_r!}
+$$
+
+### Fórmula del binomio
+
+Expansión de $(a + b)^n$ usando combinatoria:
+
+$$
+(a + b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k
+$$
+
+## Algunos recordatorios de Teoría de Conjuntos {#sec-conjuntos}
+
+Dado un conjunto $\Omega$, los subconjuntos $A, B, C, D \subseteq \Omega$ pueden relacionarse mediante las siguientes operaciones y propiedades:
+
+### Pertenencia
+
+Un elemento $a$ pertenece a un conjunto $A$ si:
+
+$$
+a \in A
+$$
+
+---
+
+### Intersección de conjuntos
+
+La intersección de dos conjuntos $A$ y $B$ se define como:
+
+$$
+A \cap B = \{x \in \Omega \mid x \in A \text{ y } x \in B\}
+$$
+
+**Propiedades:**
+
+- Conmutatividad: $A \cap B = B \cap A$
+- Asociatividad: $A \cap (B \cap C) = (A \cap B) \cap C$
+- Inclusión: $A \subseteq B \Rightarrow A \cap B = A$
+- Si $D \subseteq A$ y $D \subseteq B \Rightarrow D \subseteq A \cap B$
+
+---
+
+### Unión de conjuntos
+
+La unión de dos conjuntos $A$ y $B$ se define como:
+
+$$
+A \cup B = \{x \in \Omega \mid x \in A \text{ o } x \in B\}
+$$
+
+**Propiedades:**
+
+- Conmutatividad: $A \cup B = B \cup A$
+- Asociatividad: $A \cup (B \cup C) = (A \cup B) \cup C$
+- Inclusión: $A \subseteq B \Rightarrow A \cup B = B$
+- Si $A \subseteq D$ y $B \subseteq D \Rightarrow A \cup B \subseteq D$
+
+---
+
+### Diferencia de conjuntos
+
+La diferencia de conjuntos se define como:
+
+$$
+B - A = \{x \in B \mid x \notin A\}
+$$
+
+El complemento de un conjunto $A$ respecto al universo $\Omega$ es:
+
+$$
+A^c = \Omega - A = \{x \in \Omega \mid x \notin A\}
+$$
+
+---
+
+### Leyes de De Morgan
+
+Sean $\{A_i\}_{i \in I}$ una familia de conjuntos, se tiene:
+
+- $\left( \bigcap\limits_{i \in I} A_i \right)^c = \bigcup\limits_{i \in I} A_i^c$
+- $\left( \bigcup\limits_{i \in I} A_i \right)^c = \bigcap\limits_{i \in I} A_i^c$
+
+En particular, para $A$ y $B$ arbitrarios:
+
+- $E \setminus (A \cup B) = (E \setminus A) \cap (E \setminus B)$
+- $E \setminus (A \cap B) = (E \setminus A) \cup (E \setminus B)$
+- $A \cap B = A \setminus B^c$
+

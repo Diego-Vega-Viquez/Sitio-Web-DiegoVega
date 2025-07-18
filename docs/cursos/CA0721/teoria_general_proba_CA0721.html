@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Preliminares – Mi Sitio Web</title>
+<title>Teoría General de Probabilidades – Mi Sitio Web</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -156,26 +156,24 @@ window.Quarto = {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#sumas-finitas" id="toc-sumas-finitas" class="nav-link active" data-scroll-target="#sumas-finitas">Sumas finitas</a>
+  <li><a href="#experimentos-aleatorios-y-espacio-de-probabilidad" id="toc-experimentos-aleatorios-y-espacio-de-probabilidad" class="nav-link active" data-scroll-target="#experimentos-aleatorios-y-espacio-de-probabilidad">Experimentos aleatorios y espacio de probabilidad</a>
   <ul class="collapse">
-  <li><a href="#propiedades-de-las-sumatorias" id="toc-propiedades-de-las-sumatorias" class="nav-link" data-scroll-target="#propiedades-de-las-sumatorias">Propiedades de las sumatorias</a></li>
-  <li><a href="#suma-telescópica" id="toc-suma-telescópica" class="nav-link" data-scroll-target="#suma-telescópica">Suma telescópica</a></li>
-  <li><a href="#suma-geométrica" id="toc-suma-geométrica" class="nav-link" data-scroll-target="#suma-geométrica">Suma geométrica</a></li>
+  <li><a href="#el-espacio-de-eventos-boldsymbolsigma-álgebra" id="toc-el-espacio-de-eventos-boldsymbolsigma-álgebra" class="nav-link" data-scroll-target="#el-espacio-de-eventos-boldsymbolsigma-álgebra">El espacio de eventos: <span class="math inline">\(\boldsymbol{\sigma}\)</span>-álgebra</a></li>
+  <li><a href="#medida-de-probabilidad" id="toc-medida-de-probabilidad" class="nav-link" data-scroll-target="#medida-de-probabilidad">Medida de probabilidad</a></li>
   </ul></li>
-  <li><a href="#principios-de-combinatoria" id="toc-principios-de-combinatoria" class="nav-link" data-scroll-target="#principios-de-combinatoria">Principios de combinatoria</a>
+  <li><a href="#espacios-finitos-y-medidas-de-probabilidad" id="toc-espacios-finitos-y-medidas-de-probabilidad" class="nav-link" data-scroll-target="#espacios-finitos-y-medidas-de-probabilidad">Espacios finitos y medidas de probabilidad</a>
   <ul class="collapse">
-  <li><a href="#permutaciones" id="toc-permutaciones" class="nav-link" data-scroll-target="#permutaciones">Permutaciones</a></li>
-  <li><a href="#combinaciones" id="toc-combinaciones" class="nav-link" data-scroll-target="#combinaciones">Combinaciones</a></li>
-  <li><a href="#coeficiente-multinomial" id="toc-coeficiente-multinomial" class="nav-link" data-scroll-target="#coeficiente-multinomial">Coeficiente multinomial</a></li>
-  <li><a href="#fórmula-del-binomio" id="toc-fórmula-del-binomio" class="nav-link" data-scroll-target="#fórmula-del-binomio">Fórmula del binomio</a></li>
+  <li><a href="#principio-de-inclusión-exclusión" id="toc-principio-de-inclusión-exclusión" class="nav-link" data-scroll-target="#principio-de-inclusión-exclusión">Principio de inclusión-exclusión</a></li>
   </ul></li>
-  <li><a href="#sec-conjuntos" id="toc-sec-conjuntos" class="nav-link" data-scroll-target="#sec-conjuntos">Algunos recordatorios de Teoría de Conjuntos</a>
+  <li><a href="#probabilidad-condicional-e-independencia" id="toc-probabilidad-condicional-e-independencia" class="nav-link" data-scroll-target="#probabilidad-condicional-e-independencia">Probabilidad condicional e independencia</a>
   <ul class="collapse">
-  <li><a href="#pertenencia" id="toc-pertenencia" class="nav-link" data-scroll-target="#pertenencia">Pertenencia</a></li>
-  <li><a href="#intersección-de-conjuntos" id="toc-intersección-de-conjuntos" class="nav-link" data-scroll-target="#intersección-de-conjuntos">Intersección de conjuntos</a></li>
-  <li><a href="#unión-de-conjuntos" id="toc-unión-de-conjuntos" class="nav-link" data-scroll-target="#unión-de-conjuntos">Unión de conjuntos</a></li>
-  <li><a href="#diferencia-de-conjuntos" id="toc-diferencia-de-conjuntos" class="nav-link" data-scroll-target="#diferencia-de-conjuntos">Diferencia de conjuntos</a></li>
-  <li><a href="#leyes-de-de-morgan" id="toc-leyes-de-de-morgan" class="nav-link" data-scroll-target="#leyes-de-de-morgan">Leyes de De Morgan</a></li>
+  <li><a href="#probabilidad-condicional" id="toc-probabilidad-condicional" class="nav-link" data-scroll-target="#probabilidad-condicional">Probabilidad condicional</a></li>
+  <li><a href="#independencia-de-eventos" id="toc-independencia-de-eventos" class="nav-link" data-scroll-target="#independencia-de-eventos">Independencia de eventos</a></li>
+  </ul></li>
+  <li><a href="#fórmulas-fundamentales" id="toc-fórmulas-fundamentales" class="nav-link" data-scroll-target="#fórmulas-fundamentales">Fórmulas fundamentales</a>
+  <ul class="collapse">
+  <li><a href="#teorema-de-la-probabilidad-total" id="toc-teorema-de-la-probabilidad-total" class="nav-link" data-scroll-target="#teorema-de-la-probabilidad-total">Teorema de la probabilidad total</a></li>
+  <li><a href="#fórmula-de-bayes" id="toc-fórmula-de-bayes" class="nav-link" data-scroll-target="#fórmula-de-bayes">Fórmula de Bayes</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -185,7 +183,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Preliminares</h1>
+<h1 class="title">Teoría General de Probabilidades</h1>
 </div>
 
 
@@ -202,156 +200,115 @@ window.Quarto = {
 </header>
 
 
-<section id="sumas-finitas" class="level2">
-<h2 class="anchored" data-anchor-id="sumas-finitas">Sumas finitas</h2>
-<p>Dada una sucesión <span class="math inline">\(\{a_k\}\)</span>, definimos la suma finita desde <span class="math inline">\(k = m\)</span> hasta <span class="math inline">\(k = n\)</span> como:</p>
-<p><span class="math display">\[
-\sum_{k=m}^n a_k = a_m + a_{m+1} + \cdots + a_n
-\]</span></p>
-<section id="propiedades-de-las-sumatorias" class="level3">
-<h3 class="anchored" data-anchor-id="propiedades-de-las-sumatorias">Propiedades de las sumatorias</h3>
+<p>XD</p>
+<hr>
+<section id="experimentos-aleatorios-y-espacio-de-probabilidad" class="level2">
+<h2 class="anchored" data-anchor-id="experimentos-aleatorios-y-espacio-de-probabilidad">Experimentos aleatorios y espacio de probabilidad</h2>
+<p>Hasta ahora hemos trabajado con la probabilidad en contextos finitos y simples, donde todos los resultados son igualmente probables (modelo de Laplace). Sin embargo, para desarrollar una teoría más general de la probabilidad, necesitamos una base más formal.</p>
+<p>Un <strong>experimento aleatorio</strong> es un proceso cuyo resultado no se puede predecir con certeza, pero cuyo conjunto de resultados posibles puede describirse. A cada experimento aleatorio le asociamos tres componentes fundamentales:</p>
 <ul>
-<li><p>Linealidad por constante: <span class="math display">\[
-\sum_{k=1}^n c a_k = c \sum_{k=1}^n a_k \quad \text{para todo } c \in \mathbb{R}
+<li>Un <strong>espacio muestral</strong> <span class="math inline">\(\Omega\)</span>: el conjunto de todos los posibles resultados del experimento.</li>
+<li>Un <strong>conjunto de eventos</strong> <span class="math inline">\(\mathcal{F}\)</span>: una colección de subconjuntos de <span class="math inline">\(\Omega\)</span>, considerados como los eventos del experimento.</li>
+<li>Una <strong>función de probabilidad</strong> <span class="math inline">\(P\)</span>: que asigna a cada evento <span class="math inline">\(A \in \mathcal{F}\)</span> un número entre <span class="math inline">\(0\)</span> y <span class="math inline">\(1\)</span>, representando la probabilidad de que ese evento ocurra.</li>
+</ul>
+<hr>
+<section id="el-espacio-de-eventos-boldsymbolsigma-álgebra" class="level3">
+<h3 class="anchored" data-anchor-id="el-espacio-de-eventos-boldsymbolsigma-álgebra">El espacio de eventos: <span class="math inline">\(\boldsymbol{\sigma}\)</span>-álgebra</h3>
+<p>Para que el conjunto de eventos <span class="math inline">\(\mathcal{F}\)</span> sea adecuado, debe cumplir ciertas propiedades. A esto se le llama una <strong><span class="math inline">\(\sigma\)</span>-álgebra</strong> de subconjuntos, y garantiza que podamos hacer operaciones como complementos, uniones y demás, sin salirnos del conjunto de eventos válidos.</p>
+<p>Formalmente, <span class="math inline">\(\mathcal{F}\)</span> es una <span class="math inline">\(\sigma\)</span>-álgebra sobre <span class="math inline">\(\Omega\)</span> si:</p>
+<ol type="1">
+<li><span class="math inline">\(\mathcal{F}\)</span> no es vacío.</li>
+<li>Si <span class="math inline">\(A \in \mathcal{F}\)</span>, entonces su complemento también está en <span class="math inline">\(\mathcal{F}\)</span>: <span class="math display">\[
+A^c = \Omega \setminus A \in \mathcal{F}
+\]</span></li>
+<li>Si <span class="math inline">\(A_1, A_2, A_3, \dots \in \mathcal{F}\)</span>, entonces la unión infinita también pertenece a <span class="math inline">\(\mathcal{F}\)</span>: <span class="math display">\[
+\bigcup_{j \in \mathbb{N}} A_j \in \mathcal{F}
+\]</span></li>
+</ol>
+<hr>
+</section>
+<section id="medida-de-probabilidad" class="level3">
+<h3 class="anchored" data-anchor-id="medida-de-probabilidad">Medida de probabilidad</h3>
+<p>La función <span class="math inline">\(P : \mathcal{F} \to [0,1]\)</span> se llama <strong>medida de probabilidad</strong>, y debe cumplir con las siguientes propiedades:</p>
+<ul>
+<li><p><strong>No negatividad y normalización</strong>: <span class="math display">\[
+P(A) \geq 0 \quad \text{para todo } A \in \mathcal{F}, \quad \text{y} \quad P(\Omega) = 1
 \]</span></p></li>
-<li><p>Suma término a término: <span class="math display">\[
-\sum_{k=1}^n (a_k + b_k) = \sum_{k=1}^n a_k + \sum_{k=1}^n b_k
-\]</span></p></li>
-<li><p>Cambio de índice: <span class="math display">\[
-\sum_{k=0}^n a_{k+1} = \sum_{k=1}^{n+1} a_k
+<li><p><strong>Aditividad numerable</strong>: Si <span class="math inline">\(\{A_j\}_{j \in \mathbb{N}}\)</span> es una familia de eventos disjuntos dos a dos (es decir, <span class="math inline">\(A_i \cap A_j = \emptyset\)</span> si <span class="math inline">\(i \neq j\)</span>), entonces: <span class="math display">\[
+P\left( \bigcup_{j \in \mathbb{N}} A_j \right) = \sum_{j \in \mathbb{N}} P(A_j)
 \]</span></p></li>
 </ul>
+<p>Este conjunto <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> es lo que se conoce como un <strong>espacio de probabilidad</strong>. A partir de esta estructura, se puede desarrollar toda la teoría moderna de la probabilidad, tanto para espacios finitos como infinitos.</p>
 </section>
-<section id="suma-telescópica" class="level3">
-<h3 class="anchored" data-anchor-id="suma-telescópica">Suma telescópica</h3>
-<p>Si <span class="math inline">\(a_k = b_k - b_{k+1}\)</span>, entonces se tiene:</p>
-<p><span class="math display">\[
-\sum_{k=m}^n (b_k - b_{k+1}) = b_m - b_{n+1}
-\]</span></p>
-<p>Si la suma es infinita y el límite existe:</p>
-<p><span class="math display">\[
-\sum_{k=m}^\infty (b_k - b_{k+1}) = b_m - \lim_{j \to \infty} b_{j+1}
-\]</span></p>
 </section>
-<section id="suma-geométrica" class="level3">
-<h3 class="anchored" data-anchor-id="suma-geométrica">Suma geométrica</h3>
-<p>La suma de una progresión geométrica de razón <span class="math inline">\(r \ne 1\)</span> es:</p>
+<section id="espacios-finitos-y-medidas-de-probabilidad" class="level2">
+<h2 class="anchored" data-anchor-id="espacios-finitos-y-medidas-de-probabilidad">Espacios finitos y medidas de probabilidad</h2>
+<p>Una medida de probabilidad sobre un espacio finito es una función <span class="math inline">\(P\)</span> definida en subconjuntos de <span class="math inline">\(\Omega\)</span>, tal que:</p>
+<ol type="1">
+<li><p><span class="math inline">\(P(\Omega) = 1\)</span></p></li>
+<li><p>Si <span class="math inline">\(A, B \subseteq \Omega\)</span> y <span class="math inline">\(A \cap B = \emptyset\)</span>, entonces:</p>
 <p><span class="math display">\[
-\sum_{k=m}^n r^k = \frac{r^m - r^{n+1}}{1 - r}
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+\]</span></p></li>
+</ol>
+<section id="principio-de-inclusión-exclusión" class="level3">
+<h3 class="anchored" data-anchor-id="principio-de-inclusión-exclusión">Principio de inclusión-exclusión</h3>
+<p>Para eventos <span class="math inline">\(A_1, \ldots, A_n\)</span>, se tiene:</p>
+<p><span class="math display">\[
+P\left(\bigcup_{i=1}^n A_i\right) = \sum_{i=1}^n P(A_i)
+- \sum_{i_1&lt;i_2} P(A_{i_1} \cap A_{i_2})
++ \sum_{i_1&lt;i_2&lt;i_3} P(A_{i_1} \cap A_{i_2} \cap A_{i_3})
+- \cdots + (-1)^{n-1} P\left(\bigcap_{j=1}^n A_j\right)
 \]</span></p>
 <hr>
 </section>
 </section>
-<section id="principios-de-combinatoria" class="level2">
-<h2 class="anchored" data-anchor-id="principios-de-combinatoria">Principios de combinatoria</h2>
-<p>Sea <span class="math inline">\(\Omega_1\)</span> y <span class="math inline">\(\Omega_2\)</span> dos conjuntos finitos no vacíos. El número de formas de formar pares <span class="math inline">\((a, b)\)</span> con <span class="math inline">\(a \in \Omega_1\)</span> y <span class="math inline">\(b \in \Omega_2\)</span> es:</p>
+<section id="probabilidad-condicional-e-independencia" class="level2">
+<h2 class="anchored" data-anchor-id="probabilidad-condicional-e-independencia">Probabilidad condicional e independencia</h2>
+<section id="probabilidad-condicional" class="level3">
+<h3 class="anchored" data-anchor-id="probabilidad-condicional">Probabilidad condicional</h3>
+<p>Dado un evento <span class="math inline">\(B\)</span> tal que <span class="math inline">\(P(B) &gt; 0\)</span>, se define la <strong>probabilidad de <span class="math inline">\(A\)</span> dado <span class="math inline">\(B\)</span></strong> como:</p>
 <p><span class="math display">\[
-|\Omega_1 \times \Omega_2| = |\Omega_1| \cdot |\Omega_2|
+P(A \mid B) = \frac{P(A \cap B)}{P(B)}
 \]</span></p>
-<p>donde <span class="math inline">\(\times\)</span> denota el <strong>producto cartesiano</strong> de conjuntos. Este resultado es un caso del <strong>principio de multiplicación</strong>.</p>
-<p>Una aplicación importante de este principio es el conteo de permutaciones. Si un conjunto <span class="math inline">\(\Omega\)</span> tiene <span class="math inline">\(n\)</span> elementos, entonces existen:</p>
+<p>También se tiene:</p>
 <p><span class="math display">\[
-n! := 1 \cdot 2 \cdot 3 \cdots (n-1)\cdot n
+P(B \mid A) = \frac{P(B \cap A)}{P(A)} = \frac{P(A \cap B)}{P(A)}
 \]</span></p>
-<p>formas distintas de ordenarlos. Este número se llama el <strong>factorial de <span class="math inline">\(n\)</span></strong>, y representa la cantidad total de permutaciones posibles de los elementos del conjunto.</p>
+</section>
+<section id="independencia-de-eventos" class="level3">
+<h3 class="anchored" data-anchor-id="independencia-de-eventos">Independencia de eventos</h3>
+<p>Se dice que dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son <strong>independientes</strong> si:</p>
+<p><span class="math display">\[
+P(A \cap B) = P(A) \cdot P(B)
+\]</span></p>
 <blockquote class="blockquote">
-<p>Intuitivamente, una permutación es una forma de reorganizar (ordenar) todos los elementos del conjunto.</p>
+<p>Si no se cumple la propiedad anterior, los eventos se dicen <strong>dependientes</strong>.</p>
 </blockquote>
-<section id="permutaciones" class="level3">
-<h3 class="anchored" data-anchor-id="permutaciones">Permutaciones</h3>
-<p>Número de formas de seleccionar <span class="math inline">\(k\)</span> objetos <strong>ordenadamente</strong> de un total de <span class="math inline">\(n\)</span>:</p>
+<p>También se define independencia de una <strong>familia de eventos</strong> <span class="math inline">\((A_i)_{i \in I}\)</span> como:</p>
 <p><span class="math display">\[
-P(n,k) = \frac{n!}{(n-k)!}
+P\left(\bigcap_{j \in J} A_j\right) = \prod_{j \in J} P(A_j)
 \]</span></p>
+<p>para todo subconjunto finito no vacío <span class="math inline">\(J \subseteq I\)</span>.</p>
+<hr>
 </section>
-<section id="combinaciones" class="level3">
-<h3 class="anchored" data-anchor-id="combinaciones">Combinaciones</h3>
-<p>Número de formas de elegir <span class="math inline">\(k\)</span> objetos <strong>sin importar el orden</strong>:</p>
+</section>
+<section id="fórmulas-fundamentales" class="level2">
+<h2 class="anchored" data-anchor-id="fórmulas-fundamentales">Fórmulas fundamentales</h2>
+<section id="teorema-de-la-probabilidad-total" class="level3">
+<h3 class="anchored" data-anchor-id="teorema-de-la-probabilidad-total">Teorema de la probabilidad total</h3>
+<p>Si <span class="math inline">\(\{E_1, \ldots, E_n\}\)</span> es una partición del espacio muestral <span class="math inline">\(\Omega\)</span> (eventos mutuamente excluyentes y exhaustivos), entonces:</p>
 <p><span class="math display">\[
-\binom{n}{k} = \frac{n!}{k! (n-k)!}
-\]</span></p>
-</section>
-<section id="coeficiente-multinomial" class="level3">
-<h3 class="anchored" data-anchor-id="coeficiente-multinomial">Coeficiente multinomial</h3>
-<p>Número de formas de dividir <span class="math inline">\(n\)</span> objetos en <span class="math inline">\(r\)</span> grupos de tamaños <span class="math inline">\(n_1, n_2, \ldots, n_r\)</span> con <span class="math inline">\(n_1 + \cdots + n_r = n\)</span>:</p>
-<p><span class="math display">\[
-\binom{n}{n_1\, n_2\, \cdots\, n_r} = \frac{n!}{n_1! \, n_2! \cdots n_r!}
-\]</span></p>
-</section>
-<section id="fórmula-del-binomio" class="level3">
-<h3 class="anchored" data-anchor-id="fórmula-del-binomio">Fórmula del binomio</h3>
-<p>Expansión de <span class="math inline">\((a + b)^n\)</span> usando combinatoria:</p>
-<p><span class="math display">\[
-(a + b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k
-\]</span></p>
-</section>
-</section>
-<section id="sec-conjuntos" class="level2">
-<h2 class="anchored" data-anchor-id="sec-conjuntos">Algunos recordatorios de Teoría de Conjuntos</h2>
-<p>Dado un conjunto <span class="math inline">\(\Omega\)</span>, los subconjuntos <span class="math inline">\(A, B, C, D \subseteq \Omega\)</span> pueden relacionarse mediante las siguientes operaciones y propiedades:</p>
-<section id="pertenencia" class="level3">
-<h3 class="anchored" data-anchor-id="pertenencia">Pertenencia</h3>
-<p>Un elemento <span class="math inline">\(a\)</span> pertenece a un conjunto <span class="math inline">\(A\)</span> si:</p>
-<p><span class="math display">\[
-a \in A
+P(A) = \sum_{i=1}^n P(A \cap E_i) = \sum_{i=1}^n P(A \mid E_i) P(E_i)
 \]</span></p>
 <hr>
 </section>
-<section id="intersección-de-conjuntos" class="level3">
-<h3 class="anchored" data-anchor-id="intersección-de-conjuntos">Intersección de conjuntos</h3>
-<p>La intersección de dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> se define como:</p>
+<section id="fórmula-de-bayes" class="level3">
+<h3 class="anchored" data-anchor-id="fórmula-de-bayes">Fórmula de Bayes</h3>
+<p>Para calcular la probabilidad de un evento <span class="math inline">\(E_i\)</span> dado que ocurrió <span class="math inline">\(A\)</span>:</p>
 <p><span class="math display">\[
-A \cap B = \{x \in \Omega \mid x \in A \text{ y } x \in B\}
+P(E_i \mid A) = \frac{P(E_i \cap A)}{P(A)} = \frac{P(A \mid E_i) P(E_i)}{\sum_{k=1}^n P(A \mid E_k) P(E_k)}
 \]</span></p>
-<p><strong>Propiedades:</strong></p>
-<ul>
-<li>Conmutatividad: <span class="math inline">\(A \cap B = B \cap A\)</span></li>
-<li>Asociatividad: <span class="math inline">\(A \cap (B \cap C) = (A \cap B) \cap C\)</span></li>
-<li>Inclusión: <span class="math inline">\(A \subseteq B \Rightarrow A \cap B = A\)</span></li>
-<li>Si <span class="math inline">\(D \subseteq A\)</span> y <span class="math inline">\(D \subseteq B \Rightarrow D \subseteq A \cap B\)</span></li>
-</ul>
-<hr>
-</section>
-<section id="unión-de-conjuntos" class="level3">
-<h3 class="anchored" data-anchor-id="unión-de-conjuntos">Unión de conjuntos</h3>
-<p>La unión de dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> se define como:</p>
-<p><span class="math display">\[
-A \cup B = \{x \in \Omega \mid x \in A \text{ o } x \in B\}
-\]</span></p>
-<p><strong>Propiedades:</strong></p>
-<ul>
-<li>Conmutatividad: <span class="math inline">\(A \cup B = B \cup A\)</span></li>
-<li>Asociatividad: <span class="math inline">\(A \cup (B \cup C) = (A \cup B) \cup C\)</span></li>
-<li>Inclusión: <span class="math inline">\(A \subseteq B \Rightarrow A \cup B = B\)</span></li>
-<li>Si <span class="math inline">\(A \subseteq D\)</span> y <span class="math inline">\(B \subseteq D \Rightarrow A \cup B \subseteq D\)</span></li>
-</ul>
-<hr>
-</section>
-<section id="diferencia-de-conjuntos" class="level3">
-<h3 class="anchored" data-anchor-id="diferencia-de-conjuntos">Diferencia de conjuntos</h3>
-<p>La diferencia de conjuntos se define como:</p>
-<p><span class="math display">\[
-B - A = \{x \in B \mid x \notin A\}
-\]</span></p>
-<p>El complemento de un conjunto <span class="math inline">\(A\)</span> respecto al universo <span class="math inline">\(\Omega\)</span> es:</p>
-<p><span class="math display">\[
-A^c = \Omega - A = \{x \in \Omega \mid x \notin A\}
-\]</span></p>
-<hr>
-</section>
-<section id="leyes-de-de-morgan" class="level3">
-<h3 class="anchored" data-anchor-id="leyes-de-de-morgan">Leyes de De Morgan</h3>
-<p>Sean <span class="math inline">\(\{A_i\}_{i \in I}\)</span> una familia de conjuntos, se tiene:</p>
-<ul>
-<li><span class="math inline">\(\left( \bigcap\limits_{i \in I} A_i \right)^c = \bigcup\limits_{i \in I} A_i^c\)</span></li>
-<li><span class="math inline">\(\left( \bigcup\limits_{i \in I} A_i \right)^c = \bigcap\limits_{i \in I} A_i^c\)</span></li>
-</ul>
-<p>En particular, para <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> arbitrarios:</p>
-<ul>
-<li><span class="math inline">\(E \setminus (A \cup B) = (E \setminus A) \cap (E \setminus B)\)</span></li>
-<li><span class="math inline">\(E \setminus (A \cap B) = (E \setminus A) \cup (E \setminus B)\)</span></li>
-<li><span class="math inline">\(A \cap B = A \setminus B^c\)</span></li>
-</ul>
 
 
 </section>

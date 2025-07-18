@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Preliminares – Mi Sitio Web</title>
+<title>Introducción a la Probabilidad – CA0721: Probabilidad</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,28 +23,28 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -97,86 +97,90 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Mi Sitio Web</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../index_main.html"> 
-<span class="menu-text">Inicio</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">Sobre mí</span></a>
-  </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cursos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Cursos</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-cursos">    
-        <li>
-    <a class="dropdown-item" href="../../cursos/CA0721/index_CA0721.html">
- <span class="dropdown-text">CA0721: Probabilidad</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../cursos/CA0306/index_CA0306.html">
- <span class="dropdown-text">CA0306: Contingencias de Vida I</span></a>
-  </li>  
-    </ul>
-  </li>
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro_proba_CA0721.html">Introducción a la Probabilidad</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">CA0721: Probabilidad</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index_CA0721.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CA0721: Probabilidad</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./antecedentes_CA0721.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preliminares</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro_proba_CA0721.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Introducción a la Probabilidad</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./teoria_general_proba_CA0721.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teoría General de Probabilidades</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./variables_aleatorias_CA0721.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Variables Aleatorias</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#sumas-finitas" id="toc-sumas-finitas" class="nav-link active" data-scroll-target="#sumas-finitas">Sumas finitas</a>
+  <li><a href="#introducción-a-la-notación-y-conceptos-básicos-de-probabilidad" id="toc-introducción-a-la-notación-y-conceptos-básicos-de-probabilidad" class="nav-link active" data-scroll-target="#introducción-a-la-notación-y-conceptos-básicos-de-probabilidad">Introducción a la Notación y Conceptos Básicos de Probabilidad</a>
   <ul class="collapse">
-  <li><a href="#propiedades-de-las-sumatorias" id="toc-propiedades-de-las-sumatorias" class="nav-link" data-scroll-target="#propiedades-de-las-sumatorias">Propiedades de las sumatorias</a></li>
-  <li><a href="#suma-telescópica" id="toc-suma-telescópica" class="nav-link" data-scroll-target="#suma-telescópica">Suma telescópica</a></li>
-  <li><a href="#suma-geométrica" id="toc-suma-geométrica" class="nav-link" data-scroll-target="#suma-geométrica">Suma geométrica</a></li>
+  <li><a href="#notación-inicial" id="toc-notación-inicial" class="nav-link" data-scroll-target="#notación-inicial">Notación inicial</a></li>
+  <li><a href="#el-espacio-muestral" id="toc-el-espacio-muestral" class="nav-link" data-scroll-target="#el-espacio-muestral">El espacio muestral</a></li>
+  <li><a href="#eventos-como-subconjuntos" id="toc-eventos-como-subconjuntos" class="nav-link" data-scroll-target="#eventos-como-subconjuntos">Eventos como subconjuntos</a></li>
+  <li><a href="#una-primera-definición-intuitiva-de-probabilidad" id="toc-una-primera-definición-intuitiva-de-probabilidad" class="nav-link" data-scroll-target="#una-primera-definición-intuitiva-de-probabilidad">Una primera definición intuitiva de probabilidad</a></li>
   </ul></li>
-  <li><a href="#principios-de-combinatoria" id="toc-principios-de-combinatoria" class="nav-link" data-scroll-target="#principios-de-combinatoria">Principios de combinatoria</a>
-  <ul class="collapse">
-  <li><a href="#permutaciones" id="toc-permutaciones" class="nav-link" data-scroll-target="#permutaciones">Permutaciones</a></li>
-  <li><a href="#combinaciones" id="toc-combinaciones" class="nav-link" data-scroll-target="#combinaciones">Combinaciones</a></li>
-  <li><a href="#coeficiente-multinomial" id="toc-coeficiente-multinomial" class="nav-link" data-scroll-target="#coeficiente-multinomial">Coeficiente multinomial</a></li>
-  <li><a href="#fórmula-del-binomio" id="toc-fórmula-del-binomio" class="nav-link" data-scroll-target="#fórmula-del-binomio">Fórmula del binomio</a></li>
-  </ul></li>
-  <li><a href="#sec-conjuntos" id="toc-sec-conjuntos" class="nav-link" data-scroll-target="#sec-conjuntos">Algunos recordatorios de Teoría de Conjuntos</a>
-  <ul class="collapse">
-  <li><a href="#pertenencia" id="toc-pertenencia" class="nav-link" data-scroll-target="#pertenencia">Pertenencia</a></li>
-  <li><a href="#intersección-de-conjuntos" id="toc-intersección-de-conjuntos" class="nav-link" data-scroll-target="#intersección-de-conjuntos">Intersección de conjuntos</a></li>
-  <li><a href="#unión-de-conjuntos" id="toc-unión-de-conjuntos" class="nav-link" data-scroll-target="#unión-de-conjuntos">Unión de conjuntos</a></li>
-  <li><a href="#diferencia-de-conjuntos" id="toc-diferencia-de-conjuntos" class="nav-link" data-scroll-target="#diferencia-de-conjuntos">Diferencia de conjuntos</a></li>
-  <li><a href="#leyes-de-de-morgan" id="toc-leyes-de-de-morgan" class="nav-link" data-scroll-target="#leyes-de-de-morgan">Leyes de De Morgan</a></li>
-  </ul></li>
+  <li><a href="#modelo-de-probabilidad-de-laplace" id="toc-modelo-de-probabilidad-de-laplace" class="nav-link" data-scroll-target="#modelo-de-probabilidad-de-laplace">Modelo de probabilidad de Laplace</a></li>
   </ul>
 </nav>
     </div>
@@ -185,7 +189,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Preliminares</h1>
+<h1 class="title">Introducción a la Probabilidad</h1>
 </div>
 
 
@@ -202,159 +206,74 @@ window.Quarto = {
 </header>
 
 
-<section id="sumas-finitas" class="level2">
-<h2 class="anchored" data-anchor-id="sumas-finitas">Sumas finitas</h2>
-<p>Dada una sucesión <span class="math inline">\(\{a_k\}\)</span>, definimos la suma finita desde <span class="math inline">\(k = m\)</span> hasta <span class="math inline">\(k = n\)</span> como:</p>
-<p><span class="math display">\[
-\sum_{k=m}^n a_k = a_m + a_{m+1} + \cdots + a_n
-\]</span></p>
-<section id="propiedades-de-las-sumatorias" class="level3">
-<h3 class="anchored" data-anchor-id="propiedades-de-las-sumatorias">Propiedades de las sumatorias</h3>
-<ul>
-<li><p>Linealidad por constante: <span class="math display">\[
-\sum_{k=1}^n c a_k = c \sum_{k=1}^n a_k \quad \text{para todo } c \in \mathbb{R}
-\]</span></p></li>
-<li><p>Suma término a término: <span class="math display">\[
-\sum_{k=1}^n (a_k + b_k) = \sum_{k=1}^n a_k + \sum_{k=1}^n b_k
-\]</span></p></li>
-<li><p>Cambio de índice: <span class="math display">\[
-\sum_{k=0}^n a_{k+1} = \sum_{k=1}^{n+1} a_k
-\]</span></p></li>
-</ul>
-</section>
-<section id="suma-telescópica" class="level3">
-<h3 class="anchored" data-anchor-id="suma-telescópica">Suma telescópica</h3>
-<p>Si <span class="math inline">\(a_k = b_k - b_{k+1}\)</span>, entonces se tiene:</p>
-<p><span class="math display">\[
-\sum_{k=m}^n (b_k - b_{k+1}) = b_m - b_{n+1}
-\]</span></p>
-<p>Si la suma es infinita y el límite existe:</p>
-<p><span class="math display">\[
-\sum_{k=m}^\infty (b_k - b_{k+1}) = b_m - \lim_{j \to \infty} b_{j+1}
-\]</span></p>
-</section>
-<section id="suma-geométrica" class="level3">
-<h3 class="anchored" data-anchor-id="suma-geométrica">Suma geométrica</h3>
-<p>La suma de una progresión geométrica de razón <span class="math inline">\(r \ne 1\)</span> es:</p>
-<p><span class="math display">\[
-\sum_{k=m}^n r^k = \frac{r^m - r^{n+1}}{1 - r}
-\]</span></p>
-<hr>
-</section>
-</section>
-<section id="principios-de-combinatoria" class="level2">
-<h2 class="anchored" data-anchor-id="principios-de-combinatoria">Principios de combinatoria</h2>
-<p>Sea <span class="math inline">\(\Omega_1\)</span> y <span class="math inline">\(\Omega_2\)</span> dos conjuntos finitos no vacíos. El número de formas de formar pares <span class="math inline">\((a, b)\)</span> con <span class="math inline">\(a \in \Omega_1\)</span> y <span class="math inline">\(b \in \Omega_2\)</span> es:</p>
-<p><span class="math display">\[
-|\Omega_1 \times \Omega_2| = |\Omega_1| \cdot |\Omega_2|
-\]</span></p>
-<p>donde <span class="math inline">\(\times\)</span> denota el <strong>producto cartesiano</strong> de conjuntos. Este resultado es un caso del <strong>principio de multiplicación</strong>.</p>
-<p>Una aplicación importante de este principio es el conteo de permutaciones. Si un conjunto <span class="math inline">\(\Omega\)</span> tiene <span class="math inline">\(n\)</span> elementos, entonces existen:</p>
-<p><span class="math display">\[
-n! := 1 \cdot 2 \cdot 3 \cdots (n-1)\cdot n
-\]</span></p>
-<p>formas distintas de ordenarlos. Este número se llama el <strong>factorial de <span class="math inline">\(n\)</span></strong>, y representa la cantidad total de permutaciones posibles de los elementos del conjunto.</p>
-<blockquote class="blockquote">
-<p>Intuitivamente, una permutación es una forma de reorganizar (ordenar) todos los elementos del conjunto.</p>
-</blockquote>
-<section id="permutaciones" class="level3">
-<h3 class="anchored" data-anchor-id="permutaciones">Permutaciones</h3>
-<p>Número de formas de seleccionar <span class="math inline">\(k\)</span> objetos <strong>ordenadamente</strong> de un total de <span class="math inline">\(n\)</span>:</p>
-<p><span class="math display">\[
-P(n,k) = \frac{n!}{(n-k)!}
-\]</span></p>
-</section>
-<section id="combinaciones" class="level3">
-<h3 class="anchored" data-anchor-id="combinaciones">Combinaciones</h3>
-<p>Número de formas de elegir <span class="math inline">\(k\)</span> objetos <strong>sin importar el orden</strong>:</p>
-<p><span class="math display">\[
-\binom{n}{k} = \frac{n!}{k! (n-k)!}
-\]</span></p>
-</section>
-<section id="coeficiente-multinomial" class="level3">
-<h3 class="anchored" data-anchor-id="coeficiente-multinomial">Coeficiente multinomial</h3>
-<p>Número de formas de dividir <span class="math inline">\(n\)</span> objetos en <span class="math inline">\(r\)</span> grupos de tamaños <span class="math inline">\(n_1, n_2, \ldots, n_r\)</span> con <span class="math inline">\(n_1 + \cdots + n_r = n\)</span>:</p>
-<p><span class="math display">\[
-\binom{n}{n_1\, n_2\, \cdots\, n_r} = \frac{n!}{n_1! \, n_2! \cdots n_r!}
-\]</span></p>
-</section>
-<section id="fórmula-del-binomio" class="level3">
-<h3 class="anchored" data-anchor-id="fórmula-del-binomio">Fórmula del binomio</h3>
-<p>Expansión de <span class="math inline">\((a + b)^n\)</span> usando combinatoria:</p>
-<p><span class="math display">\[
-(a + b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k
-\]</span></p>
-</section>
-</section>
-<section id="sec-conjuntos" class="level2">
-<h2 class="anchored" data-anchor-id="sec-conjuntos">Algunos recordatorios de Teoría de Conjuntos</h2>
-<p>Dado un conjunto <span class="math inline">\(\Omega\)</span>, los subconjuntos <span class="math inline">\(A, B, C, D \subseteq \Omega\)</span> pueden relacionarse mediante las siguientes operaciones y propiedades:</p>
-<section id="pertenencia" class="level3">
-<h3 class="anchored" data-anchor-id="pertenencia">Pertenencia</h3>
-<p>Un elemento <span class="math inline">\(a\)</span> pertenece a un conjunto <span class="math inline">\(A\)</span> si:</p>
+<section id="introducción-a-la-notación-y-conceptos-básicos-de-probabilidad" class="level2">
+<h2 class="anchored" data-anchor-id="introducción-a-la-notación-y-conceptos-básicos-de-probabilidad">Introducción a la Notación y Conceptos Básicos de Probabilidad</h2>
+<section id="notación-inicial" class="level3">
+<h3 class="anchored" data-anchor-id="notación-inicial">Notación inicial</h3>
+<p>Sea <span class="math inline">\(\Omega\)</span> un conjunto finito al que llamamos <strong>espacio muestral</strong>. Sus elementos representan todos los posibles resultados de un experimento aleatorio.</p>
+<p>Sean <span class="math inline">\(A, B \subseteq \Omega\)</span> subconjuntos del espacio muestral. Estos subconjuntos se denominan <strong>eventos</strong>.</p>
+<p>Un elemento <span class="math inline">\(a\)</span> pertenece a un evento <span class="math inline">\(A\)</span> si:</p>
 <p><span class="math display">\[
 a \in A
 \]</span></p>
 <hr>
 </section>
-<section id="intersección-de-conjuntos" class="level3">
-<h3 class="anchored" data-anchor-id="intersección-de-conjuntos">Intersección de conjuntos</h3>
-<p>La intersección de dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> se define como:</p>
-<p><span class="math display">\[
-A \cap B = \{x \in \Omega \mid x \in A \text{ y } x \in B\}
-\]</span></p>
-<p><strong>Propiedades:</strong></p>
+<section id="el-espacio-muestral" class="level3">
+<h3 class="anchored" data-anchor-id="el-espacio-muestral">El espacio muestral</h3>
+<p>En el contexto de la probabilidad, un <strong>experimento aleatorio</strong> es un proceso que genera un resultado que no puede preverse con certeza. El conjunto <span class="math inline">\(\Omega\)</span> representa el <strong>conjunto de todos los posibles resultados</strong> de ese experimento.</p>
+<p>Por ejemplo:</p>
 <ul>
-<li>Conmutatividad: <span class="math inline">\(A \cap B = B \cap A\)</span></li>
-<li>Asociatividad: <span class="math inline">\(A \cap (B \cap C) = (A \cap B) \cap C\)</span></li>
-<li>Inclusión: <span class="math inline">\(A \subseteq B \Rightarrow A \cap B = A\)</span></li>
-<li>Si <span class="math inline">\(D \subseteq A\)</span> y <span class="math inline">\(D \subseteq B \Rightarrow D \subseteq A \cap B\)</span></li>
+<li>Al lanzar un dado: <span class="math inline">\(\Omega = \{1,2,3,4,5,6\}\)</span></li>
+<li>Al lanzar una moneda: <span class="math inline">\(\Omega = \{\text{cara}, \text{cruz}\}\)</span></li>
 </ul>
 <hr>
 </section>
-<section id="unión-de-conjuntos" class="level3">
-<h3 class="anchored" data-anchor-id="unión-de-conjuntos">Unión de conjuntos</h3>
-<p>La unión de dos conjuntos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> se define como:</p>
-<p><span class="math display">\[
-A \cup B = \{x \in \Omega \mid x \in A \text{ o } x \in B\}
-\]</span></p>
-<p><strong>Propiedades:</strong></p>
+<section id="eventos-como-subconjuntos" class="level3">
+<h3 class="anchored" data-anchor-id="eventos-como-subconjuntos">Eventos como subconjuntos</h3>
+<p>Un <strong>evento</strong> es cualquier subconjunto del espacio muestral. Esto incluye desde el conjunto vacío hasta el conjunto total <span class="math inline">\(\Omega\)</span>. Notamos que:</p>
+<blockquote class="blockquote">
+<p><strong>Nota:</strong> Como los eventos son conjuntos, <strong>todas las operaciones entre conjuntos (unión, intersección, complemento, etc.) también se aplican a los eventos</strong>. Puedes consultar la sección <a href="./antecedentes_CA0721.html#sec-conjuntos">Algunos recordatorios de Teoría de Conjuntos</a> para ver esas propiedades en detalle.</p>
+</blockquote>
+<p>Podemos construir nuevos eventos combinando otros mediante operaciones de conjuntos:</p>
 <ul>
-<li>Conmutatividad: <span class="math inline">\(A \cup B = B \cup A\)</span></li>
-<li>Asociatividad: <span class="math inline">\(A \cup (B \cup C) = (A \cup B) \cup C\)</span></li>
-<li>Inclusión: <span class="math inline">\(A \subseteq B \Rightarrow A \cup B = B\)</span></li>
-<li>Si <span class="math inline">\(A \subseteq D\)</span> y <span class="math inline">\(B \subseteq D \Rightarrow A \cup B \subseteq D\)</span></li>
+<li><strong>Intersección</strong> <span class="math inline">\((A \cap B\,)\)</span>: elementos que están en ambos eventos.</li>
+<li><strong>Unión</strong> <span class="math inline">\((A \cup B\,)\)</span>: elementos que están en al menos uno de los eventos.</li>
+<li><strong>Complemento</strong> <span class="math inline">\((A^c)\)</span>: elementos que no están en el evento <span class="math inline">\(A\)</span>.</li>
 </ul>
 <hr>
 </section>
-<section id="diferencia-de-conjuntos" class="level3">
-<h3 class="anchored" data-anchor-id="diferencia-de-conjuntos">Diferencia de conjuntos</h3>
-<p>La diferencia de conjuntos se define como:</p>
+<section id="una-primera-definición-intuitiva-de-probabilidad" class="level3">
+<h3 class="anchored" data-anchor-id="una-primera-definición-intuitiva-de-probabilidad">Una primera definición intuitiva de probabilidad</h3>
+<p>La probabilidad es una función que asigna un número entre 0 y 1 a cada evento, representando <strong>cuán probable es que ese evento ocurra</strong>.</p>
+<p>Provisionalmente, podemos pensar en la probabilidad como una función:</p>
 <p><span class="math display">\[
-B - A = \{x \in B \mid x \notin A\}
+P : \mathcal{F} \to [0,1]
 \]</span></p>
-<p>El complemento de un conjunto <span class="math inline">\(A\)</span> respecto al universo <span class="math inline">\(\Omega\)</span> es:</p>
-<p><span class="math display">\[
-A^c = \Omega - A = \{x \in \Omega \mid x \notin A\}
-\]</span></p>
+<p>donde <span class="math inline">\(\mathcal{F}\)</span> es una colección de subconjuntos de <span class="math inline">\(\Omega\)</span> (es decir, eventos), y <span class="math inline">\(P(A)\)</span> nos da la <strong>probabilidad</strong> de que ocurra el evento <span class="math inline">\(A\)</span>.</p>
+<p>Más adelante, formalizaremos los axiomas que esta función debe cumplir.</p>
 <hr>
 </section>
-<section id="leyes-de-de-morgan" class="level3">
-<h3 class="anchored" data-anchor-id="leyes-de-de-morgan">Leyes de De Morgan</h3>
-<p>Sean <span class="math inline">\(\{A_i\}_{i \in I}\)</span> una familia de conjuntos, se tiene:</p>
-<ul>
-<li><span class="math inline">\(\left( \bigcap\limits_{i \in I} A_i \right)^c = \bigcup\limits_{i \in I} A_i^c\)</span></li>
-<li><span class="math inline">\(\left( \bigcup\limits_{i \in I} A_i \right)^c = \bigcap\limits_{i \in I} A_i^c\)</span></li>
-</ul>
-<p>En particular, para <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> arbitrarios:</p>
-<ul>
-<li><span class="math inline">\(E \setminus (A \cup B) = (E \setminus A) \cap (E \setminus B)\)</span></li>
-<li><span class="math inline">\(E \setminus (A \cap B) = (E \setminus A) \cup (E \setminus B)\)</span></li>
-<li><span class="math inline">\(A \cap B = A \setminus B^c\)</span></li>
-</ul>
+</section>
+<section id="modelo-de-probabilidad-de-laplace" class="level2">
+<h2 class="anchored" data-anchor-id="modelo-de-probabilidad-de-laplace">Modelo de probabilidad de Laplace</h2>
+<p>Cuando el espacio muestral <span class="math inline">\(\Omega\)</span> es finito, se puede considerar que todos los resultados son igualmente probables. A este modelo se le conoce como <strong>modelo de probabilidad de Laplace</strong> o también como <strong>probabilidad clásica</strong>.</p>
+<p>En este contexto, se asigna la misma probabilidad a cada resultado <span class="math inline">\(\omega \in \Omega\)</span>, de modo que:</p>
+<p><span class="math display">\[
+P(\{\omega\}) = \frac{1}{|\Omega|}
+\]</span></p>
+<p>donde <span class="math inline">\(|\Omega|\)</span> denota la cantidad total de posibles resultados.</p>
+<hr>
+<p>De forma general, si <span class="math inline">\(A\)</span> es un evento (es decir, un subconjunto de <span class="math inline">\(\Omega\)</span>), su probabilidad se define como el cociente entre la cantidad de resultados favorables (elementos de <span class="math inline">\(A\)</span>) y la cantidad total de posibles resultados:</p>
+<p><span class="math display">\[
+P(A) = \frac{|A|}{|\Omega|}
+\]</span></p>
+<p>Esta definición supone que <strong>todos los resultados tienen la misma probabilidad</strong> y es válida únicamente cuando el número de resultados posibles es finito y equiprobable.</p>
+<hr>
+<blockquote class="blockquote">
+<p><strong>Nota:</strong> Este modelo es un caso particular de lo que más adelante definiremos como una <strong>medida de probabilidad</strong> sobre una colección de eventos <span class="math inline">\(\mathcal{F}\)</span>. Por ahora, basta con tener una comprensión intuitiva: el modelo de Laplace asigna igual peso a todos los elementos de <span class="math inline">\(\Omega\)</span> y calcula la probabilidad de un evento <span class="math inline">\(A\)</span> como la proporción de casos favorables respecto al total.</p>
+</blockquote>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -779,19 +698,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>© 2025 | <a href="https://linkedin.com/in/tuusuario">LinkedIn</a> | <a href="diegovv13@gmail.com">Correo</a></p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
-  </div>
-</footer>
 
 
 
