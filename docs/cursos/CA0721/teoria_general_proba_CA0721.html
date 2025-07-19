@@ -158,12 +158,9 @@ window.Quarto = {
   <ul>
   <li><a href="#experimentos-aleatorios-y-espacio-de-probabilidad" id="toc-experimentos-aleatorios-y-espacio-de-probabilidad" class="nav-link active" data-scroll-target="#experimentos-aleatorios-y-espacio-de-probabilidad">Experimentos aleatorios y espacio de probabilidad</a>
   <ul class="collapse">
-  <li><a href="#el-espacio-de-eventos-boldsymbolsigma-álgebra" id="toc-el-espacio-de-eventos-boldsymbolsigma-álgebra" class="nav-link" data-scroll-target="#el-espacio-de-eventos-boldsymbolsigma-álgebra">El espacio de eventos: <span class="math inline">\(\boldsymbol{\sigma}\)</span>-álgebra</a></li>
+  <li><a href="#el-espacio-de-eventos-boldsymbolsigma-álgebra" id="toc-el-espacio-de-eventos-boldsymbolsigma-álgebra" class="nav-link" data-scroll-target="#el-espacio-de-eventos-boldsymbolsigma-álgebra">El espacio de eventos: <span class="math inline">\(\boldsymbol{\sigma}-\)</span>álgebra</a></li>
   <li><a href="#medida-de-probabilidad" id="toc-medida-de-probabilidad" class="nav-link" data-scroll-target="#medida-de-probabilidad">Medida de probabilidad</a></li>
-  </ul></li>
-  <li><a href="#espacios-finitos-y-medidas-de-probabilidad" id="toc-espacios-finitos-y-medidas-de-probabilidad" class="nav-link" data-scroll-target="#espacios-finitos-y-medidas-de-probabilidad">Espacios finitos y medidas de probabilidad</a>
-  <ul class="collapse">
-  <li><a href="#principio-de-inclusión-exclusión" id="toc-principio-de-inclusión-exclusión" class="nav-link" data-scroll-target="#principio-de-inclusión-exclusión">Principio de inclusión-exclusión</a></li>
+  <li><a href="#espacios-de-probabilidad" id="toc-espacios-de-probabilidad" class="nav-link" data-scroll-target="#espacios-de-probabilidad">Espacios de probabilidad</a></li>
   </ul></li>
   <li><a href="#probabilidad-condicional-e-independencia" id="toc-probabilidad-condicional-e-independencia" class="nav-link" data-scroll-target="#probabilidad-condicional-e-independencia">Probabilidad condicional e independencia</a>
   <ul class="collapse">
@@ -174,6 +171,9 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#teorema-de-la-probabilidad-total" id="toc-teorema-de-la-probabilidad-total" class="nav-link" data-scroll-target="#teorema-de-la-probabilidad-total">Teorema de la probabilidad total</a></li>
   <li><a href="#fórmula-de-bayes" id="toc-fórmula-de-bayes" class="nav-link" data-scroll-target="#fórmula-de-bayes">Fórmula de Bayes</a></li>
+  <li><a href="#desigualdad-de-boole" id="toc-desigualdad-de-boole" class="nav-link" data-scroll-target="#desigualdad-de-boole">Desigualdad de Boole</a></li>
+  <li><a href="#continuidad-de-la-probabilidad" id="toc-continuidad-de-la-probabilidad" class="nav-link" data-scroll-target="#continuidad-de-la-probabilidad">Continuidad de la probabilidad</a></li>
+  <li><a href="#lemas-de-borelcantelli" id="toc-lemas-de-borelcantelli" class="nav-link" data-scroll-target="#lemas-de-borelcantelli">Lemas de Borel–Cantelli</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -200,8 +200,6 @@ window.Quarto = {
 </header>
 
 
-<p>XD</p>
-<hr>
 <section id="experimentos-aleatorios-y-espacio-de-probabilidad" class="level2">
 <h2 class="anchored" data-anchor-id="experimentos-aleatorios-y-espacio-de-probabilidad">Experimentos aleatorios y espacio de probabilidad</h2>
 <p>Hasta ahora hemos trabajado con la probabilidad en contextos finitos y simples, donde todos los resultados son igualmente probables (modelo de Laplace). Sin embargo, para desarrollar una teoría más general de la probabilidad, necesitamos una base más formal.</p>
@@ -211,11 +209,10 @@ window.Quarto = {
 <li>Un <strong>conjunto de eventos</strong> <span class="math inline">\(\mathcal{F}\)</span>: una colección de subconjuntos de <span class="math inline">\(\Omega\)</span>, considerados como los eventos del experimento.</li>
 <li>Una <strong>función de probabilidad</strong> <span class="math inline">\(P\)</span>: que asigna a cada evento <span class="math inline">\(A \in \mathcal{F}\)</span> un número entre <span class="math inline">\(0\)</span> y <span class="math inline">\(1\)</span>, representando la probabilidad de que ese evento ocurra.</li>
 </ul>
-<hr>
 <section id="el-espacio-de-eventos-boldsymbolsigma-álgebra" class="level3">
-<h3 class="anchored" data-anchor-id="el-espacio-de-eventos-boldsymbolsigma-álgebra">El espacio de eventos: <span class="math inline">\(\boldsymbol{\sigma}\)</span>-álgebra</h3>
+<h3 class="anchored" data-anchor-id="el-espacio-de-eventos-boldsymbolsigma-álgebra">El espacio de eventos: <span class="math inline">\(\boldsymbol{\sigma}-\)</span>álgebra</h3>
 <p>Para que el conjunto de eventos <span class="math inline">\(\mathcal{F}\)</span> sea adecuado, debe cumplir ciertas propiedades. A esto se le llama una <strong><span class="math inline">\(\sigma\)</span>-álgebra</strong> de subconjuntos, y garantiza que podamos hacer operaciones como complementos, uniones y demás, sin salirnos del conjunto de eventos válidos.</p>
-<p>Formalmente, <span class="math inline">\(\mathcal{F}\)</span> es una <span class="math inline">\(\sigma\)</span>-álgebra sobre <span class="math inline">\(\Omega\)</span> si:</p>
+<p>Formalmente, <span class="math inline">\(\mathcal{F}\)</span> es una <span class="math inline">\(\sigma-\)</span>álgebra sobre <span class="math inline">\(\Omega\)</span> si:</p>
 <ol type="1">
 <li><span class="math inline">\(\mathcal{F}\)</span> no es vacío.</li>
 <li>Si <span class="math inline">\(A \in \mathcal{F}\)</span>, entonces su complemento también está en <span class="math inline">\(\mathcal{F}\)</span>: <span class="math display">\[
@@ -225,11 +222,26 @@ A^c = \Omega \setminus A \in \mathcal{F}
 \bigcup_{j \in \mathbb{N}} A_j \in \mathcal{F}
 \]</span></li>
 </ol>
-<hr>
+<section id="propiedades-básicas-de-boldsymbolsigma-álgebras" class="level4">
+<h4 class="anchored" data-anchor-id="propiedades-básicas-de-boldsymbolsigma-álgebras">Propiedades básicas de <span class="math inline">\(\boldsymbol{\sigma}-\)</span>álgebras</h4>
+<p>Recurriendo a propiedades básicas de conjuntos, no es difícil probar que si <span class="math inline">\(\mathcal{F}\)</span> es una <span class="math inline">\(\sigma-\)</span>álgebra tomada de un espacio muestral <span class="math inline">\(\Omega\)</span>, entonces:</p>
+<ul>
+<li><p><span class="math inline">\(\emptyset \in \mathcal{F}\)</span> y <span class="math inline">\(\Omega \in \mathcal{F}\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(A, B \in \mathcal{F}\)</span>, entonces <span class="math inline">\(A \cup B \in \mathcal{F}\)</span><br>
+(de hecho, puede verse también que <span class="math inline">\(\mathcal{F}\)</span> es cerrado bajo un número finito de uniones).</p></li>
+<li><p>Si <span class="math inline">\(A, B \in \mathcal{F}\)</span>, entonces <span class="math inline">\(A \cap B \in \mathcal{F}\)</span><br>
+(de hecho, puede verse también que <span class="math inline">\(\mathcal{F}\)</span> es cerrado bajo un número finito de intersecciones).</p></li>
+<li><p>Si <span class="math inline">\(A, B \in \mathcal{F}\)</span>, entonces <span class="math inline">\(A \setminus B \in \mathcal{F}\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(A_j \in \mathcal{F}\)</span> para todo <span class="math inline">\(j \in \mathbb{N}\)</span>, entonces<br>
+<span class="math display">\[
+\bigcap_{j \in \mathbb{N}} A_j \in \mathcal{F}.
+\]</span></p></li>
+</ul>
+</section>
 </section>
 <section id="medida-de-probabilidad" class="level3">
 <h3 class="anchored" data-anchor-id="medida-de-probabilidad">Medida de probabilidad</h3>
-<p>La función <span class="math inline">\(P : \mathcal{F} \to [0,1]\)</span> se llama <strong>medida de probabilidad</strong>, y debe cumplir con las siguientes propiedades:</p>
+<p>La función <span class="math inline">\(P : \mathcal{F} \to [0,1]\)</span> se llama <strong>medida de probabilidad</strong> sobre <span class="math inline">\((\Omega,\mathcal{F})\)</span>, y debe cumplir con las siguientes propiedades:</p>
 <ul>
 <li><p><strong>No negatividad y normalización</strong>: <span class="math display">\[
 P(A) \geq 0 \quad \text{para todo } A \in \mathcal{F}, \quad \text{y} \quad P(\Omega) = 1
@@ -238,28 +250,51 @@ P(A) \geq 0 \quad \text{para todo } A \in \mathcal{F}, \quad \text{y} \quad P(\O
 P\left( \bigcup_{j \in \mathbb{N}} A_j \right) = \sum_{j \in \mathbb{N}} P(A_j)
 \]</span></p></li>
 </ul>
-<p>Este conjunto <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> es lo que se conoce como un <strong>espacio de probabilidad</strong>. A partir de esta estructura, se puede desarrollar toda la teoría moderna de la probabilidad, tanto para espacios finitos como infinitos.</p>
-</section>
-</section>
-<section id="espacios-finitos-y-medidas-de-probabilidad" class="level2">
-<h2 class="anchored" data-anchor-id="espacios-finitos-y-medidas-de-probabilidad">Espacios finitos y medidas de probabilidad</h2>
-<p>Una medida de probabilidad sobre un espacio finito es una función <span class="math inline">\(P\)</span> definida en subconjuntos de <span class="math inline">\(\Omega\)</span>, tal que:</p>
-<ol type="1">
-<li><p><span class="math inline">\(P(\Omega) = 1\)</span></p></li>
-<li><p>Si <span class="math inline">\(A, B \subseteq \Omega\)</span> y <span class="math inline">\(A \cap B = \emptyset\)</span>, entonces:</p>
+<section id="propiedades-básicas-de-medidas-de-probabilidad" class="level4">
+<h4 class="anchored" data-anchor-id="propiedades-básicas-de-medidas-de-probabilidad">Propiedades básicas de medidas de probabilidad</h4>
+<p>Sea <span class="math inline">\(P\)</span> una medida de probabilidad definida sobre <span class="math inline">\((\Omega, \mathcal{F})\)</span>. Entonces se cumple que:</p>
+<ul>
+<li><p><span class="math inline">\(P(\emptyset) = 0\)</span></p></li>
+<li><p>Si <span class="math inline">\(A_1, A_2, \ldots, A_n \in \mathcal{F}\)</span> y son disjuntos dos a dos, entonces:</p>
 <p><span class="math display">\[
-P(A \cup B) = P(A) + P(B) - P(A \cap B)
+P\left( \bigcup_{j=1}^n A_j \right) = \sum_{j=1}^n P(A_j)
 \]</span></p></li>
-</ol>
-<section id="principio-de-inclusión-exclusión" class="level3">
-<h3 class="anchored" data-anchor-id="principio-de-inclusión-exclusión">Principio de inclusión-exclusión</h3>
-<p>Para eventos <span class="math inline">\(A_1, \ldots, A_n\)</span>, se tiene:</p>
+<li><p>Si <span class="math inline">\(A \in \mathcal{F}\)</span>, entonces:</p>
 <p><span class="math display">\[
-P\left(\bigcup_{i=1}^n A_i\right) = \sum_{i=1}^n P(A_i)
-- \sum_{i_1&lt;i_2} P(A_{i_1} \cap A_{i_2})
-+ \sum_{i_1&lt;i_2&lt;i_3} P(A_{i_1} \cap A_{i_2} \cap A_{i_3})
-- \cdots + (-1)^{n-1} P\left(\bigcap_{j=1}^n A_j\right)
+P(A) + P(A^c) = 1
+\]</span></p></li>
+<li><p>Si <span class="math inline">\(A, B \in \mathcal{F}\)</span>, entonces:</p>
+<p><span class="math display">\[
+P(A) + P(B) = P(A \cup B) + P(A \cap B)
 \]</span></p>
+<p>En particular:</p>
+<p><span class="math display">\[
+P(A \cup B) \leq P(A) + P(B)
+\]</span></p></li>
+<li><p>Si <span class="math inline">\(A, B \in \mathcal{F}\)</span> y <span class="math inline">\(A \subseteq B\)</span>, entonces:</p>
+<p><span class="math display">\[
+P(A) \leq P(B)
+\]</span></p></li>
+<li><p>Para eventos arbitrarios <span class="math inline">\(A_1, \ldots, A_n \in \mathcal{F}\)</span> (no necesariamente disjuntos), se cumple el <strong>principio de inclusión-exclusión</strong>:</p>
+<p><span class="math display">\[
+P\left( \bigcup_{i=1}^n A_i \right) =
+\sum_{i=1}^n P(A_i)
+- \sum_{i_1 &lt; i_2} P(A_{i_1} \cap A_{i_2})
++ \sum_{i_1 &lt; i_2 &lt; i_3} P(A_{i_1} \cap A_{i_2} \cap A_{i_3})
+- \cdots + (-1)^{n-1} P\left( \bigcap_{j=1}^n A_j \right)
+\]</span></p></li>
+</ul>
+</section>
+</section>
+<section id="espacios-de-probabilidad" class="level3">
+<h3 class="anchored" data-anchor-id="espacios-de-probabilidad">Espacios de probabilidad</h3>
+<p>Sea <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> una tripleta donde:</p>
+<ul>
+<li><p><span class="math inline">\(\Omega\)</span> es un conjunto no vacío.</p></li>
+<li><p><span class="math inline">\(\mathcal{F}\)</span> es una <span class="math inline">\(\sigma\)</span>-álgebra de subconjuntos de <span class="math inline">\(\Omega\)</span>.</p></li>
+<li><p><span class="math inline">\(P : \mathcal{F} \to [0,1]\)</span> es una <strong>medida de probabilidad</strong> sobre <span class="math inline">\((\Omega, \mathcal{F})\)</span>.</p></li>
+</ul>
+<p>Este conjunto <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> es lo que se conoce como un <strong>espacio de probabilidad</strong>. A partir de esta estructura, se puede desarrollar toda la teoría moderna de la probabilidad, tanto para espacios finitos como infinitos.</p>
 <hr>
 </section>
 </section>
@@ -267,7 +302,7 @@ P\left(\bigcup_{i=1}^n A_i\right) = \sum_{i=1}^n P(A_i)
 <h2 class="anchored" data-anchor-id="probabilidad-condicional-e-independencia">Probabilidad condicional e independencia</h2>
 <section id="probabilidad-condicional" class="level3">
 <h3 class="anchored" data-anchor-id="probabilidad-condicional">Probabilidad condicional</h3>
-<p>Dado un evento <span class="math inline">\(B\)</span> tal que <span class="math inline">\(P(B) &gt; 0\)</span>, se define la <strong>probabilidad de <span class="math inline">\(A\)</span> dado <span class="math inline">\(B\)</span></strong> como:</p>
+<p>Sean <span class="math inline">\(A, B\)</span> dos eventos en un espacio de probabilidad <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> con <span class="math inline">\(P(B) &gt; 0\)</span>. La <strong>probabilidad condicional de <span class="math inline">\(A\)</span> dado <span class="math inline">\(B\)</span></strong> viene dada por:</p>
 <p><span class="math display">\[
 P(A \mid B) = \frac{P(A \cap B)}{P(B)}
 \]</span></p>
@@ -278,14 +313,14 @@ P(B \mid A) = \frac{P(B \cap A)}{P(A)} = \frac{P(A \cap B)}{P(A)}
 </section>
 <section id="independencia-de-eventos" class="level3">
 <h3 class="anchored" data-anchor-id="independencia-de-eventos">Independencia de eventos</h3>
-<p>Se dice que dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son <strong>independientes</strong> si:</p>
+<p>Sean <span class="math inline">\(A, B\)</span> dos eventos en un espacio de probabilidad <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>. Se dice que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son <strong>independientes</strong> si:</p>
 <p><span class="math display">\[
 P(A \cap B) = P(A) \cdot P(B)
 \]</span></p>
 <blockquote class="blockquote">
 <p>Si no se cumple la propiedad anterior, los eventos se dicen <strong>dependientes</strong>.</p>
 </blockquote>
-<p>También se define independencia de una <strong>familia de eventos</strong> <span class="math inline">\((A_i)_{i \in I}\)</span> como:</p>
+<p>También se define independencia de una <strong>familia de eventos</strong> <span class="math inline">\((A_i)_{i \in I}\)</span> en un espacio de probabilidad <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> como:</p>
 <p><span class="math display">\[
 P\left(\bigcap_{j \in J} A_j\right) = \prod_{j \in J} P(A_j)
 \]</span></p>
@@ -295,20 +330,75 @@ P\left(\bigcap_{j \in J} A_j\right) = \prod_{j \in J} P(A_j)
 </section>
 <section id="fórmulas-fundamentales" class="level2">
 <h2 class="anchored" data-anchor-id="fórmulas-fundamentales">Fórmulas fundamentales</h2>
+<p>Sea <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> un espacio de probabilidad.</p>
+<p>Decimos que una colección <span class="math inline">\(\{E_i\}_{i \in \mathbb{N}} \subseteq \mathcal{F}\)</span> es una <strong>partición</strong> de <span class="math inline">\(\Omega\)</span> si cumple que:</p>
+<ul>
+<li><span class="math inline">\(\displaystyle \bigcup_{i \in \mathbb{N}} E_i = \Omega\)</span></li>
+<li><span class="math inline">\(E_i \cap E_j = \emptyset\)</span> para todo <span class="math inline">\(i \ne j\)</span></li>
+</ul>
 <section id="teorema-de-la-probabilidad-total" class="level3">
 <h3 class="anchored" data-anchor-id="teorema-de-la-probabilidad-total">Teorema de la probabilidad total</h3>
-<p>Si <span class="math inline">\(\{E_1, \ldots, E_n\}\)</span> es una partición del espacio muestral <span class="math inline">\(\Omega\)</span> (eventos mutuamente excluyentes y exhaustivos), entonces:</p>
+<p>Si <span class="math inline">\(\{E_i\}_{i \in \mathbb{N}}\)</span> es una partición de <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> y <span class="math inline">\(B \in \mathcal{F}\)</span>, entonces:</p>
 <p><span class="math display">\[
-P(A) = \sum_{i=1}^n P(A \cap E_i) = \sum_{i=1}^n P(A \mid E_i) P(E_i)
+P(B) = \sum_{i \in \mathbb{N}} P(B \cap E_i)
 \]</span></p>
-<hr>
+<p>Si además <span class="math inline">\(P(E_i) &gt; 0\)</span> para todo <span class="math inline">\(i\)</span>, se tiene la versión condicional:</p>
+<p><span class="math display">\[
+P(B) = \sum_{i \in \mathbb{N}} P(B \mid E_i) \, P(E_i)
+\]</span></p>
 </section>
 <section id="fórmula-de-bayes" class="level3">
 <h3 class="anchored" data-anchor-id="fórmula-de-bayes">Fórmula de Bayes</h3>
-<p>Para calcular la probabilidad de un evento <span class="math inline">\(E_i\)</span> dado que ocurrió <span class="math inline">\(A\)</span>:</p>
+<p>Sean <span class="math inline">\(A, B \in \mathcal{F}\)</span> con <span class="math inline">\(P(A), P(B) &gt; 0\)</span>. Entonces:</p>
 <p><span class="math display">\[
-P(E_i \mid A) = \frac{P(E_i \cap A)}{P(A)} = \frac{P(A \mid E_i) P(E_i)}{\sum_{k=1}^n P(A \mid E_k) P(E_k)}
+P(B \mid A) = \frac{P(B)}{P(A)} \cdot P(A \mid B)
 \]</span></p>
+<p>Más generalmente, si <span class="math inline">\(\{E_i\}_{i \in \mathbb{N}}\)</span> es una partición de <span class="math inline">\(\Omega\)</span> con <span class="math inline">\(P(E_i) &gt; 0\)</span> y <span class="math inline">\(B \in \mathcal{F}\)</span> tal que <span class="math inline">\(P(B) &gt; 0\)</span>, se cumple:</p>
+<p><span class="math display">\[
+P(E_k \mid B) = \frac{P(B \mid E_k) \, P(E_k)}{\sum\limits_{i \in \mathbb{N}} P(B \mid E_i) \, P(E_i)}
+\]</span></p>
+</section>
+<section id="desigualdad-de-boole" class="level3">
+<h3 class="anchored" data-anchor-id="desigualdad-de-boole">Desigualdad de Boole</h3>
+<p>Si <span class="math inline">\(\{A_n\}_{n \in \mathbb{N}}\)</span> es una familia de eventos en <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>, entonces:</p>
+<p><span class="math display">\[
+P\left( \bigcup_{n \in \mathbb{N}} A_n \right) \leq \sum_{n \in \mathbb{N}} P(A_n)
+\]</span></p>
+</section>
+<section id="continuidad-de-la-probabilidad" class="level3">
+<h3 class="anchored" data-anchor-id="continuidad-de-la-probabilidad">Continuidad de la probabilidad</h3>
+<p>Sea <span class="math inline">\(\{A_n\}_{n \in \mathbb{N}}\)</span> una sucesión de eventos en <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>.</p>
+<ul>
+<li><p><strong>Creciente</strong></p>
+<p><span class="math display">\[
+A_n \subseteq A_{n+1} \;\;\forall n\quad\implies\quad P\left( \bigcup_{n \in \mathbb{N}} A_n \right) = \lim_{n \to \infty} P(A_n)
+\]</span></p></li>
+<li><p><strong>Decreciente</strong></p>
+<p><span class="math display">\[
+A_{n+1} \subseteq A_n\;\;\forall n\quad\implies\quad P\left( \bigcap_{n \in \mathbb{N}} A_n \right) = \lim_{n \to \infty} P(A_n)
+\]</span></p></li>
+</ul>
+</section>
+<section id="lemas-de-borelcantelli" class="level3">
+<h3 class="anchored" data-anchor-id="lemas-de-borelcantelli">Lemas de Borel–Cantelli</h3>
+<p>Sea <span class="math inline">\(\{A_n\}_{n \in \mathbb{N}}\)</span> una sucesión de eventos en <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>. Denotamos:</p>
+<p><span class="math display">\[
+\{A_n \text{ i.o.}\} := \bigcap_{n=1}^{\infty} \bigcup_{k = n}^{\infty} A_k
+\]</span></p>
+<blockquote class="blockquote">
+<p><strong>Nota:</strong> La notación “<span class="math inline">\(A_n\)</span> i.o.” proviene del inglés <em>infinitely often</em>, y se refiere al evento de que <strong>ocurran infinitamente muchos</strong> de los eventos <span class="math inline">\(A_n\)</span>. Es decir, que sin importar cuán lejos avancemos en la sucesión, siempre habrá algunos <span class="math inline">\(A_k\)</span> con <span class="math inline">\(k &gt; n\)</span> que se cumplan.</p>
+<p>Intuitivamente, <span class="math inline">\(A_n\)</span> ocurre <em>infinitas veces</em> si, a partir de cierto punto, sigue ocurriendo de forma repetida (aunque no necesariamente de forma continua).</p>
+</blockquote>
+<ol type="1">
+<li><p><strong>Primer lema de Borel–Cantelli:</strong></p>
+<p><span class="math display">\[
+\sum\limits_{n=1}^\infty P(A_n) &lt; \infty \quad\implies\quad P(A_n \text{ i.o.}) = 0
+\]</span></p></li>
+<li><p><strong>Segundo lema de Borel–Cantelli:</strong></p>
+<p><span class="math display">\[
+\left.\begin{array} AA_n \text{ son independientes} \\ \sum\limits_{n=1}^\infty P(A_n) = \infty \end{array}\right\}\quad\implies\quad P(A_n \text{ i.o.}) = 1
+\]</span></p></li>
+</ol>
 
 
 </section>
