@@ -8,16 +8,16 @@ website:
   title: "Diego Alberto Vega Víquez"
   navbar:
     left:
-      - href: index.qmd
+      - href: index_main.qmd
         text: Inicio
       - href: about.qmd
         text: Sobre mí
       - text: Cursos
         menu:
-          - text: CA0721
-            href: cursos/CA0721/antecedentes_CA0721.qmd
-          - text: CA0306
-            href: cursos/CA0306/tema1.qmd
+          - text: "CA0721: Probabilidad"
+            href: cursos/CA0721/index_CA0721.qmd
+          - text: "CA0306: Contingencias de Vida I"
+            href: cursos/CA0306/index_CA0306.qmd
 
   sidebar:
     - id: ca0721
@@ -45,7 +45,7 @@ website:
 
   page-footer:
     center: |
-      © 2025 | [LinkedIn](https://linkedin.com/in/tuusuario) | [Correo](diegovv13@gmail.com)
+      © 2025 | [LinkedIn](https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3B4s9KlG5%2FTXOzWHwBdfCQpA%3D%3D) | [Correo](diegovv13@gmail.com)
 
 format:
   html:

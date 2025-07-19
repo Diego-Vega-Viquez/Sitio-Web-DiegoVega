@@ -1,0 +1,14 @@
+---
+title: "CA0721: Probabilidad"
+sidebar: ca0721
+format: html
+---
+
+Bienvenido a los apuntes del curso **CA0721**.
+
+## Temas
+
+- [Tema 1: Preliminares](antecedentes_CA0721.qmd)
+- [Tema 2: Introducción a la Probabilidad](intro_proba_CA0721.qmd)
+- [Tema 3: Teoría General de la Probabilidad](teoria_general_proba_CA0721.qmd)
+- [Tema 4: Variables Aleatorias](variables_aleatorias_CA0721.qmd)

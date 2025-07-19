@@ -1,0 +1,10 @@
+---
+title: "CA0306: Contingencias de Vida I"
+format: html
+---
+
+Bienvenido a los apuntes del curso **CA0306**.
+
+## Temas
+
+- [Tema 1: Distribuciones de Sobrevivencia](distribuciones_sobrevivencia_CA0306.qmd)
