@@ -1,5 +1,6 @@
 ---
 title: "Teoría General de Probabilidades"
+sidebar: ca0721
 format: html
 ---
 

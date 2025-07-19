@@ -5,19 +5,43 @@ project:
 lang: es
 
 website:
-  title: "Mi Sitio Web"
+  title: "Diego Alberto Vega Víquez"
   navbar:
     left:
-      - href: index_main.qmd
+      - href: index.qmd
         text: Inicio
       - href: about.qmd
         text: Sobre mí
       - text: Cursos
         menu:
-          - text: "CA0721: Probabilidad"
-            href: cursos/CA0721/index_CA0721.qmd
-          - text: "CA0306: Contingencias de Vida I"
-            href: cursos/CA0306/index_CA0306.qmd
+          - text: CA0721
+            href: cursos/CA0721/antecedentes_CA0721.qmd
+          - text: CA0306
+            href: cursos/CA0306/tema1.qmd
+
+  sidebar:
+    - id: ca0721
+      title: "CA0721: Probabilidad"
+      contents:
+        - href: cursos/CA0721/index_CA0721.qmd
+          text: "Página principal del curso"
+        - href: cursos/CA0721/antecedentes_CA0721.qmd
+          text: "Tema 1: Preliminares"
+        - href: cursos/CA0721/intro_proba_CA0721.qmd
+          text: "Tema 2: Introducción a la Probabilidad"
+        - href: cursos/CA0721/teoria_general_proba_CA0721.qmd
+          text: "Tema 3: Teoría General de la Probabilidad"
+        - href: cursos/CA0721/variables_aleatorias_CA0721.qmd
+          text: "Tema 4: Variables Aleatorias"
+    - id: ca0306
+      title: "CA0306: Contingencias de Vida I"
+      contents:
+        - href: cursos/CA0721/index_CA0306.qmd
+          text: "Página principal del curso"
+        - href: cursos/CA0721/distribuciones_sobrevivencia_CA0306.qmd
+          text: "Tema 1: Distribuciones de Sobrevivencia"
+      
+
 
   page-footer:
     center: |

@@ -1,5 +1,6 @@
 ---
 title: "Variables Aleatorias"
+sidebar: ca0721
 format: html
 ---
 

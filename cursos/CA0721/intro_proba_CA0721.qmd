@@ -1,5 +1,6 @@
 ---
 title: "Introducción a la Probabilidad"
+sidebar: ca0721
 format: html
 ---
 
