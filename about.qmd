@@ -1,9 +1,22 @@
 ---
-title: "About"
+title: "¿Quién Sos?"
 ---
 
-About this site
+Hola soy Diego!
+
+¿Cuánto es 1+1?
 
 ```{r}
 1 + 1
 ```
+
+Podés visualizar mi currículum directamente en esta página:
+
+<iframe src="Curriculum/CV.pdf" width="100%" height="600px" style="border: none;">
+</iframe>
+
+---
+
+También podés descargarlo directamente desde este enlace:
+
+👉 [Descargar CV en PDF](Curriculum/CV.pdf)

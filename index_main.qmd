@@ -1,11 +1,30 @@
 ---
 title: "Diego Alberto Vega Víquez"
+page-layout: full
 ---
 
-This is a Quarto website.
+# ¡Hola! 👋
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Bienvenido a mi sitio web personal. Este espacio ha sido creado como una plataforma para compartir mis apuntes, recursos y materiales de estudio a lo largo de mi formación académica.
 
-```{r}
-1 + 1
-```
+## 🎯 Objetivo del sitio
+
+El propósito principal de esta página es organizar de forma clara y accesible mis apuntes de distintos cursos, permitiéndome consultarlos fácilmente desde cualquier lugar, así como compartirlos con otras personas interesadas en los temas que estudio.
+
+Aquí encontrarás:
+
+- 📚 **Apuntes por curso**, organizados por tema.
+- 🧑‍💼 Una breve sección **sobre mí**, con enlaces a mis redes profesionales.
+- 🔍 Una estructura clara y navegable, pensada para facilitar el aprendizaje y la revisión.
+
+## 📌 ¿Qué podés explorar?
+
+En la barra superior de navegación podés acceder a:
+
+- **Inicio** (esta página)
+- **Sobre mí** – Una presentación personal y formas de contacto
+- **Cursos** – Acceso a los apuntes clasificados por materia
+
+Gracias por visitar este espacio. ¡Espero que el contenido te sea útil!
+
+---
