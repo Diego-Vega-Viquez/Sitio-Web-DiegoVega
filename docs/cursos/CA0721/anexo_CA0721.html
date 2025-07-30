@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CA0721: Probabilidad – Diego Alberto Vega Víquez</title>
+<title>Anexo – Diego Alberto Vega Víquez</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -122,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../cursos/CA0721/index_CA0721.html">Página principal del curso</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../cursos/CA0721/anexo_CA0721.html">Anexo</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -136,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../cursos/CA0721/index_CA0721.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../cursos/CA0721/index_CA0721.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Página principal del curso</span></a>
   </div>
 </li>
@@ -172,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../cursos/CA0721/anexo_CA0721.html" class="sidebar-item-text sidebar-link">
+  <a href="../../cursos/CA0721/anexo_CA0721.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Anexo</span></a>
   </div>
 </li>
@@ -186,7 +215,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#temas" id="toc-temas" class="nav-link active" data-scroll-target="#temas">Temas</a></li>
+  <li><a href="#distribución-t-student" id="toc-distribución-t-student" class="nav-link active" data-scroll-target="#distribución-t-student">Distribución t-Student</a>
+  <ul class="collapse">
+  <li><a href="#para-la-transformación" id="toc-para-la-transformación" class="nav-link" data-scroll-target="#para-la-transformación">Para la transformación:</a></li>
+  <li><a href="#entonces-la-densidad-conjunta-de-u-v-es" id="toc-entonces-la-densidad-conjunta-de-u-v-es" class="nav-link" data-scroll-target="#entonces-la-densidad-conjunta-de-u-v-es">Entonces, la densidad conjunta de <span class="math inline">\((U, V)\)</span> es:</a></li>
+  <li><a href="#particularmente-la-pdf-de-u-viene-dada-por" id="toc-particularmente-la-pdf-de-u-viene-dada-por" class="nav-link" data-scroll-target="#particularmente-la-pdf-de-u-viene-dada-por">Particularmente la pdf de <span class="math inline">\(U\)</span> viene dada por:</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -195,7 +229,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CA0721: Probabilidad</h1>
+<h1 class="title">Anexo</h1>
 </div>
 
 
@@ -212,19 +246,88 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Bienvenido a los apuntes del curso <strong>CA0721</strong>.</p>
-<section id="temas" class="level2">
-<h2 class="anchored" data-anchor-id="temas">Temas</h2>
-<ul>
-<li><a href="../../cursos/CA0721/antecedentes_CA0721.html">Tema 1: Preliminares</a></li>
-<li><a href="../../cursos/CA0721/intro_proba_CA0721.html">Tema 2: Introducción a la Probabilidad</a></li>
-<li><a href="../../cursos/CA0721/teoria_general_proba_CA0721.html">Tema 3: Teoría General de la Probabilidad</a></li>
-<li><a href="../../cursos/CA0721/variables_aleatorias_CA0721.html">Tema 4: Variables Aleatorias</a></li>
-<li><a href="../../cursos/CA0721/vectores_aleatorios_CA0721.html">Tema 5: Vectores Aleatorios</a></li>
-<li><a href="../../cursos/CA0721/anexo_CA0721.html">Anexo</a></li>
-</ul>
+<section id="distribución-t-student" class="level2">
+<h2 class="anchored" data-anchor-id="distribución-t-student">Distribución t-Student</h2>
+<p>Sean <span class="math inline">\(X, Y\)</span> dos variables aleatorias independientes con <span class="math inline">\(X \sim \mathcal{N}(0, 1)\)</span> y <span class="math inline">\(Y \sim \chi_n^2\)</span>.</p>
+<p>Considere la función de densidad conjunta del vector <span class="math inline">\((U, V)\)</span> donde<br>
+<span class="math display">\[
+U = \frac{X}{\sqrt{Y/n}}, \quad V = Y
+\]</span></p>
+<p>Para <span class="math inline">\(X\)</span> tenemos:<br>
+<span class="math display">\[
+f_X(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2 / 2}, \quad x \in \mathbb{R}
+\]</span></p>
+<p>Para <span class="math inline">\(Y\)</span>:<br>
+<span class="math display">\[
+f_Y(y) = \frac{y^{n/2 - 1} e^{-y/2}}{2^{n/2} \Gamma(n/2)}, \quad y &gt; 0
+\]</span></p>
+<p>Dado que <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes:<br>
+<span class="math display">\[
+f_{X,Y}(x, y) = f_X(x) f_Y(y) = \frac{e^{-x^2/2}}{\sqrt{2\pi}} \cdot \frac{y^{n/2 - 1} e^{-y/2}}{2^{n/2} \Gamma(n/2)} = \frac{e^{-(x^2 + y)/2} y^{n/2 - 1}}{\sqrt{2\pi} \cdot 2^{n/2} \Gamma(n/2)}
+\]</span></p>
+<hr>
+<section id="para-la-transformación" class="level3">
+<h3 class="anchored" data-anchor-id="para-la-transformación">Para la transformación:</h3>
+<p><span class="math display">\[\begin{align*}
+\begin{cases}
+U = \dfrac{X}{\sqrt{Y/n}} \\
+V = Y
+\end{cases}
+&amp;\quad \Rightarrow \quad
+\begin{cases}
+u = \dfrac{x}{\sqrt{y/n}} \\
+v = y
+\end{cases}
+\quad \Rightarrow \quad
+\begin{cases}
+x = u \sqrt{v/n} \\
+y = v
+\end{cases} \\
+&amp;\quad \Rightarrow \quad
+\mathcal{A} = \{ (x, y) \in \mathbb{R}^2 : y &gt; 0 \}, \quad
+\mathcal{B} = \{ (u, v) \in \mathbb{R}^2 : v &gt; 0 \}
+\end{align*}\]</span></p>
+<p>Y el Jacobiano es:</p>
+<p><span class="math display">\[
+J = \left| \begin{vmatrix}
+\frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\
+\frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v}
+\end{vmatrix} \right|
+= \left| \begin{vmatrix}
+\sqrt{\frac{v}{n}} &amp; \frac{u}{2 \sqrt{n v}} \\
+0 &amp; 1
+\end{vmatrix} \right|
+= \sqrt{\frac{v}{n}}
+\]</span></p>
+<hr>
+</section>
+<section id="entonces-la-densidad-conjunta-de-u-v-es" class="level3">
+<h3 class="anchored" data-anchor-id="entonces-la-densidad-conjunta-de-u-v-es">Entonces, la densidad conjunta de <span class="math inline">\((U, V)\)</span> es:</h3>
+<p><span class="math display">\[
+f_{U,V}(u,v) = \frac{v^{(n-1)/2} \cdot e^{-(1 + u^2)v/2}}{\Gamma(n/2) \cdot 2^{(n+1)/2} \cdot \sqrt{n\pi}} \cdot \mathbf{1}_{\mathcal{B}}(u, v)
+\]</span></p>
+<hr>
+</section>
+<section id="particularmente-la-pdf-de-u-viene-dada-por" class="level3">
+<h3 class="anchored" data-anchor-id="particularmente-la-pdf-de-u-viene-dada-por">Particularmente la pdf de <span class="math inline">\(U\)</span> viene dada por:</h3>
+<p><span class="math display">\[
+f_U(u) = \int_0^\infty f_{U,V}(u,v) \, dv = \int_0^\infty \frac{v^{(n-1)/2} \cdot e^{-(1 + u^2)v/2}}{\Gamma(n/2) \cdot 2^{(n+1)/2} \cdot \sqrt{n\pi}} \, dv
+\]</span></p>
+<p>Sea:</p>
+<p><span class="math display">\[
+\frac{v^\beta}{\Gamma(\alpha)} e^{-vB}, \quad \text{donde} \quad \beta = \frac{n-1}{2}, \quad B = \frac{1 + u^2/n}{2}
+\]</span></p>
+<p>Usamos el hecho de que:</p>
+<p><span class="math display">\[
+\int_0^\infty v^{\alpha - 1} e^{-vB} \, dv = \frac{\Gamma(\alpha)}{B^\alpha}
+\]</span></p>
+<p>Entonces, resolviendo la integral obtenemos que <span class="math inline">\(U\)</span> sigue una distribución t-Student con <span class="math inline">\(n\)</span> grados de libertad:</p>
+<p><span class="math display">\[
+f_U(u) = \frac{\Gamma\left(\frac{n + 1}{2}\right)}{\Gamma(n/2) \sqrt{n\pi}} \cdot \left(1 + \frac{u^2}{n} \right)^{-(n+1)/2}
+\]</span></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

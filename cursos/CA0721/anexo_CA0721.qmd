@@ -1,0 +1,101 @@
+---
+title: "Anexo"
+sidebar: ca0721
+format: html
+---
+
+## Distribución t-Student
+
+Sean $X, Y$ dos variables aleatorias independientes con $X \sim \mathcal{N}(0, 1)$ y $Y \sim \chi_n^2$.
+
+Considere la función de densidad conjunta del vector $(U, V)$ donde  
+$$
+U = \frac{X}{\sqrt{Y/n}}, \quad V = Y
+$$
+
+Para $X$ tenemos:  
+$$
+f_X(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2 / 2}, \quad x \in \mathbb{R}
+$$
+
+Para $Y$:  
+$$
+f_Y(y) = \frac{y^{n/2 - 1} e^{-y/2}}{2^{n/2} \Gamma(n/2)}, \quad y > 0
+$$
+
+Dado que $X$ y $Y$ son independientes:  
+$$
+f_{X,Y}(x, y) = f_X(x) f_Y(y) = \frac{e^{-x^2/2}}{\sqrt{2\pi}} \cdot \frac{y^{n/2 - 1} e^{-y/2}}{2^{n/2} \Gamma(n/2)} = \frac{e^{-(x^2 + y)/2} y^{n/2 - 1}}{\sqrt{2\pi} \cdot 2^{n/2} \Gamma(n/2)}
+$$
+
+---
+
+### Para la transformación:
+
+\begin{align*}
+\begin{cases}
+U = \dfrac{X}{\sqrt{Y/n}} \\
+V = Y
+\end{cases}
+&\quad \Rightarrow \quad
+\begin{cases}
+u = \dfrac{x}{\sqrt{y/n}} \\
+v = y
+\end{cases}
+\quad \Rightarrow \quad
+\begin{cases}
+x = u \sqrt{v/n} \\
+y = v
+\end{cases} \\
+&\quad \Rightarrow \quad
+\mathcal{A} = \{ (x, y) \in \mathbb{R}^2 : y > 0 \}, \quad
+\mathcal{B} = \{ (u, v) \in \mathbb{R}^2 : v > 0 \}
+\end{align*}
+
+Y el Jacobiano es:
+
+$$
+J = \left| \begin{vmatrix}
+\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+\end{vmatrix} \right|
+= \left| \begin{vmatrix}
+\sqrt{\frac{v}{n}} & \frac{u}{2 \sqrt{n v}} \\
+0 & 1
+\end{vmatrix} \right|
+= \sqrt{\frac{v}{n}}
+$$
+
+---
+
+### Entonces, la densidad conjunta de $(U, V)$ es:
+
+$$
+f_{U,V}(u,v) = \frac{v^{(n-1)/2} \cdot e^{-(1 + u^2)v/2}}{\Gamma(n/2) \cdot 2^{(n+1)/2} \cdot \sqrt{n\pi}} \cdot \mathbf{1}_{\mathcal{B}}(u, v)
+$$
+
+---
+
+### Particularmente la pdf de $U$ viene dada por:
+
+$$
+f_U(u) = \int_0^\infty f_{U,V}(u,v) \, dv = \int_0^\infty \frac{v^{(n-1)/2} \cdot e^{-(1 + u^2)v/2}}{\Gamma(n/2) \cdot 2^{(n+1)/2} \cdot \sqrt{n\pi}} \, dv
+$$
+
+Sea:
+
+$$
+\frac{v^\beta}{\Gamma(\alpha)} e^{-vB}, \quad \text{donde} \quad \beta = \frac{n-1}{2}, \quad B = \frac{1 + u^2/n}{2}
+$$
+
+Usamos el hecho de que:
+
+$$
+\int_0^\infty v^{\alpha - 1} e^{-vB} \, dv = \frac{\Gamma(\alpha)}{B^\alpha}
+$$
+
+Entonces, resolviendo la integral obtenemos que $U$ sigue una distribución t-Student con $n$ grados de libertad:
+
+$$
+f_U(u) = \frac{\Gamma\left(\frac{n + 1}{2}\right)}{\Gamma(n/2) \sqrt{n\pi}} \cdot \left(1 + \frac{u^2}{n} \right)^{-(n+1)/2}
+$$

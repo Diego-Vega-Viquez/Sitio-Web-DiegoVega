@@ -35,6 +35,8 @@ website:
           text: "Tema 4: Variables Aleatorias"
         - href: cursos/CA0721/vectores_aleatorios_CA0721.qmd
           text: "Tema 5: Vectores Aleatorios"
+        - href: cursos/CA0721/anexo_CA0721.qmd
+          text: "Anexo"
     - id: ca0306
       title: "CA0306: Contingencias de Vida I"
       contents:

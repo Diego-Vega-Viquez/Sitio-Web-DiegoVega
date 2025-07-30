@@ -1,0 +1,359 @@
+---
+title: "Modos de convergencia de Variables Aleatorias"
+sidebar: ca0721
+format: html
+---
+
+## Convergencia Casi Siempre
+
+Sea $X_n$ una sucesión de v.a. definidas en un e.p $(\Omega, \mathcal{F}, P)$ y sea $X$ otra v.a en el mismo espacio.
+
+La sucesión $X_n$ converge casi siempre a $X$, denotado  
+$$X_n \xrightarrow{c.s.} X$$  
+si el conjunto donde $X_n(w)$ converge a $X(w)$ tiene probabilidad igual a 1, i.e
+
+$$
+P\left( \left\{ w \in \Omega : \lim_{n \to \infty} X_n(w) = X(w) \right\} \right) = 1
+$$
+
+::: {.callout-note}
+#### Condición suficiente  
+Sean $X_n$ una sucesión de v.a en un e.p $(\Omega, \mathcal{F}, P)$ y sea $X$ otra v.a en $(\Omega, \mathcal{F}, P)$. Entonces  
+$$\sum_{n=1}^{+\infty} P(|X_n - X| > \varepsilon) \text{ converge} \Longrightarrow X_n \xrightarrow{c.s.} X$$
+:::
+
+### Propiedades
+
+- Si $X_n \xrightarrow{c.s.} X$ y $X_n \xrightarrow{c.s.} Y$ entonces $X = Y$ c.s.
+- Si $X_n \xrightarrow{c.s.} X$, entonces:  
+  (a) $\alpha X_n \xrightarrow{c.s.} \alpha X$  $\forall \alpha \in \mathbb{R}$  
+  (b) Si $X \neq 0$ c.s. entonces $\dfrac{1}{X_n} \xrightarrow{c.s.} \dfrac{1}{X}$
+- Si $X_n \xrightarrow{c.s.} X$ y $Y_n \xrightarrow{c.s.} Y$ entonces:  
+  (i) $X_n \pm Y_n \xrightarrow{c.s.} X \pm Y$  
+  (ii) $X_n \cdot Y_n \xrightarrow{c.s.} X \cdot Y$
+- Si $X_n \xrightarrow{c.s.} X$ y $g: I \to \mathbb{R}$ es continua tal que $X_n \in I$ c.s., entonces $g(X_n) \xrightarrow{c.s.} g(X)$
+- Si $X_n \xrightarrow{c.s.} X$, entonces $X_{n_k} \xrightarrow{c.s.} X$ para cualquier subsecuencia $X_{n_k}$ de $X_n$
+
+### Algunos criterios
+
+::: {.callout-tip}
+#### Condición necesaria y suficiente  
+Sean $X_n$ una sucesión de v.a en un e.p $(\Omega, \mathcal{F}, P)$ y sea $X$ otra v.a en $(\Omega, \mathcal{F}, P)$. Entonces  
+$X_n \xrightarrow{c.s.} X$ $\Longleftrightarrow$ ∀ $\varepsilon > 0$ se cumple que  
+$$
+P\left( |X_n - X| > \varepsilon, \, i.o. \right) = \lim_{n \to \infty} P\left( \sup_{k \geq n} |X_k - X| > \varepsilon \right) = 0
+$$
+:::
+
+---
+
+## Convergencia en Probabilidad
+
+Sea $X_n$ una sucesión de v.a definidas en un e.p $(\Omega, \mathcal{F}, P)$  
+y sea $X$ otra v.a en el mismo espacio.
+
+La sucesión $X_n$ converge en probabilidad a $X$, denotado  
+$$X_n \xrightarrow{P} X$$  
+si  
+$$\lim_{n \to +\infty} P\left( |X_n - X| > \varepsilon \right) = 0$$
+
+### Propiedades
+
+- Si $X_n \xrightarrow{P} X$ y $X_n \xrightarrow{P} Y$ entonces $X = Y$ c.s.
+- Si $X_n \xrightarrow{P} X$ y $Y_n \xrightarrow{P} Y$ entonces:  
+  (i) $\alpha X_n \xrightarrow{P} \alpha X$  $\forall \alpha \in \mathbb{R}$  
+  (ii) $X_n \pm Y_n \xrightarrow{P} X \pm Y$
+
+---
+
+## Relación entre $c.s.$ y $P$
+
+::: {.callout-note}
+### Teorema  
+$$X_n \xrightarrow{c.s.} X \Longrightarrow X_n \xrightarrow{P} X$$
+:::
+
+::: {.callout-note}
+### Teorema  
+$X_n \xrightarrow{P} X \Longleftrightarrow$ toda subsecuencia de $X_n$ tiene una subsecuencia que converge a $X$ casi siempre,  
+i.e.  
+$$X_n \xrightarrow{P} X \Longleftrightarrow \forall X_{n_k} \, \exists \{k_l\}_{l \in \mathbb{N}} : X_{n_{k_l}} \xrightarrow{c.s.} X$$
+:::
+
+
+Sea $(\Omega, \mathcal{F}, P)$ un e.p y sea $p \geq 1$. El espacio $L^p(\Omega, \mathcal{F}, P)$ puede entenderse como el conjunto de todas aquellas v.a definidas en el e.p $(\Omega, \mathcal{F}, P)$ tales que $\mathbb{E}(|X|^p) < \infty$
+
+$$
+L^p(\Omega, \mathcal{F}, P) = \{ X : \Omega \to \mathbb{R} \, : \, \mathbb{E}(|X|^p) < \infty \}
+$$
+
+Así el espacio $L^p(\Omega)$ equipado con $\|\cdot\|_p$ se convierte en un espacio vectorial (e.p) normado. Este espacio no solamente es un e.p normado sino que es un espacio de Banach.
+
+::: {.callout-note}
+
+### Teorema (Desigualdad de Hölder)
+
+Sean $p, q > 0$ tales que $\dfrac{1}{p} + \dfrac{1}{q} = 1$. Sea $X \in L^p(\Omega)$ y $Y \in L^q(\Omega)$ entonces $XY \in L^1(\Omega)$ y además
+
+$$
+\mathbb{E}(|XY|) \leq \mathbb{E}(|XY|) \leq \left( \mathbb{E}(|X|^p) \right)^{1/p} \left( \mathbb{E}(|Y|^q) \right)^{1/q}
+$$
+
+:::
+
+
+> **Nota**: en el caso en que $p = q = 2$, la desigualdad de Hölder recibe el nombre de desigualdad de Cauchy-Schwarz.
+
+::: {.callout-note}
+
+#### Teorema (Desigualdad de Lyapunov)
+
+Sean $1 < r < s$. Si $X \in L^s(\Omega)$, entonces $X \in L^r(\Omega)$ y además
+
+$$
+\left( \mathbb{E}(|X|^r) \right)^{1/r} \leq \left( \mathbb{E}(|X|^s) \right)^{1/s}
+$$
+
+:::
+
+::: {.callout-note}
+
+#### Teorema (Desigualdad de Chebyshev)
+
+Si $X \in L^p(\Omega)$ y $\varepsilon > 0$, entonces
+
+$$
+P(|X| > \varepsilon) \leq \dfrac{\|X\|_p^p}{\varepsilon^p} = \dfrac{\mathbb{E}(|X|^p)}{\varepsilon^p}
+$$
+
+:::
+
+::: {.callout-note}
+**Obs**: Para el caso en que $p = 1$ la anterior desigualdad puede usarse para establecer que
+
+$$
+P\left( |X - \mathbb{E}(X)| \geq \varepsilon \right) \leq \dfrac{\sigma_X^2}{\varepsilon^2}
+$$
+
+o la versión alternativa
+
+$$
+P\left( |X - \mathbb{E}(X)| \geq k\sigma_X \right) \leq \dfrac{1}{k^2}
+$$
+:::
+
+---
+
+## El espacio $L^p(\Omega)$
+
+::: {.callout-note}
+
+### Teorema (Desigualdad de Minkowski)
+
+Sean $p \geq 1$ y $X, Y \in L^p(\Omega)$. Entonces $X + Y \in L^p(\Omega)$ y además
+
+$$
+\left( \mathbb{E}(|X + Y|^p) \right)^{1/p} \leq \left( \mathbb{E}(|X|^p) \right)^{1/p} + \left( \mathbb{E}(|Y|^p) \right)^{1/p}
+$$
+:::
+
+::: {.callout-note}
+**Nota**: Para $X \in L^p(\Omega)$ denotaremos  
+$$\|X\|_p = \left( \mathbb{E}(|X|^p) \right)^{1/p}$$
+:::
+
+Luego se puede probar:
+
+- $\|X\|_p = 0 \iff X = 0$ c.s.
+- $\|\alpha X\|_p = |\alpha| \cdot \|X\|_p$  $\forall \alpha \in \mathbb{R}$
+- $\|X + Y\|_p \leq \|X\|_p + \|Y\|_p$
+
+---
+
+## Convergencia en $L^p(\Omega)$
+
+Sea $p \geq 1$ y sea $X_n$ una sucesión de v.a definidas en el e.p $(\Omega, \mathcal{F}, P)$ tal que $X_n \in L^p(\Omega)$ ∀ $n$. Se dice que $X_n$ converge a $X$ en $L^p$, denotado  
+$$X_n \xrightarrow{L^p} X$$  
+si  
+$$\lim_{n \to \infty} \mathbb{E}(|X_n - X|^p) = 0$$
+
+$$\lim_{n \to \infty} \mathbb{E}(|X_n - X|^p) = 0 \Longrightarrow X_n \xrightarrow{L^p} X$$
+
+::: {.callout-note}
+**Obs**: La convergencia en $L^2(\Omega)$ suele recibir el nombre propio conocido como convergencia en media cuadrática.
+:::
+
+---
+
+### Teorema
+
+- Si $1 \leq q < p$ y $X_n \xrightarrow{L^p} X$ $\Longrightarrow$ $X_n \xrightarrow{L^q} X$
+- $X_n \xrightarrow{L^p} X \Longrightarrow X_n \xrightarrow{P} X$
+
+
+## Convergencia en distribución
+
+Sea $X_n$ una sucesión de v.a definidas en un e.p $(\Omega, \mathcal{F}, P)$ y sea $X$ otra v.a.
+
+Se dice que $X_n$ converge en distribución a $X$, denotado  
+$$X_n \xrightarrow{D} X$$  
+si $F_{X_n}(t)$ converge a $F_X(t)$ para todo $t$ donde la función $F_X$ es continua.
+
+::: {.callout-note}
+
+### Teorema
+
+- Si $X_n \xrightarrow{P} X$, entonces $X_n \xrightarrow{D} X$
+- Si $X_n \xrightarrow{D} c$ donde $c$ es una v.a constante, entonces $X_n \xrightarrow{P} c$
+
+:::
+
+::: {.callout-note}
+
+### Teorema
+
+Sea $C$ el conjunto de funciones acotadas y continuas en $\mathbb{R}$. Entonces  
+$$
+X_n \xrightarrow{D} X \iff \mathbb{E}[f(X_n)] \to \mathbb{E}[f(X)] \quad \forall f \in C
+$$
+
+:::
+
+El anterior teorema puede utilizarse para demostrar el siguiente resultado:
+
+::: {.callout-note}
+
+### Teorema de Slutsky
+
+Suponga que $X_n \xrightarrow{D} X$, $Y_n \xrightarrow{D} c$ donde $c$ es una constante. Entonces
+
+- $X_n + Y_n \xrightarrow{D} X + c$
+- $X_n \cdot Y_n \xrightarrow{D} X \cdot c$
+
+:::
+::: {.callout-note}
+
+### Teorema de continuidad de Lévy
+
+Sea $\{X_n\}_{n=1}^\infty$ una sucesión de v.a con funciones características $\{\varphi_n\}_{n=1}^\infty$.
+
+**Parte 1:**  
+Si $X_n$ converge en distribución a una variable $X$, entonces $\varphi_n(t)$ converge a  
+$$
+\varphi_X(t) = \mathbb{E}[e^{itX}] \quad \forall t \in \mathbb{R}
+$$  
+es decir,  
+$$
+X_n \xrightarrow{D} X \Longrightarrow \varphi_n(t) \xrightarrow{n \to \infty} \mathbb{E}[e^{itX}] \quad \forall t \in \mathbb{R}
+$$
+
+**Parte 2:**  
+Si $\varphi_n(t)$ converge puntualmente a una función $\varphi(t)$ que es continua en $t = 0$, entonces existe una v.a $X$ tal que $\varphi(t) = \mathbb{E}[e^{itX}]$ y además  
+$$
+X_n \xrightarrow{D} X
+$$
+
+:::
+
+## Recapitulando convergencia
+
+Aquí resumimos las relaciones que podemos utilizar entre los distintos tipos de convergencia estudiados:
+
+- **(C.S ⟹ P):** si $X_n \xrightarrow{c.s.} X$, entonces $X_n \xrightarrow{P} X$
+- **($L^p \Rightarrow L^q$)** para $1 \leq q \leq p$. Si $X_n \xrightarrow{L^p} X$ y $1 \leq q \leq p$, entonces $X_n \xrightarrow{L^q} X$
+- **($L^p \Rightarrow P$):** si $X_n \xrightarrow{L^p} X$ donde $p \geq 1$, entonces $X_n \xrightarrow{P} X$
+- **($P \Rightarrow D$):** si $X_n \xrightarrow{P} X$, entonces $X_n \xrightarrow{D} X$
+- ($\text{Límite constante} + D \implies P$: si $X_n \xrightarrow{D} c$ donde $c$ es una constante, entonces $X_n \xrightarrow{P} c$
+
+---
+
+### Resultados de convergencia bajo operaciones y funciones:
+
+- Suponga que $X_n \xrightarrow{(*)} X$ y $Y_n \xrightarrow{(*)} Y$ donde $(*)$ representa (en ambas) convergencia en casi siempre, probabilidad o $L^p$. Entonces $X_n + Y_n \xrightarrow{(*)} X + Y$ en el mismo sentido.
+
+- Suponga que $X_n \xrightarrow{(*)} X$ y $Y_n \xrightarrow{(*)} Y$ donde $(*)$ representa (en ambas) convergencia en casi siempre o probabilidad. Entonces $X_n Y_n \xrightarrow{(*)} XY$ en el mismo sentido.
+
+- Suponga que $X_n \xrightarrow{L^2} X$ y $Y_n \xrightarrow{L^2} Y$. Entonces $X_n Y_n$ converge a $XY$ en $L^1$.
+
+- Suponga que $X_n \xrightarrow{D} X$, $Y_n \xrightarrow{D} c$ donde $c$ es una constante. Entonces $X_n + Y_n \xrightarrow{D} X + c$ y $X_n Y_n \xrightarrow{D} cX$.
+
+- Sea $f : \mathbb{R} \to \mathbb{R}$ una función continua y suponga que $X_n$ es una sucesión de variables aleatorias tales que $X_n \xrightarrow{(*)} X$ donde $(*)$ representa convergencia en un sentido casi siempre, probabilidad o en distribución. Entonces $g(X_n)$ converge a $g(X)$ en el mismo sentido.
+
+
+## Convergencia para vectores
+
+Los modos de convergencia estudiados anteriormente pueden ser naturalmente extendidos para el caso de vectores sin mayor problema, solamente que como cada elemento de la sucesión $X_n$ y el límite $X$ corresponden a vectores en $\mathbb{R}^k$, entonces en muchos casos en lugar de utilizar $|X_n - X|$ es necesario utilizar $\|X_n - X\|$.
+
+Por ejemplo, la definición de convergencia en probabilidad sería entonces que:
+
+$$
+\lim_{n \to +\infty} \Pr(\|X_n - X\| > \varepsilon) = 0
+$$
+
+Al menos para los casos de convergencia casi siempre, en probabilidad o en $L^p$ se puede probar que el vector $X_n$ converge en alguno de estos sentidos al vector $X$ si y solo si cada componente de $X_n$ converge a la respectiva componente de $X$ en el mismo sentido.
+
+Lastimosamente, el párrafo anterior no es cierto para convergencia en distribución, pues en este caso solamente se cumple que si el vector $X_n$ converge en distribución al vector $X$, entonces cada componente de $X_n$ converge en distribución a la respectiva componente de $X$.
+
+---
+
+## Leyes de los grandes números
+
+En términos simples la ley de los grandes números nos dice que si $X_1, X_2, \dots$ es una sucesión de variables aleatorias independientes e idénticamente distribuidas (i.i.d) que satisfacen ciertas condiciones, entonces su promedio:
+
+$$
+\frac{X_1 + X_2 + \cdots + X_n}{n}
+$$
+
+converge en cierto sentido a $\mathbb{E}[X_1]$. De manera más precisa, formularemos 4 versiones de esta ley aunque solo probaremos las primeras 3.
+
+---
+
+### Ley débil de los grandes números
+
+Sea $X_1, X_2, \dots$ una sucesión de v.a. i.i.d. tales que $\text{Var}(X_1)$ existe. Entonces:
+
+$$
+\frac{X_1 + X_2 + \cdots + X_n}{n} \xrightarrow{L^2} \mathbb{E}[X_1]
+$$
+
+Si $\mathbb{E}[X_1]$ existe, entonces:
+
+$$
+\frac{X_1 + X_2 + \cdots + X_n}{n} \xrightarrow{D} \mathbb{E}[X_1]
+$$
+
+En particular:
+
+$$
+\frac{X_1 + X_2 + \cdots + X_n}{n} \xrightarrow{P} \mathbb{E}[X_1]
+$$
+
+---
+
+### Ley fuerte de los grandes números
+
+Sea $X_1, X_2, \dots$ una sucesión de v.a. i.i.d. tales que $\mathbb{E}[X_1^4]$ existe. Entonces:
+
+$$
+\frac{X_1 + X_2 + \cdots + X_n}{n} \xrightarrow{c.s.} \mathbb{E}[X_1]
+$$
+
+Si $\mathbb{E}[|X_1|]$ existe, entonces:
+
+$$
+\frac{X_1 + X_2 + \cdots + X_n}{n} \xrightarrow{c.s.} \mathbb{E}[X_1]
+$$
+
+---
+
+## Teorema del Límite Central
+
+Sea una sucesión de variables aleatorias independientes e idénticamente distribuidas tal que $\mathbb{E}[X_1] = \mu < \infty$ y $\text{Var}(X_1) = \sigma^2 < \infty$.
+
+Denótese $S_n = X_1 + X_2 + \cdots + X_n$ y $\bar{X} = \dfrac{S_n}{n}$. Entonces:
+
+$$
+\sqrt{n} \cdot \frac{\bar{X} - \mu}{\sigma} = \frac{S_n - n\mu}{\sigma \sqrt{n}} \xrightarrow{D} Z
+$$
+
+donde $Z \sim \mathcal{N}(0, 1)$.
