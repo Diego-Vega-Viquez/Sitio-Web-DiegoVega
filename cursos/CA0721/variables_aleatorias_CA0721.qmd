@@ -347,3 +347,5 @@ Una variable $X$ se llama **hipergeométrica** de parámetros $n$, $m$ y $r$ si 
 
 
 :::
+
+## Variables aleatorias discretas
