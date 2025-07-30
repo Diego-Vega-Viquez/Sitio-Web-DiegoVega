@@ -55,14 +55,14 @@ y = v
 Y el Jacobiano es:
 
 $$
-J = \left| \begin{vmatrix}
+J =  \begin{vmatrix}
 \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\
 \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
-\end{vmatrix} \right|
-= \left| \begin{vmatrix}
+\end{vmatrix}
+=  \begin{vmatrix}
 \sqrt{\frac{v}{n}} & \frac{u}{2 \sqrt{n v}} \\
 0 & 1
-\end{vmatrix} \right|
+\end{vmatrix}
 = \sqrt{\frac{v}{n}}
 $$
 
