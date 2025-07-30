@@ -12,11 +12,11 @@ Hola soy Diego!
 
 Podés visualizar mi currículum directamente en esta página:
 
-<iframe src="Curriculum/CV.pdf" width="100%" height="600px" style="border: none;">
-</iframe>
+<!-- <iframe src="Curriculum/CV.pdf" width="100%" height="600px" style="border: none;"> -->
+<!-- </iframe> -->
 
 ---
 
 También podés descargarlo directamente desde este enlace:
 
-👉 [Descargar CV en PDF](Curriculum/CV.pdf)
+👉 [Descargar CV en PDF](Curriculum/hoja.pdf)
