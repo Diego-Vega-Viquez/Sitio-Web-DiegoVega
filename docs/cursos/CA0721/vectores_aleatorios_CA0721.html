@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Vectores Aleatorios – Diego Alberto Vega Víquez</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Diego Alberto Vega Víquez</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index_main.qmd"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Sobre mí</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cursos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Cursos</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-cursos">    
+        <li>
+    <a class="dropdown-item" href="../../cursos/CA0721/index_CA0721.html">
+ <span class="dropdown-text">CA0721: Probabilidad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../cursos/CA0306/index_CA0306.html">
+ <span class="dropdown-text">CA0306: Contingencias de Vida I</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../cursos/CA0721/vectores_aleatorios_CA0721.html">Tema 5: Vectores Aleatorios</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../cursos/CA0721/index_CA0721.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Página principal del curso</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../cursos/CA0721/antecedentes_CA0721.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema 1: Preliminares</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../cursos/CA0721/intro_proba_CA0721.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema 2: Introducción a la Probabilidad</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../cursos/CA0721/teoria_general_proba_CA0721.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema 3: Teoría General de la Probabilidad</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../cursos/CA0721/variables_aleatorias_CA0721.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tema 4: Variables Aleatorias</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../cursos/CA0721/vectores_aleatorios_CA0721.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Tema 5: Vectores Aleatorios</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#definición" id="toc-definición" class="nav-link active" data-scroll-target="#definición">Definición</a></li>
+  <li><a href="#función-de-distribución" id="toc-función-de-distribución" class="nav-link" data-scroll-target="#función-de-distribución">Función de distribución</a></li>
+  <li><a href="#densidades-marginales" id="toc-densidades-marginales" class="nav-link" data-scroll-target="#densidades-marginales">Densidades marginales</a></li>
+  <li><a href="#cálculo-de-probabilidades" id="toc-cálculo-de-probabilidades" class="nav-link" data-scroll-target="#cálculo-de-probabilidades">Cálculo de probabilidades</a></li>
+  <li><a href="#independencia" id="toc-independencia" class="nav-link" data-scroll-target="#independencia">Independencia</a></li>
+  <li><a href="#densidad-de-una-suma" id="toc-densidad-de-una-suma" class="nav-link" data-scroll-target="#densidad-de-una-suma">Densidad de una suma</a></li>
+  <li><a href="#transformaciones-en-vectores-aleatorios" id="toc-transformaciones-en-vectores-aleatorios" class="nav-link" data-scroll-target="#transformaciones-en-vectores-aleatorios">Transformaciones en vectores aleatorios</a></li>
+  <li><a href="#acerca-de-independencia" id="toc-acerca-de-independencia" class="nav-link" data-scroll-target="#acerca-de-independencia">Acerca de independencia</a></li>
+  <li><a href="#esperanzas" id="toc-esperanzas" class="nav-link" data-scroll-target="#esperanzas">Esperanzas</a>
+  <ul class="collapse">
+  <li><a href="#propiedades" id="toc-propiedades" class="nav-link" data-scroll-target="#propiedades">Propiedades</a></li>
+  </ul></li>
+  <li><a href="#covarianza-correlación-y-matriz-de-covarianza" id="toc-covarianza-correlación-y-matriz-de-covarianza" class="nav-link" data-scroll-target="#covarianza-correlación-y-matriz-de-covarianza">Covarianza, correlación y matriz de covarianza</a>
+  <ul class="collapse">
+  <li><a href="#otras-propiedades" id="toc-otras-propiedades" class="nav-link" data-scroll-target="#otras-propiedades">Otras propiedades</a></li>
+  </ul></li>
+  <li><a href="#función-generadora-de-momentos" id="toc-función-generadora-de-momentos" class="nav-link" data-scroll-target="#función-generadora-de-momentos">Función generadora de momentos</a></li>
+  <li><a href="#distribución-normal-multivariada" id="toc-distribución-normal-multivariada" class="nav-link" data-scroll-target="#distribución-normal-multivariada">Distribución normal multivariada</a></li>
+  <li><a href="#vectores-aleatorios-discretos" id="toc-vectores-aleatorios-discretos" class="nav-link" data-scroll-target="#vectores-aleatorios-discretos">Vectores Aleatorios Discretos</a>
+  <ul class="collapse">
+  <li><a href="#función-de-masa-condicional" id="toc-función-de-masa-condicional" class="nav-link" data-scroll-target="#función-de-masa-condicional">Función de masa condicional</a></li>
+  <li><a href="#esperanza-condicional" id="toc-esperanza-condicional" class="nav-link" data-scroll-target="#esperanza-condicional">Esperanza condicional</a></li>
+  </ul></li>
+  <li><a href="#densidad-condicional" id="toc-densidad-condicional" class="nav-link" data-scroll-target="#densidad-condicional">Densidad condicional</a></li>
+  <li><a href="#varianza-condicional" id="toc-varianza-condicional" class="nav-link" data-scroll-target="#varianza-condicional">Varianza condicional</a>
+  <ul class="collapse">
+  <li><a href="#propiedades-1" id="toc-propiedades-1" class="nav-link" data-scroll-target="#propiedades-1">Propiedades</a></li>
+  </ul></li>
+  <li><a href="#definición-formal-de-mathbbex-mid-mathcalh" id="toc-definición-formal-de-mathbbex-mid-mathcalh" class="nav-link" data-scroll-target="#definición-formal-de-mathbbex-mid-mathcalh">Definición formal de <span class="math inline">\(\mathbb{E}[X \mid \mathcal{H}]\)</span></a>
+  <ul class="collapse">
+  <li><a href="#observaciones" id="toc-observaciones" class="nav-link" data-scroll-target="#observaciones">Observaciones:</a></li>
+  </ul></li>
+  <li><a href="#esperanza-condicional-respecto-a-un-evento" id="toc-esperanza-condicional-respecto-a-un-evento" class="nav-link" data-scroll-target="#esperanza-condicional-respecto-a-un-evento">Esperanza condicional respecto a un evento</a></li>
+  <li><a href="#propiedad-minimizadora-de-la-esperanza" id="toc-propiedad-minimizadora-de-la-esperanza" class="nav-link" data-scroll-target="#propiedad-minimizadora-de-la-esperanza">Propiedad minimizadora de la esperanza</a></li>
+  <li><a href="#revisando-la-normal-bivariada" id="toc-revisando-la-normal-bivariada" class="nav-link" data-scroll-target="#revisando-la-normal-bivariada">Revisando la normal bivariada</a></li>
+  <li><a href="#funciones-importantes" id="toc-funciones-importantes" class="nav-link" data-scroll-target="#funciones-importantes">Funciones importantes</a></li>
+  <li><a href="#estadísticos-de-orden" id="toc-estadísticos-de-orden" class="nav-link" data-scroll-target="#estadísticos-de-orden">Estadísticos de orden</a>
+  <ul class="collapse">
+  <li><a href="#función-de-densidad-conjunta" id="toc-función-de-densidad-conjunta" class="nav-link" data-scroll-target="#función-de-densidad-conjunta">Función de densidad conjunta</a></li>
+  <li><a href="#función-de-densidad-del-j-ésimo-orden" id="toc-función-de-densidad-del-j-ésimo-orden" class="nav-link" data-scroll-target="#función-de-densidad-del-j-ésimo-orden">Función de densidad del <span class="math inline">\(j\)</span>-ésimo orden</a></li>
+  <li><a href="#función-de-distribución-de-x_j" id="toc-función-de-distribución-de-x_j" class="nav-link" data-scroll-target="#función-de-distribución-de-x_j">Función de distribución de <span class="math inline">\(X_{(j)}\)</span></a></li>
+  <li><a href="#función-de-distribución-conjunta-de-x_i-x_j-con-i-j" id="toc-función-de-distribución-conjunta-de-x_i-x_j-con-i-j" class="nav-link" data-scroll-target="#función-de-distribución-conjunta-de-x_i-x_j-con-i-j">Función de distribución conjunta de <span class="math inline">\(X_{(i)}, X_{(j)}\)</span> con <span class="math inline">\(i &lt; j\)</span></a></li>
+  <li><a href="#rango-de-la-muestra-aleatoria" id="toc-rango-de-la-muestra-aleatoria" class="nav-link" data-scroll-target="#rango-de-la-muestra-aleatoria">Rango de la muestra aleatoria</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Vectores Aleatorios</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="definición" class="level2">
+<h2 class="anchored" data-anchor-id="definición">Definición</h2>
+<p>Un vector aleatorio (<em>v.e</em>) sobre un e.p <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> es una función</p>
+<p><span class="math display">\[
+X : \Omega \to \mathbb{R}^n \quad | \quad X^{-1}(B) \in \mathcal{F} \quad \forall B \in \mathcal{B}(\mathbb{R}^n)
+\]</span></p>
+<p>donde <span class="math inline">\(\mathcal{B}(\mathbb{R}^n)\)</span> denota la <span class="math inline">\(\sigma\)</span>-álgebra de Borel en <span class="math inline">\(\mathbb{R}^n\)</span>, es decir <span class="math inline">\(\mathcal{B}(\mathbb{R}^n)\)</span> es la <span class="math inline">\(\sigma\)</span>-álgebra generada por todos los conjuntos abiertos de <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
+<p>Para mantener la presentación sencilla se expondrá la teoría usando vectores <span class="math inline">\((X, Y)\)</span> aunque la teoría es fácilmente extendible a vectores en más dimensiones.</p>
+<hr>
+</section>
+<section id="función-de-distribución" class="level2">
+<h2 class="anchored" data-anchor-id="función-de-distribución">Función de distribución</h2>
+<p>La función de distribución conjunta de un vector aleatorio continuo <span class="math inline">\((X, Y)\)</span> corresponde a la función</p>
+<p><span class="math display">\[
+F_{X,Y}(x, y) = P[X \leq x, Y \leq y]
+\]</span></p>
+<p>Se pueden recuperar las funciones de distribución mediante</p>
+<p><span class="math display">\[
+F_X(x) = \lim_{y \to +\infty} F_{X,Y}(x, y), \quad
+F_Y(y) = \lim_{x \to +\infty} F_{X,Y}(x, y)
+\]</span></p>
+<p>En el caso de vectores aleatorios absolutamente continuos existe una función no negativa <span class="math inline">\(f_{X,Y}(x, y)\)</span> tal que</p>
+<p><span class="math display">\[
+F_{X,Y}(x, y) = \int_{-\infty}^x \int_{-\infty}^y f_{X,Y}(u, v) \, dv \, du
+\]</span></p>
+<p>A <span class="math inline">\(f_{X,Y}(x, y)\)</span> se le dice la <em>función de densidad conjunta</em> (<em>joint pdf</em>) de <span class="math inline">\((X, Y)\)</span>.</p>
+<p>En particular, cuando <span class="math inline">\(f_{X,Y}(x, y)\)</span> es continua, se cumple que</p>
+<p><span class="math display">\[
+\frac{\partial^2}{\partial x \, \partial y} F_{X,Y}(x, y) = f_{X,Y}(x, y)
+\]</span></p>
+<hr>
+</section>
+<section id="densidades-marginales" class="level2">
+<h2 class="anchored" data-anchor-id="densidades-marginales">Densidades marginales</h2>
+<p><span class="math inline">\(f_{X,Y}(x, y)\)</span> continua es la <em>joint pdf</em> de <span class="math inline">\((X, Y)\)</span>. Se pueden encontrar las pdf <span class="math inline">\(f_X, f_Y\)</span> de la siguiente manera:</p>
+<p><span class="math display">\[
+\begin{aligned}
+f_X(x) &amp;= \frac{d}{dx} P(X \leq x) \\
+       &amp;= \frac{d}{dx} \int_{-\infty}^x \int_{-\infty}^{+\infty} f_{X,Y}(u, v) \, dv \, du \\
+       &amp;= \int_{-\infty}^{+\infty} f_{X,Y}(x, v) \, dv
+\end{aligned}
+\]</span></p>
+<hr>
+</section>
+<section id="cálculo-de-probabilidades" class="level2">
+<h2 class="anchored" data-anchor-id="cálculo-de-probabilidades">Cálculo de probabilidades</h2>
+<p>Sea <span class="math inline">\(D \subset \mathbb{R}^2\)</span> una región en el plano que cumple con las condiciones para ser Riemann integrable.</p>
+<p><span class="math inline">\(f_{X,Y}(x, y)\)</span> es la <em>joint pdf</em> de <span class="math inline">\((X, Y)\)</span> y tiene la siguiente propiedad:</p>
+<p><span class="math display">\[
+P[(X, Y) \in D] = \iint_D f_{X,Y}(x, y) \, dA
+\]</span></p>
+<p>Además, bajo las condiciones del Teorema de Fubini se cumple que la anterior integral doble puede calcularse tanto como una integral iterada en el orden <span class="math inline">\(dx \, dy\)</span> como una en el orden <span class="math inline">\(dy \, dx\)</span>, aunque para esto los límites de integración deben acomodarse adecuadamente.</p>
+<hr>
+</section>
+<section id="independencia" class="level2">
+<h2 class="anchored" data-anchor-id="independencia">Independencia</h2>
+<p>Si <span class="math inline">\(r, s\)</span> son funciones continuas y <span class="math inline">\(X, Y\)</span> son independientes, entonces <span class="math inline">\(r(X)\)</span> y <span class="math inline">\(s(Y)\)</span> también son independientes.</p>
+<p>A partir de dicha definición puede probarse que <span class="math inline">\(X, Y\)</span> son independientes:</p>
+<p><span class="math display">\[
+\Longleftrightarrow F_{X,Y}(x, y) = F_X(x) F_Y(y) \quad \forall x, y \in \mathbb{R}
+\]</span></p>
+<p>Asumiendo que <span class="math inline">\(F_X, F_Y\)</span> son derivables <span class="math inline">\(\forall \mathbb{R}\)</span>, entonces la anterior igualdad ocurre:</p>
+<p><span class="math display">\[
+\Longleftrightarrow f_{X,Y}(x, y) = f_X(x) f_Y(y) \quad \forall x, y \in \mathbb{R}
+\]</span></p>
+<p><strong>Teorema de Factorización:</strong><br>
+Si el vector <span class="math inline">\((X, Y)\)</span> es absolutamente continuo, entonces</p>
+<p><span class="math display">\[
+f_{X,Y}(x, y) = g(x) h(y) \quad \forall x, y \in \mathbb{R}
+\]</span></p>
+<p>para ciertas funciones <span class="math inline">\(g, h\)</span>.</p>
+</section>
+<section id="densidad-de-una-suma" class="level2">
+<h2 class="anchored" data-anchor-id="densidad-de-una-suma">Densidad de una suma</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Teorema:</strong><br>
+Si <span class="math inline">\((X, Y)\)</span> es un vector absolutamente continuo y <span class="math inline">\(f_{X,Y}\)</span> es su función de densidad conjunta, entonces la función de densidad de <span class="math inline">\(X + Y\)</span> viene dada por:</p>
+<p><span class="math display">\[
+f_{X+Y}(z) = \int_{-\infty}^{+\infty} f_{X,Y}(u, z - u) \, du \quad \text{para } z \in \mathbb{R}
+\]</span></p>
+<p><strong>Nota:</strong><br>
+Como corolario del teorema anterior se obtiene que si <span class="math inline">\(X, Y\)</span> son v.a. absolutamente continuas e independientes, entonces <span class="math inline">\(f_{X,Y}(u, z - u) = f_X(u) f_Y(z - u)\)</span> y:</p>
+<p><span class="math display">\[
+f_{X+Y}(z) = \int_{-\infty}^{+\infty} f_X(u) f_Y(z - u) \, du \quad \text{para } z \in \mathbb{R}
+\]</span></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="transformaciones-en-vectores-aleatorios" class="level2">
+<h2 class="anchored" data-anchor-id="transformaciones-en-vectores-aleatorios">Transformaciones en vectores aleatorios</h2>
+<p>Sea <span class="math inline">\((X, Y)\)</span> un v.e. abs. continuo con joint pdf <span class="math inline">\(f_{X,Y}(x, y)\)</span> y sean <span class="math inline">\(g_1(x, y), g_2(x, y)\)</span> dos funciones.</p>
+<p>Defínase:</p>
+<ul>
+<li><span class="math inline">\(A = \{(x, y) \in \mathbb{R}^2 : f_{X,Y}(x, y) &gt; 0\}\)</span><br>
+</li>
+<li><span class="math inline">\(B = \{(u, v) \in \mathbb{R}^2 : u = g_1(x, y), v = g_2(x, y) \ \text{para algún } (x, y) \in A\}\)</span></li>
+</ul>
+<p>Suponga que <span class="math inline">\(g_1, g_2\)</span> son inyectivas en <span class="math inline">\(A\)</span> de modo que la transformación <span class="math inline">\((U, V) = T(x, y) = (g_1(x, y), g_2(x, y))\)</span> es biyectiva como función de <span class="math inline">\(A\)</span> a <span class="math inline">\(B\)</span> y en particular <span class="math inline">\(T^{-1}(u, v) = (x, y) = (h_1(u, v), h_2(u, v))\)</span> existe.</p>
+<p>Suponga que <span class="math inline">\(h_1, h_2\)</span> son <span class="math inline">\(C^1\)</span> en <span class="math inline">\(B\)</span> y que además para todo <span class="math inline">\((u, v) \in B\)</span> se tiene que</p>
+<p><span class="math display">\[
+J := \left| \begin{array}{cc}
+\frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\
+\frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v}
+\end{array} \right| \neq 0
+\]</span></p>
+<p>Entonces el vector aleatorio <span class="math inline">\((U, V)\)</span> es absolutamente continuo y su densidad conjunta <span class="math inline">\(f_{U,V}(u, v)\)</span> viene dada por:</p>
+<p><span class="math display">\[
+f_{U,V}(u, v) = \begin{cases}
+0 &amp; \text{si } (u, v) \notin B \\
+f_{X,Y}(x(u, v), y(u, v)) \cdot |J| &amp; \text{si } (u, v) \in B
+\end{cases}
+\]</span></p>
+<hr>
+</section>
+<section id="acerca-de-independencia" class="level2">
+<h2 class="anchored" data-anchor-id="acerca-de-independencia">Acerca de independencia</h2>
+<p>Los conceptos de independencia, el teorema de factorización, funciones generadoras de momentos y cambios de variable para variables aleatorias se extienden de manera natural a dimensiones mayores a 2.</p>
+<hr>
+</section>
+<section id="esperanzas" class="level2">
+<h2 class="anchored" data-anchor-id="esperanzas">Esperanzas</h2>
+<p>Sea <span class="math inline">\((X, Y)\)</span> un v.e con joint pdf <span class="math inline">\(f_{X,Y}(x,y)\)</span> y sea <span class="math inline">\(g : \mathbb{R}^2 \to \mathbb{R}\)</span> una función continua. Es importante señalar que incluso sin conocer dicha densidad el teorema del estadístico inconsciente sigue siendo válido en este contexto y nos dice que:</p>
+<p><span class="math display">\[
+\mathbb{E}[g(X,Y)] = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} g(x,y) f_{X,Y}(x,y) \, dy dx
+\]</span></p>
+<p>siempre que la integral sea absolutamente convergente.</p>
+<hr>
+<section id="propiedades" class="level3">
+<h3 class="anchored" data-anchor-id="propiedades">Propiedades</h3>
+<ul>
+<li>Si <span class="math inline">\(\mathbb{E}[X]\)</span> y <span class="math inline">\(\mathbb{E}[Y]\)</span> existen, entonces:</li>
+</ul>
+<p><span class="math display">\[
+\mathbb{E}[\alpha X + \beta Y] = \alpha \mathbb{E}[X] + \beta \mathbb{E}[Y] \quad \text{para todo } \alpha, \beta \in \mathbb{R}
+\]</span></p>
+<ul>
+<li>Si <span class="math inline">\(X, Y\)</span> son variables independientes, entonces:</li>
+</ul>
+<p><span class="math display">\[
+\mathbb{E}[XY] = \mathbb{E}[X] \, \mathbb{E}[Y]
+\]</span></p>
+<ul>
+<li><p>Si <span class="math inline">\(X \geq 0\)</span> c.s., entonces <span class="math inline">\(\mathbb{E}[X] \geq 0\)</span>.</p></li>
+<li><p>El anterior resultado puede usarse para deducir algunas desigualdades tales como<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
+<ol type="1">
+<li><p><strong>Monotonicidad de la esperanza:</strong><br>
+Si <span class="math inline">\(X \leq Y\)</span> c.s., entonces</p>
+<p><span class="math display">\[\mathbb{E}[X] \leq \mathbb{E}[Y]\qquad\text{(cuando ambas esperanzas existan)}\]</span></p></li>
+<li><p><strong>Desigualdad triangular:</strong></p>
+<p><span class="math display">\[|\mathbb{E}[X]| \leq \mathbb{E}[|X|] \quad \text{ cuando }\quad\mathbb{E}(|X|) &lt; \infty\]</span></p></li>
+<li><p><strong>Cauchy-Schwarz:</strong></p>
+<p><span class="math display">\[|\mathbb{E}[XY]| \leq \sqrt{\mathbb{E}(X^2)} \sqrt{\mathbb{E}(Y^2)}\quad \text{ cuando }\quad \mathbb{E}[X^2] &lt; \infty \; \text{ y }\; \mathbb{E}[Y^2] &lt; \infty\]</span></p></li>
+</ol></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="covarianza-correlación-y-matriz-de-covarianza" class="level2">
+<h2 class="anchored" data-anchor-id="covarianza-correlación-y-matriz-de-covarianza">Covarianza, correlación y matriz de covarianza</h2>
+<p>Denótese:<br>
+<span class="math display">\[\mu_X = \mathbb{E}(X) \qquad \mu_Y = \mathbb{E}(Y)\]</span></p>
+<ul>
+<li><p>El valor esperado del vector <span class="math inline">\((X, Y)\)</span> es el vector <span class="math inline">\((\mu_X, \mu_Y)\)</span>.</p></li>
+<li><p>La <strong>covarianza</strong> de las variables <span class="math inline">\(X, Y\)</span> se define como:</p></li>
+</ul>
+<p><span class="math display">\[
+\text{Cov}[X, Y] = \mathbb{E} \left[ (X - \mu_X)(Y - \mu_Y) \right]
+\]</span></p>
+<p>(De donde se deduce):</p>
+<p><span class="math display">\[
+\text{Var}[X] = \text{Cov}[X, X], \quad \text{Cov}[X, Y] = \text{Cov}[Y, X]
+\]</span></p>
+<ul>
+<li>Si <span class="math inline">\(\text{Var}[X]\)</span> y <span class="math inline">\(\text{Var}[Y]\)</span> existen, entonces:</li>
+</ul>
+<p><span class="math display">\[
+\text{Var}[\alpha X + \beta Y] = \alpha^2 \text{Var}[X] + \beta^2 \text{Var}[Y] + 2\alpha \beta \text{Cov}[X, Y]
+\]</span></p>
+<ul>
+<li>En particular, si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes, entonces:</li>
+</ul>
+<p><span class="math display">\[
+\text{Var}[\alpha X + \beta Y] = \alpha^2 \text{Var}[X] + \beta^2 \text{Var}[Y]
+\]</span></p>
+<ul>
+<li>La <strong>matriz de covarianza</strong> del vector <span class="math inline">\((X, Y)\)</span> es la matriz:</li>
+</ul>
+<p><span class="math display">\[
+\Sigma(X,Y) =
+\begin{pmatrix}
+\text{Var}[X] &amp; \text{Cov}[X,Y] \\
+\text{Cov}[Y,X] &amp; \text{Var}[Y]
+\end{pmatrix}
+\]</span></p>
+<ul>
+<li>El <strong>coeficiente de correlación</strong> entre <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> se define como:</li>
+</ul>
+<p><span class="math display">\[
+\rho_{XY} = \frac{\text{Cov}[X,Y]}{\sigma_X \sigma_Y}
+\]</span></p>
+<ul>
+<li>La <strong>matriz de correlación</strong> del vector <span class="math inline">\((X, Y)\)</span> es la matriz<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>:</li>
+</ul>
+<p><span class="math display">\[
+\begin{pmatrix}
+1 &amp; \rho_{XY} \\
+\rho_{YX} &amp; 1
+\end{pmatrix}
+\]</span></p>
+<hr>
+<section id="otras-propiedades" class="level3">
+<h3 class="anchored" data-anchor-id="otras-propiedades">Otras propiedades</h3>
+<p>Sean <span class="math inline">\(X, Y\)</span> dos variables aleatorias:</p>
+<ul>
+<li><p>Sea <span class="math inline">\(X\)</span> una v.a. no negativa c.s. Entonces <span class="math inline">\(\mathbb{E}[X] = 0\)</span> si y solo si <span class="math inline">\(X = 0\)</span> c.s.</p></li>
+<li><p><span class="math inline">\(\text{Cov}[X, Y] = \mathbb{E}[XY] - \mu_X \mu_Y\)</span></p></li>
+<li><p>Si <span class="math inline">\(X, Y\)</span> son independientes, entonces <span class="math inline">\(\text{Cov}[X, Y] = 0\)</span></p></li>
+<li><p><span class="math inline">\(|\text{Cov}[X,Y]| \leq \sqrt{\text{Var}[X]} \sqrt{\text{Var}[Y]}\)</span>.<br>
+En particular, se tiene que <span class="math inline">\(-1 \leq \rho_{XY} \leq 1\)</span></p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="función-generadora-de-momentos" class="level2">
+<h2 class="anchored" data-anchor-id="función-generadora-de-momentos">Función generadora de momentos</h2>
+<p>La función generadora de momentos de un vector <span class="math inline">\(X = (X_1, X_2, \dots, X_n)\)</span> corresponde a la función:</p>
+<p><span class="math display">\[
+M_X(t_1, t_2, \dots, t_n) = \mathbb{E} \left[ e^{\sum\limits_{j=1}^n t_j X_j} \right]
+\]</span></p>
+<p>definida en aquella región de <span class="math inline">\(\mathbb{R}^n\)</span> donde dicha esperanza exista.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Nota 1:</strong><br>
+En el caso de que <span class="math inline">\((X_1, X_2, \dots, X_n)\)</span> sean independientes, se cumple que</p>
+<p><span class="math display">\[
+M_X(t_1, t_2, \dots, t_n) = \prod_{j=1}^n M_{X_j}(t_j)
+\]</span></p>
+<p><strong>Nota 2:</strong><br>
+Similar al caso de dimensión 1, si la anterior <span class="math inline">\(M_X(t_1, t_2, \dots, t_n)\)</span> existe en un intervalo abierto del origen <span class="math inline">\(\vec{0}\)</span>, entonces dicha función puede utilizarse para calcular momentos. Por ejemplo:</p>
+<p><span class="math display">\[
+\mathbb{E}[X_1^3] = \left. \frac{\partial^3}{\partial t_1^3} M_X(t_1, t_2, \dots, t_n) \right|_{t = \vec{0}}
+\]</span></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="distribución-normal-multivariada" class="level2">
+<h2 class="anchored" data-anchor-id="distribución-normal-multivariada">Distribución normal multivariada</h2>
+<p>Sea <span class="math inline">\(\mu \in \mathbb{R}^n\)</span>, <span class="math inline">\(\Sigma \in M(n, \mathbb{R})\)</span> donde <span class="math inline">\(\Sigma^T = \Sigma\)</span> y <span class="math inline">\(\Sigma\)</span> es una matriz definida positiva. Se dice que el v.e. <span class="math inline">\(X = (X_1, X_2, \dots, X_n)\)</span> tiene una distribución normal multivariada con media <span class="math inline">\(\mu\)</span> y matriz de covarianza <span class="math inline">\(\Sigma\)</span>, si su función de densidad viene dada por:</p>
+<p><span class="math display">\[
+f(X) = \frac{1}{(2\pi)^{n/2} |\Sigma|^{1/2}} \cdot e^{-\frac{1}{2} (X - \mu)^T \Sigma^{-1} (X - \mu)}
+\]</span></p>
+<p>Al igual que en el caso de la normal bivariada, si el vector <span class="math inline">\(X\)</span> es normal multivariado entonces cada componente del vector es normal. De hecho, usando el resultado de la diapositiva anterior puede probarse que toda combinación lineal de las variables <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> es normal también.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Advertencia
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Cuidado:</strong><br>
+Como vimos anteriormente puede ocurrir que <span class="math inline">\(X, Y\)</span> sean dos variables normales (no independientes), pero que el vector <span class="math inline">\((X, Y)\)</span> no sea normal bivariado. Esta situación se generaliza para dimensiones superiores.</p>
+</div>
+</div>
+</section>
+<section id="vectores-aleatorios-discretos" class="level2">
+<h2 class="anchored" data-anchor-id="vectores-aleatorios-discretos">Vectores Aleatorios Discretos</h2>
+<p>Lo de vectores aleatorios absolutamente continuos puede ser adaptado para ser utilizado en el caso de vectores discretos.</p>
+<section id="función-de-masa-condicional" class="level3">
+<h3 class="anchored" data-anchor-id="función-de-masa-condicional">Función de masa condicional</h3>
+<p>Sea <span class="math inline">\((X, Y)\)</span> un v.e. discreto con función de probabilidad <span class="math inline">\(p_{X,Y}(x,y)\)</span> y marginales <span class="math inline">\(p_X(x)\)</span>, <span class="math inline">\(p_Y(y)\)</span>. <span class="math inline">\(\forall x : p_X(x) &gt; 0\)</span>.</p>
+<p>Se define la pmf condicional de <span class="math inline">\(Y\)</span> dado que <span class="math inline">\(X = x\)</span> como:</p>
+<p><span class="math display">\[
+p_{Y|X}(y \mid x) = \frac{P(X = x, Y = y)}{P(X = x)} = \frac{p(x,y)}{p_X(x)}
+\]</span></p>
+<p>Similarmente, para cada <span class="math inline">\(y\)</span> tal que <span class="math inline">\(p_Y(y) &gt; 0\)</span> se define la pmf de <span class="math inline">\(X\)</span> dado que <span class="math inline">\(Y = y\)</span> como:</p>
+<p><span class="math display">\[
+p_{X|Y}(x \mid y) = \frac{p_{X,Y}(x,y)}{p_Y(y)}
+\]</span></p>
+<hr>
+</section>
+<section id="esperanza-condicional" class="level3">
+<h3 class="anchored" data-anchor-id="esperanza-condicional">Esperanza condicional</h3>
+<p>Sea <span class="math inline">\(Y\)</span> una v.a. tal que <span class="math inline">\(\mathbb{E}|Y| &lt; \infty\)</span> y sea <span class="math inline">\(g\)</span> una función.<br>
+La esperanza condicional de <span class="math inline">\(g(Y)\)</span> dado <span class="math inline">\(X = x\)</span> se define como:</p>
+<p><span class="math display">\[
+\phi(x) := \mathbb{E}(g(Y) \mid X = x) = \sum_{y \in \text{Im}(Y)} g(y) \, p_{Y|X}(y \mid x)
+\]</span></p>
+<p>siempre que la anterior suma (en caso de ser una serie) converja absolutamente.</p>
+<hr>
+</section>
+</section>
+<section id="densidad-condicional" class="level2">
+<h2 class="anchored" data-anchor-id="densidad-condicional">Densidad condicional</h2>
+<p>Sea <span class="math inline">\((X,Y)\)</span> un v.e. absolutamente continuo con joint pdf <span class="math inline">\(f_{X,Y}(x,y)\)</span><br>
+y con marginal pdf <span class="math inline">\(f_X(x)\)</span>, <span class="math inline">\(f_Y(y)\)</span>.<br>
+Para cada <span class="math inline">\(x\)</span> tal que <span class="math inline">\(f_X(x) &gt; 0\)</span> se define la pdf condicional de <span class="math inline">\(Y\)</span> dado que <span class="math inline">\(X = x\)</span> como:</p>
+<p><span class="math display">\[
+f_{Y|X}(y \mid x) = \frac{f_{X,Y}(x,y)}{f_X(x)}
+\]</span></p>
+<p>Similarmente <span class="math inline">\(\forall y : f_Y(y) &gt; 0\)</span> se define la densidad condicional de <span class="math inline">\(X\)</span> dado que <span class="math inline">\(Y = y\)</span> como:</p>
+<p><span class="math display">\[
+\phi(x) := \mathbb{E}[g(Y) \mid X = x] = \int_{-\infty}^{+\infty} g(y) \cdot f_{Y|X}(y|x) \, dy
+\]</span></p>
+<p>siempre que la anterior integral converja absolutamente.<br>
+De manera similar al caso discreto, se define <span class="math inline">\(\mathbb{E}[g(X) \mid X]\)</span>.</p>
+<hr>
+</section>
+<section id="varianza-condicional" class="level2">
+<h2 class="anchored" data-anchor-id="varianza-condicional">Varianza condicional</h2>
+<p>También, la varianza condicional de <span class="math inline">\(Y\)</span> dada <span class="math inline">\(X = x\)</span> se define como:</p>
+<p><span class="math display">\[
+r(x) = \text{Var}[Y \mid X = x] = \mathbb{E}\left[Y^2 \mid X = x\right] - \left( \mathbb{E}[Y \mid X = x] \right)^2
+\]</span></p>
+<p>Esta definición aplica tanto para el caso discreto como para el caso continuo.</p>
+<section id="propiedades-1" class="level3">
+<h3 class="anchored" data-anchor-id="propiedades-1">Propiedades</h3>
+<p>Tanto para el caso discreto como absolutamente continuo (y otros más generales), se cumplen las siguientes propiedades (asumiendo que las esperanzas y varianzas involucradas existen):</p>
+<ul>
+<li><p><strong>Ley de esperanza total:</strong></p>
+<p>La esperanza condicional <span class="math inline">\(\mathbb{E}[X \mid Y]\)</span> es una v.a. la cual es una función de <span class="math inline">\(Y\)</span> y satisface que:</p>
+<p><span class="math display">\[
+\mathbb{E}[\mathbb{E}[X \mid Y]] = \mathbb{E}[X]
+\]</span></p>
+<p>Más generalmente:</p>
+<p><span class="math display">\[
+\mathbb{E}[X] = \sum_{i=1}^n P(A_i) \mathbb{E}[X \mid A_i]
+\]</span></p></li>
+<li><p><strong>Linealidad:</strong></p>
+<p>La esperanza condicional es lineal, i.e.:</p>
+<p><span class="math display">\[
+\mathbb{E}[\alpha X + \beta Y \mid Z] = \alpha \cdot \mathbb{E}[X \mid Z] + \beta \cdot \mathbb{E}[Y \mid Z]
+\]</span></p></li>
+<li><p><strong>Independencia:</strong></p>
+<p>Si <span class="math inline">\(X, Y\)</span> son independientes entonces:</p>
+<p><span class="math display">\[
+\mathbb{E}[X \mid Y] = \mathbb{E}[X]
+\]</span></p></li>
+<li><p><strong>Sacar información conocida:</strong></p>
+<p><span class="math display">\[
+\mathbb{E}[X \mid X] = X
+\]</span></p>
+<p><span class="math display">\[
+\mathbb{E}[g(X) \mid X] = g(X)
+\]</span></p>
+<p>Y más generalmente:</p>
+<p><span class="math display">\[
+\mathbb{E}[X \cdot g(Y) \mid Y] = g(Y) \cdot \mathbb{E}[X \mid Y]
+\]</span></p></li>
+<li><p><strong>Ley de varianza total:</strong></p>
+<p><span class="math display">\[
+\text{Var}[X] = \mathbb{E}[\text{Var}[X \mid Y]] + \text{Var}(\mathbb{E}[X \mid Y])
+\]</span></p></li>
+</ul>
+</section>
+</section>
+<section id="definición-formal-de-mathbbex-mid-mathcalh" class="level2">
+<h2 class="anchored" data-anchor-id="definición-formal-de-mathbbex-mid-mathcalh">Definición formal de <span class="math inline">\(\mathbb{E}[X \mid \mathcal{H}]\)</span></h2>
+<p>Sea <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> e.p y sea <span class="math inline">\(X : \Omega \to \mathbb{R}\)</span> una v.a. tal que <span class="math inline">\(\mathbb{E}|X| &lt; \infty\)</span> y sea <span class="math inline">\(\mathcal{H} \subset \mathcal{F}\)</span> otra <span class="math inline">\(\sigma\)</span>–álgebra.</p>
+<p>Una esperanza condicional de <span class="math inline">\(X\)</span> dado <span class="math inline">\(\mathcal{H}\)</span> es cualquier v.a. <span class="math inline">\(Z : \Omega \to \mathbb{R}\)</span> tal que:</p>
+<ol type="1">
+<li><span class="math inline">\(Z^{-1}(B) \in \mathcal{H}\)</span> para todo <span class="math inline">\(B \in \mathcal{B}(\mathbb{R})\)</span><br>
+</li>
+<li><span class="math inline">\(\mathbb{E}[Z \cdot 1_H] = \mathbb{E}[X \cdot 1_H]\)</span> para todo <span class="math inline">\(H \in \mathcal{H}\)</span></li>
+</ol>
+<section id="observaciones" class="level3">
+<h3 class="anchored" data-anchor-id="observaciones">Observaciones:</h3>
+<ul>
+<li>La esperanza condicional no es la única que dicha unicidad sea entendida en un sentido casi siempre.</li>
+<li>La “única” esperanza condicional de <span class="math inline">\(X\)</span> dado <span class="math inline">\(\mathcal{H}\)</span> se denota por <span class="math inline">\(\mathbb{E}[Y \mid \mathcal{H}]\)</span>.</li>
+<li>Cuando <span class="math inline">\(Y\)</span> es una v.a. se define <span class="math inline">\(\mathbb{E}[X \mid Y]\)</span> como <span class="math inline">\(\mathbb{E}[X \mid \sigma(Y)]\)</span> donde <span class="math inline">\(\sigma(Y)\)</span> es la <span class="math inline">\(\sigma\)</span>–álgebra generada por la v.a. <span class="math inline">\(Y\)</span>.</li>
+<li>La esperanza condicional <span class="math inline">\(\mathbb{E}[X \mid \mathcal{H}]\)</span> se interpreta como la mejor estimación que puede hacerse de <span class="math inline">\(X\)</span> en términos de la información contenida en <span class="math inline">\(\mathcal{H}\)</span>.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="esperanza-condicional-respecto-a-un-evento" class="level2">
+<h2 class="anchored" data-anchor-id="esperanza-condicional-respecto-a-un-evento">Esperanza condicional respecto a un evento</h2>
+<p>Sea <span class="math inline">\(X\)</span> en <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> y sea <span class="math inline">\(B \in \mathcal{F}\)</span> con <span class="math inline">\(P(B) &gt; 0\)</span>.<br>
+Suponga que <span class="math inline">\(\mathbb{E}|X| &lt; \infty\)</span>.</p>
+<p><span class="math display">\[
+\mathbb{E}[X \mid B] = \frac{\mathbb{E}[X \cdot \mathbf{1}_B]}{P(B)}
+\]</span></p>
+<p>Sean <span class="math inline">\((B_i)_{i=1}^n\)</span> eventos en <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> partición de <span class="math inline">\(\Omega\)</span>:</p>
+<p><span class="math display">\[
+\mathbb{E}[X] = \sum_{i=1}^n \mathbb{E}[X \mid B_i] \cdot P(B_i)
+\]</span></p>
+<hr>
+</section>
+<section id="propiedad-minimizadora-de-la-esperanza" class="level2">
+<h2 class="anchored" data-anchor-id="propiedad-minimizadora-de-la-esperanza">Propiedad minimizadora de la esperanza</h2>
+<p>La esperanza condicional <span class="math inline">\(\mathbb{E}[Y \mid X]\)</span> suele ser interpretada como la mejor predicción que puede hacerse de la variable <span class="math inline">\(Y\)</span> a partir de la variable <span class="math inline">\(X\)</span>.</p>
+<p>Suponga que se observa el valor de una v.a. <span class="math inline">\(X\)</span> y luego, con base en el valor observado, se intenta predecir el valor de una segunda v.a. <span class="math inline">\(Y\)</span>.</p>
+<p>Denótese por <span class="math inline">\(g(X)\)</span> el predictor; i.e., si se observa que <span class="math inline">\(X = x\)</span>, entonces <span class="math inline">\(g(x)\)</span> es nuestra predicción para el valor de <span class="math inline">\(Y\)</span>.<br>
+La intención es escoger <span class="math inline">\(g(X)\)</span> de manera que en cierta forma esté cerca de la variable <span class="math inline">\(Y\)</span>.</p>
+<p>Por supuesto, en general, hay distintas maneras en que se puede medir la cercanía de <span class="math inline">\(g(X)\)</span> con <span class="math inline">\(Y\)</span>, pero pensemos que se desea utilizar como criterio la expresión:</p>
+<p><span class="math display">\[
+\mathbb{E}[(Y - g(X))^2]
+\]</span></p>
+<p>Para esto se requiere asumir que <span class="math inline">\(Y\)</span> y <span class="math inline">\(g(X)\)</span> satisfacen ciertas condiciones en relación con sus segundos momentos.</p>
+<p>Asumiendo que tales condiciones se cumplen, no es difícil mostrar que:</p>
+<p><span class="math display">\[
+\mathbb{E}[(Y - g(X))^2] \geq \mathbb{E}[(Y - \mathbb{E}[Y \mid X])^2]
+\]</span></p>
+<p>De manera que, bajo esta noción de cercanía, se puede ver que <span class="math inline">\(\mathbb{E}[Y \mid X]\)</span> es en efecto el mejor predictor de <span class="math inline">\(Y\)</span> que puede hacerse a partir de <span class="math inline">\(X\)</span>.</p>
+<hr>
+</section>
+<section id="revisando-la-normal-bivariada" class="level2">
+<h2 class="anchored" data-anchor-id="revisando-la-normal-bivariada">Revisando la normal bivariada</h2>
+<p>Sean <span class="math inline">\(Z_1, Z_2\)</span> dos v.a. indep. con distribución <span class="math inline">\(\mathcal{N}(0,1)\)</span> y sean <span class="math inline">\(\mu_X, \mu_Y \in \mathbb{R}, \sigma_X, \sigma_Y \in \mathbb{R}^+, \rho \in [-1,1]\)</span>.</p>
+<p>Usando la fórmula de cambio de variable se puede mostrar que si<br>
+<span class="math inline">\(X = \sigma_X Z_1 + \mu_X\)</span>,<br>
+<span class="math inline">\(Y = \mu_Y + \sigma_Y(\rho Z_1 + \sqrt{1 - \rho^2} Z_2)\)</span>,<br>
+entonces el vector <span class="math inline">\((X,Y)\)</span> sigue una distribución normal bivariada donde:</p>
+<ul>
+<li><span class="math inline">\(\mathbb{E}(X) = \mu_X\)</span><br>
+</li>
+<li><span class="math inline">\(\mathbb{E}(Y) = \mu_Y\)</span><br>
+</li>
+<li><span class="math inline">\(\text{Var}(X) = \sigma_X^2\)</span><br>
+</li>
+<li><span class="math inline">\(\text{Var}(Y) = \sigma_Y^2\)</span><br>
+</li>
+<li><span class="math inline">\(\text{Cov}(X,Y) = \sigma_X \sigma_Y \rho\)</span></li>
+</ul>
+<p>De hecho, la anterior implicación es reversible en el sentido de que si el vector <span class="math inline">\((X,Y)\)</span> sigue una distribución normal bivariada con <span class="math inline">\(\mathbb{E}(X) = \mu_X\)</span>, <span class="math inline">\(\mathbb{E}(Y) = \mu_Y\)</span>, <span class="math inline">\(\text{Var}(X) = \sigma_X^2\)</span>, <span class="math inline">\(\text{Var}(Y) = \sigma_Y^2\)</span>, <span class="math inline">\(\text{Cov}(X,Y) = \sigma_X \sigma_Y \rho\)</span>, entonces existen variables aleatorias <span class="math inline">\(Z_1, Z_2\)</span> independientes con distribución <span class="math inline">\(\mathcal{N}(0,1)\)</span>, tal que:</p>
+<p><span class="math display">\[
+X = \sigma_X Z_1 + \mu_X,\quad Y = \mu_Y + \sigma_Y (\rho Z_1 + \sqrt{1 - \rho^2} Z_2)
+\]</span></p>
+<p>Algo muy conveniente de los ejemplos es que permite usar propiedades de esperanzas, varianzas y covarianzas para verificar que:</p>
+<ul>
+<li><span class="math inline">\(\mathbb{E}(X) = \mu_X\)</span></li>
+<li><span class="math inline">\(\mathbb{E}(Y) = \mu_Y\)</span></li>
+<li><span class="math inline">\(\text{Var}(X) = \sigma_X^2\)</span></li>
+<li><span class="math inline">\(\text{Var}(Y) = \sigma_Y^2\)</span></li>
+<li><span class="math inline">\(\text{Cov}(X,Y) = \sigma_X \sigma_Y \rho\)</span></li>
+</ul>
+<p>Similarmente, usando propiedades de las variables con distribución normal y de la esperanza condicional, puede verse que si <span class="math inline">\((X,Y)\)</span> es un v.e. con distribución normal bivariada con parámetros <span class="math inline">\(\mu_X, \mu_Y, \sigma_X, \sigma_Y, \rho\)</span>, entonces:</p>
+<p><span class="math display">\[
+\mathbb{E}[Y \mid X = x] = \mu_Y + \rho \sigma_Y \frac{x - \mu_X}{\sigma_X}
+\]</span></p>
+<p><span class="math display">\[
+\text{Var}[Y \mid X = x] = (1 - \rho^2) \sigma_Y^2
+\]</span></p>
+<p><strong>Nota:</strong> Un resultado similar aplica para <span class="math inline">\(X \mid Y = y\)</span>.</p>
+</section>
+<section id="funciones-importantes" class="level2">
+<h2 class="anchored" data-anchor-id="funciones-importantes">Funciones importantes</h2>
+<p>Sea <span class="math inline">\(\mathbf{X} = (X_1, \dots, X_n)\)</span> un vector aleatorio <span class="math inline">\(n\)</span>–dimensional. Se utiliza <span class="math inline">\(\mathbf{t} \cdot \mathbf{X} = \mathbf{t}^\mathsf{T} \mathbf{X}\)</span> en lugar de <span class="math inline">\(tX\)</span>:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Función Característica">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Función Característica
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\varphi_{\mathbf{X}}(\mathbf{t}) = \mathbb{E} \left[ e^{i \mathbf{t}^\mathsf{T} \mathbf{X}} \right]
+= \int_{\mathbb{R}^n} e^{i \mathbf{t}^\mathsf{T} \mathbf{x}} \cdot f_{\mathbf{X}}(\mathbf{x}) \, d\mathbf{x}
+\]</span></p>
+<p>Está definida para todo <span class="math inline">\(\mathbf{t} \in \mathbb{R}^n\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Función Generadora de Momentos">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Función Generadora de Momentos
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+M_{\mathbf{X}}(\mathbf{t}) = \mathbb{E} \left[ e^{\mathbf{t}^\mathsf{T} \mathbf{X}} \right]
+= \int_{\mathbb{R}^n} e^{\mathbf{t}^\mathsf{T} \mathbf{x}} \cdot f_{\mathbf{X}}(\mathbf{x}) \, d\mathbf{x}
+\]</span></p>
+<p>Válida para todo <span class="math inline">\(\mathbf{t}\)</span> donde dicho valor esperado exista.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Función Generadora de Probabilidades">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Función Generadora de Probabilidades
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+G_{\mathbf{X}}(\mathbf{t}) = \mathbb{E} \left[ \mathbf{t}^{\mathbf{X}} \right]
+= \int_{\mathbb{R}^n} \mathbf{t}^{\mathbf{x}} \cdot f_{\mathbf{X}}(\mathbf{x}) \, d\mathbf{x}
+\]</span></p>
+<p>Válida para todo <span class="math inline">\(\mathbf{t}\)</span> donde dicho valor esperado exista.</p>
+</div>
+</div>
+</section>
+<section id="estadísticos-de-orden" class="level2">
+<h2 class="anchored" data-anchor-id="estadísticos-de-orden">Estadísticos de orden</h2>
+<p>Sean <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> variables independientes absolutamente continuas e idénticamente distribuidas.</p>
+<p>Es claro que por definición:</p>
+<p><span class="math display">\[
+X_{(1)} \leq X_{(2)} \leq X_{(3)} \leq \cdots \leq X_{(n)}
+\]</span></p>
+<p>Definamos:</p>
+<ul>
+<li><span class="math inline">\(X_{(1)}\)</span> = el más pequeño de <span class="math inline">\(X_1, X_2, \dots, X_n\)</span></li>
+<li><span class="math inline">\(X_{(2)}\)</span> = el segundo más pequeño</li>
+<li><span class="math inline">\(X_{(3)}\)</span> = el tercero más pequeño<br>
+<span class="math inline">\(\;\;\vdots\)</span></li>
+<li><span class="math inline">\(X_{(n)}\)</span> = el mayor</li>
+</ul>
+<p>Sean <span class="math inline">\(f\)</span> y <span class="math inline">\(F\)</span> la función de densidad y distribución (común) de las variables <span class="math inline">\(X_1, X_2, \dots, X_n\)</span>, y <span class="math inline">\(X_{(1)}, X_{(2)}, \dots, X_{(n)}\)</span> los estadísticos de orden. Sean <span class="math inline">\(i, j \in \{1, 2, \dots, n\}\)</span>:</p>
+<section id="función-de-densidad-conjunta" class="level3">
+<h3 class="anchored" data-anchor-id="función-de-densidad-conjunta">Función de densidad conjunta</h3>
+<p><span class="math display">\[
+f_{X_{(1)}, \dots, X_{(n)}}(x_1, \dots, x_n) =
+\begin{cases}
+n! \prod\limits_{j=1}^{n} f(x_j) &amp; \text{si } x_1 &lt; x_2 &lt; \cdots &lt; x_n \\
+0 &amp; \text{en otro caso}
+\end{cases}
+\]</span></p>
+</section>
+<section id="función-de-densidad-del-j-ésimo-orden" class="level3">
+<h3 class="anchored" data-anchor-id="función-de-densidad-del-j-ésimo-orden">Función de densidad del <span class="math inline">\(j\)</span>-ésimo orden</h3>
+<p><span class="math display">\[
+f_{X_{(j)}}(x) = \binom{n-1}{j-1} F^{j-1}(x) \cdot (1 - F(x))^{n-j} \cdot f(x)
+\]</span></p>
+</section>
+<section id="función-de-distribución-de-x_j" class="level3">
+<h3 class="anchored" data-anchor-id="función-de-distribución-de-x_j">Función de distribución de <span class="math inline">\(X_{(j)}\)</span></h3>
+<p><span class="math display">\[
+F_{X_{(j)}}(x) = \sum_{k=j}^{n} \binom{n}{k} F^k(x)(1 - F(x))^{n-k}
+\]</span></p>
+<blockquote class="blockquote">
+<p><em>Intuición</em>: <span class="math inline">\(X_{(j)} &lt; x \Leftrightarrow\)</span> al menos <span class="math inline">\(j\)</span> de las variables son menores que <span class="math inline">\(x\)</span></p>
+</blockquote>
+</section>
+<section id="función-de-distribución-conjunta-de-x_i-x_j-con-i-j" class="level3">
+<h3 class="anchored" data-anchor-id="función-de-distribución-conjunta-de-x_i-x_j-con-i-j">Función de distribución conjunta de <span class="math inline">\(X_{(i)}, X_{(j)}\)</span> con <span class="math inline">\(i &lt; j\)</span></h3>
+<p><span class="math display">\[
+f_{X_{(i)}, X_{(j)}}(x_i, x_j) =
+\tbinom{n}{i-1, j-i-1, 1, n-j} F^{i-1}(x_i) (F(x_j) - F(x_i))^{j-i-1} (1 - F(x_j))^{n-j} f(x_i) f(x_j)
+\]</span></p>
+<blockquote class="blockquote">
+<p><em>Intuición</em>: Una variable igual a <span class="math inline">\(x_i\)</span>, otra a <span class="math inline">\(x_j\)</span>, <span class="math inline">\(i-1\)</span> menores a <span class="math inline">\(x_i\)</span>, <span class="math inline">\(n-j\)</span> mayores que <span class="math inline">\(x_j\)</span>, y <span class="math inline">\(j-i-1\)</span> entre <span class="math inline">\(x_i\)</span> y <span class="math inline">\(x_j\)</span>.</p>
+</blockquote>
+<hr>
+</section>
+<section id="rango-de-la-muestra-aleatoria" class="level3">
+<h3 class="anchored" data-anchor-id="rango-de-la-muestra-aleatoria">Rango de la muestra aleatoria</h3>
+<p>Sean <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> v.a. independientes absolutamente continuas e idénticamente distribuidas con distribución uniforme <span class="math inline">\(U(0,1)\)</span>.</p>
+<p>Se define la variable del rango como:</p>
+<p><span class="math display">\[
+V = X_{(n)} - X_{(1)} \sim \text{Beta}(n - 1, 2)
+\]</span></p>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas</h2>
+
+<ol>
+<li id="fn1"><p>Estas propiedades son válidas para todos los tipos de variables aleatorias (discretas, absolutamente continuas, mixtas, etc).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Tanto la matriz de covarianza como la de correlación son matrices simétricas.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2025 | <a href="https://www.linkedin.com/in/diego-vega-171629345/">LinkedIn</a> | <a href="diegovv13@gmail.com">Correo</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

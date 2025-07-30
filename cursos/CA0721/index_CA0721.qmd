@@ -12,3 +12,4 @@ Bienvenido a los apuntes del curso **CA0721**.
 - [Tema 2: Introducción a la Probabilidad](intro_proba_CA0721.qmd)
 - [Tema 3: Teoría General de la Probabilidad](teoria_general_proba_CA0721.qmd)
 - [Tema 4: Variables Aleatorias](variables_aleatorias_CA0721.qmd)
+- [Tema 5: Vectores Aleatorios](vectores_aleatorios_CA0721.qmd)

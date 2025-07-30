@@ -113,7 +113,7 @@
     "href": "cursos/CA0721/index_CA0721.html#temas",
     "title": "CA0721: Probabilidad",
     "section": "Temas",
-    "text": "Temas\n\nTema 1: Preliminares\nTema 2: Introducción a la Probabilidad\nTema 3: Teoría General de la Probabilidad\nTema 4: Variables Aleatorias",
+    "text": "Temas\n\nTema 1: Preliminares\nTema 2: Introducción a la Probabilidad\nTema 3: Teoría General de la Probabilidad\nTema 4: Variables Aleatorias\nTema 5: Vectores Aleatorios",
     "crumbs": [
       "Inicio",
       "Página principal del curso"
@@ -320,6 +320,266 @@
     "crumbs": [
       "Inicio",
       "Tema 4: Variables Aleatorias"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html",
+    "title": "Vectores Aleatorios",
+    "section": "",
+    "text": "Un vector aleatorio (v.e) sobre un e.p \\((\\Omega, \\mathcal{F}, P)\\) es una función\n\\[\nX : \\Omega \\to \\mathbb{R}^n \\quad | \\quad X^{-1}(B) \\in \\mathcal{F} \\quad \\forall B \\in \\mathcal{B}(\\mathbb{R}^n)\n\\]\ndonde \\(\\mathcal{B}(\\mathbb{R}^n)\\) denota la \\(\\sigma\\)-álgebra de Borel en \\(\\mathbb{R}^n\\), es decir \\(\\mathcal{B}(\\mathbb{R}^n)\\) es la \\(\\sigma\\)-álgebra generada por todos los conjuntos abiertos de \\(\\mathbb{R}^n\\).\nPara mantener la presentación sencilla se expondrá la teoría usando vectores \\((X, Y)\\) aunque la teoría es fácilmente extendible a vectores en más dimensiones.",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#definición",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#definición",
+    "title": "Vectores Aleatorios",
+    "section": "",
+    "text": "Un vector aleatorio (v.e) sobre un e.p \\((\\Omega, \\mathcal{F}, P)\\) es una función\n\\[\nX : \\Omega \\to \\mathbb{R}^n \\quad | \\quad X^{-1}(B) \\in \\mathcal{F} \\quad \\forall B \\in \\mathcal{B}(\\mathbb{R}^n)\n\\]\ndonde \\(\\mathcal{B}(\\mathbb{R}^n)\\) denota la \\(\\sigma\\)-álgebra de Borel en \\(\\mathbb{R}^n\\), es decir \\(\\mathcal{B}(\\mathbb{R}^n)\\) es la \\(\\sigma\\)-álgebra generada por todos los conjuntos abiertos de \\(\\mathbb{R}^n\\).\nPara mantener la presentación sencilla se expondrá la teoría usando vectores \\((X, Y)\\) aunque la teoría es fácilmente extendible a vectores en más dimensiones.",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#función-de-distribución",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#función-de-distribución",
+    "title": "Vectores Aleatorios",
+    "section": "Función de distribución",
+    "text": "Función de distribución\nLa función de distribución conjunta de un vector aleatorio continuo \\((X, Y)\\) corresponde a la función\n\\[\nF_{X,Y}(x, y) = P[X \\leq x, Y \\leq y]\n\\]\nSe pueden recuperar las funciones de distribución mediante\n\\[\nF_X(x) = \\lim_{y \\to +\\infty} F_{X,Y}(x, y), \\quad\nF_Y(y) = \\lim_{x \\to +\\infty} F_{X,Y}(x, y)\n\\]\nEn el caso de vectores aleatorios absolutamente continuos existe una función no negativa \\(f_{X,Y}(x, y)\\) tal que\n\\[\nF_{X,Y}(x, y) = \\int_{-\\infty}^x \\int_{-\\infty}^y f_{X,Y}(u, v) \\, dv \\, du\n\\]\nA \\(f_{X,Y}(x, y)\\) se le dice la función de densidad conjunta (joint pdf) de \\((X, Y)\\).\nEn particular, cuando \\(f_{X,Y}(x, y)\\) es continua, se cumple que\n\\[\n\\frac{\\partial^2}{\\partial x \\, \\partial y} F_{X,Y}(x, y) = f_{X,Y}(x, y)\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#densidades-marginales",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#densidades-marginales",
+    "title": "Vectores Aleatorios",
+    "section": "Densidades marginales",
+    "text": "Densidades marginales\n\\(f_{X,Y}(x, y)\\) continua es la joint pdf de \\((X, Y)\\). Se pueden encontrar las pdf \\(f_X, f_Y\\) de la siguiente manera:\n\\[\n\\begin{aligned}\nf_X(x) &= \\frac{d}{dx} P(X \\leq x) \\\\\n       &= \\frac{d}{dx} \\int_{-\\infty}^x \\int_{-\\infty}^{+\\infty} f_{X,Y}(u, v) \\, dv \\, du \\\\\n       &= \\int_{-\\infty}^{+\\infty} f_{X,Y}(x, v) \\, dv\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#cálculo-de-probabilidades",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#cálculo-de-probabilidades",
+    "title": "Vectores Aleatorios",
+    "section": "Cálculo de probabilidades",
+    "text": "Cálculo de probabilidades\nSea \\(D \\subset \\mathbb{R}^2\\) una región en el plano que cumple con las condiciones para ser Riemann integrable.\n\\(f_{X,Y}(x, y)\\) es la joint pdf de \\((X, Y)\\) y tiene la siguiente propiedad:\n\\[\nP[(X, Y) \\in D] = \\iint_D f_{X,Y}(x, y) \\, dA\n\\]\nAdemás, bajo las condiciones del Teorema de Fubini se cumple que la anterior integral doble puede calcularse tanto como una integral iterada en el orden \\(dx \\, dy\\) como una en el orden \\(dy \\, dx\\), aunque para esto los límites de integración deben acomodarse adecuadamente.",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#independencia",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#independencia",
+    "title": "Vectores Aleatorios",
+    "section": "Independencia",
+    "text": "Independencia\nSi \\(r, s\\) son funciones continuas y \\(X, Y\\) son independientes, entonces \\(r(X)\\) y \\(s(Y)\\) también son independientes.\nA partir de dicha definición puede probarse que \\(X, Y\\) son independientes:\n\\[\n\\Longleftrightarrow F_{X,Y}(x, y) = F_X(x) F_Y(y) \\quad \\forall x, y \\in \\mathbb{R}\n\\]\nAsumiendo que \\(F_X, F_Y\\) son derivables \\(\\forall \\mathbb{R}\\), entonces la anterior igualdad ocurre:\n\\[\n\\Longleftrightarrow f_{X,Y}(x, y) = f_X(x) f_Y(y) \\quad \\forall x, y \\in \\mathbb{R}\n\\]\nTeorema de Factorización:\nSi el vector \\((X, Y)\\) es absolutamente continuo, entonces\n\\[\nf_{X,Y}(x, y) = g(x) h(y) \\quad \\forall x, y \\in \\mathbb{R}\n\\]\npara ciertas funciones \\(g, h\\).",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#densidad-de-una-suma",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#densidad-de-una-suma",
+    "title": "Vectores Aleatorios",
+    "section": "Densidad de una suma",
+    "text": "Densidad de una suma\n\n\n\n\n\n\nNota\n\n\n\nTeorema:\nSi \\((X, Y)\\) es un vector absolutamente continuo y \\(f_{X,Y}\\) es su función de densidad conjunta, entonces la función de densidad de \\(X + Y\\) viene dada por:\n\\[\nf_{X+Y}(z) = \\int_{-\\infty}^{+\\infty} f_{X,Y}(u, z - u) \\, du \\quad \\text{para } z \\in \\mathbb{R}\n\\]\nNota:\nComo corolario del teorema anterior se obtiene que si \\(X, Y\\) son v.a. absolutamente continuas e independientes, entonces \\(f_{X,Y}(u, z - u) = f_X(u) f_Y(z - u)\\) y:\n\\[\nf_{X+Y}(z) = \\int_{-\\infty}^{+\\infty} f_X(u) f_Y(z - u) \\, du \\quad \\text{para } z \\in \\mathbb{R}\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#transformaciones-en-vectores-aleatorios",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#transformaciones-en-vectores-aleatorios",
+    "title": "Vectores Aleatorios",
+    "section": "Transformaciones en vectores aleatorios",
+    "text": "Transformaciones en vectores aleatorios\nSea \\((X, Y)\\) un v.e. abs. continuo con joint pdf \\(f_{X,Y}(x, y)\\) y sean \\(g_1(x, y), g_2(x, y)\\) dos funciones.\nDefínase:\n\n\\(A = \\{(x, y) \\in \\mathbb{R}^2 : f_{X,Y}(x, y) &gt; 0\\}\\)\n\n\\(B = \\{(u, v) \\in \\mathbb{R}^2 : u = g_1(x, y), v = g_2(x, y) \\ \\text{para algún } (x, y) \\in A\\}\\)\n\nSuponga que \\(g_1, g_2\\) son inyectivas en \\(A\\) de modo que la transformación \\((U, V) = T(x, y) = (g_1(x, y), g_2(x, y))\\) es biyectiva como función de \\(A\\) a \\(B\\) y en particular \\(T^{-1}(u, v) = (x, y) = (h_1(u, v), h_2(u, v))\\) existe.\nSuponga que \\(h_1, h_2\\) son \\(C^1\\) en \\(B\\) y que además para todo \\((u, v) \\in B\\) se tiene que\n\\[\nJ := \\left| \\begin{array}{cc}\n\\frac{\\partial x}{\\partial u} & \\frac{\\partial x}{\\partial v} \\\\\n\\frac{\\partial y}{\\partial u} & \\frac{\\partial y}{\\partial v}\n\\end{array} \\right| \\neq 0\n\\]\nEntonces el vector aleatorio \\((U, V)\\) es absolutamente continuo y su densidad conjunta \\(f_{U,V}(u, v)\\) viene dada por:\n\\[\nf_{U,V}(u, v) = \\begin{cases}\n0 & \\text{si } (u, v) \\notin B \\\\\nf_{X,Y}(x(u, v), y(u, v)) \\cdot |J| & \\text{si } (u, v) \\in B\n\\end{cases}\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#acerca-de-independencia",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#acerca-de-independencia",
+    "title": "Vectores Aleatorios",
+    "section": "Acerca de independencia",
+    "text": "Acerca de independencia\nLos conceptos de independencia, el teorema de factorización, funciones generadoras de momentos y cambios de variable para variables aleatorias se extienden de manera natural a dimensiones mayores a 2.",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#función-generadora-de-momentos",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#función-generadora-de-momentos",
+    "title": "Vectores Aleatorios",
+    "section": "Función generadora de momentos",
+    "text": "Función generadora de momentos\nLa función generadora de momentos de un vector \\(X = (X_1, X_2, \\dots, X_n)\\) corresponde a la función:\n\\[\nM_X(t_1, t_2, \\dots, t_n) = \\mathbb{E} \\left[ e^{\\sum\\limits_{j=1}^n t_j X_j} \\right]\n\\]\ndefinida en aquella región de \\(\\mathbb{R}^n\\) donde dicha esperanza exista.\n\n\n\n\n\n\nNota\n\n\n\nNota 1:\nEn el caso de que \\((X_1, X_2, \\dots, X_n)\\) sean independientes, se cumple que\n\\[\nM_X(t_1, t_2, \\dots, t_n) = \\prod_{j=1}^n M_{X_j}(t_j)\n\\]\nNota 2:\nSimilar al caso de dimensión 1, si la anterior \\(M_X(t_1, t_2, \\dots, t_n)\\) existe en un intervalo abierto del origen \\(\\vec{0}\\), entonces dicha función puede utilizarse para calcular momentos. Por ejemplo:\n\\[\n\\mathbb{E}[X_1^3] = \\left. \\frac{\\partial^3}{\\partial t_1^3} M_X(t_1, t_2, \\dots, t_n) \\right|_{t = \\vec{0}}\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#distribución-normal-multivariada",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#distribución-normal-multivariada",
+    "title": "Vectores Aleatorios",
+    "section": "Distribución normal multivariada",
+    "text": "Distribución normal multivariada\nSea \\(\\mu \\in \\mathbb{R}^n\\), \\(\\Sigma \\in M(n, \\mathbb{R})\\) donde \\(\\Sigma^T = \\Sigma\\) y \\(\\Sigma\\) es una matriz definida positiva. Se dice que el v.e. \\(X = (X_1, X_2, \\dots, X_n)\\) tiene una distribución normal multivariada con media \\(\\mu\\) y matriz de covarianza \\(\\Sigma\\), si su función de densidad viene dada por:\n\\[\nf(X) = \\frac{1}{(2\\pi)^{n/2} |\\Sigma|^{1/2}} \\cdot e^{-\\frac{1}{2} (X - \\mu)^T \\Sigma^{-1} (X - \\mu)}\n\\]\nAl igual que en el caso de la normal bivariada, si el vector \\(X\\) es normal multivariado entonces cada componente del vector es normal. De hecho, usando el resultado de la diapositiva anterior puede probarse que toda combinación lineal de las variables \\(X_1, X_2, \\dots, X_n\\) es normal también.\n\n\n\n\n\n\nAdvertencia\n\n\n\nCuidado:\nComo vimos anteriormente puede ocurrir que \\(X, Y\\) sean dos variables normales (no independientes), pero que el vector \\((X, Y)\\) no sea normal bivariado. Esta situación se generaliza para dimensiones superiores.",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#esperanzas",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#esperanzas",
+    "title": "Vectores Aleatorios",
+    "section": "Esperanzas",
+    "text": "Esperanzas\nSea \\((X, Y)\\) un v.e con joint pdf \\(f_{X,Y}(x,y)\\) y sea \\(g : \\mathbb{R}^2 \\to \\mathbb{R}\\) una función continua. Es importante señalar que incluso sin conocer dicha densidad el teorema del estadístico inconsciente sigue siendo válido en este contexto y nos dice que:\n\\[\n\\mathbb{E}[g(X,Y)] = \\int_{-\\infty}^{+\\infty} \\int_{-\\infty}^{+\\infty} g(x,y) f_{X,Y}(x,y) \\, dy dx\n\\]\nsiempre que la integral sea absolutamente convergente.\n\n\nPropiedades\n\nSi \\(\\mathbb{E}[X]\\) y \\(\\mathbb{E}[Y]\\) existen, entonces:\n\n\\[\n\\mathbb{E}[\\alpha X + \\beta Y] = \\alpha \\mathbb{E}[X] + \\beta \\mathbb{E}[Y] \\quad \\text{para todo } \\alpha, \\beta \\in \\mathbb{R}\n\\]\n\nSi \\(X, Y\\) son variables independientes, entonces:\n\n\\[\n\\mathbb{E}[XY] = \\mathbb{E}[X] \\, \\mathbb{E}[Y]\n\\]\n\nSi \\(X \\geq 0\\) c.s., entonces \\(\\mathbb{E}[X] \\geq 0\\).\nEl anterior resultado puede usarse para deducir algunas desigualdades tales como1:\n\nMonotonicidad de la esperanza:\nSi \\(X \\leq Y\\) c.s., entonces\n\\[\\mathbb{E}[X] \\leq \\mathbb{E}[Y]\\qquad\\text{(cuando ambas esperanzas existan)}\\]\nDesigualdad triangular:\n\\[|\\mathbb{E}[X]| \\leq \\mathbb{E}[|X|] \\quad \\text{ cuando }\\quad\\mathbb{E}(|X|) &lt; \\infty\\]\nCauchy-Schwarz:\n\\[|\\mathbb{E}[XY]| \\leq \\sqrt{\\mathbb{E}(X^2)} \\sqrt{\\mathbb{E}(Y^2)}\\quad \\text{ cuando }\\quad \\mathbb{E}[X^2] &lt; \\infty \\; \\text{ y }\\; \\mathbb{E}[Y^2] &lt; \\infty\\]",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#covarianza-correlación-y-matriz-de-covarianza",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#covarianza-correlación-y-matriz-de-covarianza",
+    "title": "Vectores Aleatorios",
+    "section": "Covarianza, correlación y matriz de covarianza",
+    "text": "Covarianza, correlación y matriz de covarianza\nDenótese:\n\\[\\mu_X = \\mathbb{E}(X) \\qquad \\mu_Y = \\mathbb{E}(Y)\\]\n\nEl valor esperado del vector \\((X, Y)\\) es el vector \\((\\mu_X, \\mu_Y)\\).\nLa covarianza de las variables \\(X, Y\\) se define como:\n\n\\[\n\\text{Cov}[X, Y] = \\mathbb{E} \\left[ (X - \\mu_X)(Y - \\mu_Y) \\right]\n\\]\n(De donde se deduce):\n\\[\n\\text{Var}[X] = \\text{Cov}[X, X], \\quad \\text{Cov}[X, Y] = \\text{Cov}[Y, X]\n\\]\n\nSi \\(\\text{Var}[X]\\) y \\(\\text{Var}[Y]\\) existen, entonces:\n\n\\[\n\\text{Var}[\\alpha X + \\beta Y] = \\alpha^2 \\text{Var}[X] + \\beta^2 \\text{Var}[Y] + 2\\alpha \\beta \\text{Cov}[X, Y]\n\\]\n\nEn particular, si \\(X\\) y \\(Y\\) son independientes, entonces:\n\n\\[\n\\text{Var}[\\alpha X + \\beta Y] = \\alpha^2 \\text{Var}[X] + \\beta^2 \\text{Var}[Y]\n\\]\n\nLa matriz de covarianza del vector \\((X, Y)\\) es la matriz:\n\n\\[\n\\Sigma(X,Y) =\n\\begin{pmatrix}\n\\text{Var}[X] & \\text{Cov}[X,Y] \\\\\n\\text{Cov}[Y,X] & \\text{Var}[Y]\n\\end{pmatrix}\n\\]\n\nEl coeficiente de correlación entre \\(X\\) y \\(Y\\) se define como:\n\n\\[\n\\rho_{XY} = \\frac{\\text{Cov}[X,Y]}{\\sigma_X \\sigma_Y}\n\\]\n\nLa matriz de correlación del vector \\((X, Y)\\) es la matriz2:\n\n\\[\n\\begin{pmatrix}\n1 & \\rho_{XY} \\\\\n\\rho_{YX} & 1\n\\end{pmatrix}\n\\]\n\n\nOtras propiedades\nSean \\(X, Y\\) dos variables aleatorias:\n\nSea \\(X\\) una v.a. no negativa c.s. Entonces \\(\\mathbb{E}[X] = 0\\) si y solo si \\(X = 0\\) c.s.\n\\(\\text{Cov}[X, Y] = \\mathbb{E}[XY] - \\mu_X \\mu_Y\\)\nSi \\(X, Y\\) son independientes, entonces \\(\\text{Cov}[X, Y] = 0\\)\n\\(|\\text{Cov}[X,Y]| \\leq \\sqrt{\\text{Var}[X]} \\sqrt{\\text{Var}[Y]}\\).\nEn particular, se tiene que \\(-1 \\leq \\rho_{XY} \\leq 1\\)",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#footnotes",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#footnotes",
+    "title": "Vectores Aleatorios",
+    "section": "Notas",
+    "text": "Notas\n\n\nEstas propiedades son válidas para todos los tipos de variables aleatorias (discretas, absolutamente continuas, mixtas, etc).↩︎\nTanto la matriz de covarianza como la de correlación son matrices simétricas.↩︎",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#vectores-aleatorios-discretos",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#vectores-aleatorios-discretos",
+    "title": "Vectores Aleatorios",
+    "section": "Vectores Aleatorios Discretos",
+    "text": "Vectores Aleatorios Discretos\nLo de vectores aleatorios absolutamente continuos puede ser adaptado para ser utilizado en el caso de vectores discretos.\n\nFunción de masa condicional\nSea \\((X, Y)\\) un v.e. discreto con función de probabilidad \\(p_{X,Y}(x,y)\\) y marginales \\(p_X(x)\\), \\(p_Y(y)\\). \\(\\forall x : p_X(x) &gt; 0\\).\nSe define la pmf condicional de \\(Y\\) dado que \\(X = x\\) como:\n\\[\np_{Y|X}(y \\mid x) = \\frac{P(X = x, Y = y)}{P(X = x)} = \\frac{p(x,y)}{p_X(x)}\n\\]\nSimilarmente, para cada \\(y\\) tal que \\(p_Y(y) &gt; 0\\) se define la pmf de \\(X\\) dado que \\(Y = y\\) como:\n\\[\np_{X|Y}(x \\mid y) = \\frac{p_{X,Y}(x,y)}{p_Y(y)}\n\\]\n\n\n\nEsperanza condicional\nSea \\(Y\\) una v.a. tal que \\(\\mathbb{E}|Y| &lt; \\infty\\) y sea \\(g\\) una función.\nLa esperanza condicional de \\(g(Y)\\) dado \\(X = x\\) se define como:\n\\[\n\\phi(x) := \\mathbb{E}(g(Y) \\mid X = x) = \\sum_{y \\in \\text{Im}(Y)} g(y) \\, p_{Y|X}(y \\mid x)\n\\]\nsiempre que la anterior suma (en caso de ser una serie) converja absolutamente.",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#densidad-condicional",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#densidad-condicional",
+    "title": "Vectores Aleatorios",
+    "section": "Densidad condicional",
+    "text": "Densidad condicional\nSea \\((X,Y)\\) un v.e. absolutamente continuo con joint pdf \\(f_{X,Y}(x,y)\\)\ny con marginal pdf \\(f_X(x)\\), \\(f_Y(y)\\).\nPara cada \\(x\\) tal que \\(f_X(x) &gt; 0\\) se define la pdf condicional de \\(Y\\) dado que \\(X = x\\) como:\n\\[\nf_{Y|X}(y \\mid x) = \\frac{f_{X,Y}(x,y)}{f_X(x)}\n\\]\nSimilarmente \\(\\forall y : f_Y(y) &gt; 0\\) se define la densidad condicional de \\(X\\) dado que \\(Y = y\\) como:\n\\[\n\\phi(x) := \\mathbb{E}[g(Y) \\mid X = x] = \\int_{-\\infty}^{+\\infty} g(y) \\cdot f_{Y|X}(y|x) \\, dy\n\\]\nsiempre que la anterior integral converja absolutamente.\nDe manera similar al caso discreto, se define \\(\\mathbb{E}[g(X) \\mid X]\\).",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#varianza-condicional",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#varianza-condicional",
+    "title": "Vectores Aleatorios",
+    "section": "Varianza condicional",
+    "text": "Varianza condicional\nTambién, la varianza condicional de \\(Y\\) dada \\(X = x\\) se define como:\n\\[\nr(x) = \\text{Var}[Y \\mid X = x] = \\mathbb{E}\\left[Y^2 \\mid X = x\\right] - \\left( \\mathbb{E}[Y \\mid X = x] \\right)^2\n\\]\nEsta definición aplica tanto para el caso discreto como para el caso continuo.\n\nPropiedades\nTanto para el caso discreto como absolutamente continuo (y otros más generales), se cumplen las siguientes propiedades (asumiendo que las esperanzas y varianzas involucradas existen):\n\nLey de esperanza total:\nLa esperanza condicional \\(\\mathbb{E}[X \\mid Y]\\) es una v.a. la cual es una función de \\(Y\\) y satisface que:\n\\[\n\\mathbb{E}[\\mathbb{E}[X \\mid Y]] = \\mathbb{E}[X]\n\\]\nMás generalmente:\n\\[\n\\mathbb{E}[X] = \\sum_{i=1}^n P(A_i) \\mathbb{E}[X \\mid A_i]\n\\]\nLinealidad:\nLa esperanza condicional es lineal, i.e.:\n\\[\n\\mathbb{E}[\\alpha X + \\beta Y \\mid Z] = \\alpha \\cdot \\mathbb{E}[X \\mid Z] + \\beta \\cdot \\mathbb{E}[Y \\mid Z]\n\\]\nIndependencia:\nSi \\(X, Y\\) son independientes entonces:\n\\[\n\\mathbb{E}[X \\mid Y] = \\mathbb{E}[X]\n\\]\nSacar información conocida:\n\\[\n\\mathbb{E}[X \\mid X] = X\n\\]\n\\[\n\\mathbb{E}[g(X) \\mid X] = g(X)\n\\]\nY más generalmente:\n\\[\n\\mathbb{E}[X \\cdot g(Y) \\mid Y] = g(Y) \\cdot \\mathbb{E}[X \\mid Y]\n\\]\nLey de varianza total:\n\\[\n\\text{Var}[X] = \\mathbb{E}[\\text{Var}[X \\mid Y]] + \\text{Var}(\\mathbb{E}[X \\mid Y])\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#propiedades-1",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#propiedades-1",
+    "title": "Vectores Aleatorios",
+    "section": "Propiedades",
+    "text": "Propiedades\nTanto para el caso discreto como absolutamente continuo (y otros más generales), se cumplen las siguientes propiedades (asumiendo que las esperanzas y varianzas involucradas existen):\n\nLey de esperanza total:\nLa esperanza condicional \\(\\mathbb{E}[X \\mid Y]\\) es una v.a. la cual es una función de \\(Y\\) y satisface que:\n\\[\n\\mathbb{E}[\\mathbb{E}[X \\mid Y]] = \\mathbb{E}[X]\n\\]\nMás generalmente:\n\\[\n\\mathbb{E}[X] = \\sum_{i=1}^n P(A_i) \\mathbb{E}[X \\mid A_i]\n\\]\nLinealidad:\nLa esperanza condicional es lineal, i.e.:\n\\[\n\\mathbb{E}[\\alpha X + \\beta Y \\mid Z] = \\alpha \\cdot \\mathbb{E}[X \\mid Z] + \\beta \\cdot \\mathbb{E}[Y \\mid Z]\n\\]\nIndependencia:\nSi \\(X, Y\\) son independientes entonces:\n\\[\n\\mathbb{E}[X \\mid Y] = \\mathbb{E}[X]\n\\]\nSacar información conocida:\n\\[\n\\mathbb{E}[X \\mid X] = X\n\\]\n\\[\n\\mathbb{E}[g(X) \\mid X] = g(X)\n\\]\nY más generalmente:\n\\[\n\\mathbb{E}[X \\cdot g(Y) \\mid Y] = g(Y) \\cdot \\mathbb{E}[X \\mid Y]\n\\]\nLey de varianza total:\n\\[\n\\text{Var}[X] = \\mathbb{E}[\\text{Var}[X \\mid Y]] + \\text{Var}(\\mathbb{E}[X \\mid Y])\n\\]"
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#definición-formal-de-mathbbex-mid-mathcalh",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#definición-formal-de-mathbbex-mid-mathcalh",
+    "title": "Vectores Aleatorios",
+    "section": "Definición formal de \\(\\mathbb{E}[X \\mid \\mathcal{H}]\\)",
+    "text": "Definición formal de \\(\\mathbb{E}[X \\mid \\mathcal{H}]\\)\nSea \\((\\Omega, \\mathcal{F}, P)\\) e.p y sea \\(X : \\Omega \\to \\mathbb{R}\\) una v.a. tal que \\(\\mathbb{E}|X| &lt; \\infty\\) y sea \\(\\mathcal{H} \\subset \\mathcal{F}\\) otra \\(\\sigma\\)–álgebra.\nUna esperanza condicional de \\(X\\) dado \\(\\mathcal{H}\\) es cualquier v.a. \\(Z : \\Omega \\to \\mathbb{R}\\) tal que:\n\n\\(Z^{-1}(B) \\in \\mathcal{H}\\) para todo \\(B \\in \\mathcal{B}(\\mathbb{R})\\)\n\n\\(\\mathbb{E}[Z \\cdot 1_H] = \\mathbb{E}[X \\cdot 1_H]\\) para todo \\(H \\in \\mathcal{H}\\)\n\n\nObservaciones:\n\nLa esperanza condicional no es la única que dicha unicidad sea entendida en un sentido casi siempre.\nLa “única” esperanza condicional de \\(X\\) dado \\(\\mathcal{H}\\) se denota por \\(\\mathbb{E}[Y \\mid \\mathcal{H}]\\).\nCuando \\(Y\\) es una v.a. se define \\(\\mathbb{E}[X \\mid Y]\\) como \\(\\mathbb{E}[X \\mid \\sigma(Y)]\\) donde \\(\\sigma(Y)\\) es la \\(\\sigma\\)–álgebra generada por la v.a. \\(Y\\).\nLa esperanza condicional \\(\\mathbb{E}[X \\mid \\mathcal{H}]\\) se interpreta como la mejor estimación que puede hacerse de \\(X\\) en términos de la información contenida en \\(\\mathcal{H}\\).",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#esperanza-condicional-respecto-a-un-evento",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#esperanza-condicional-respecto-a-un-evento",
+    "title": "Vectores Aleatorios",
+    "section": "Esperanza condicional respecto a un evento",
+    "text": "Esperanza condicional respecto a un evento\nSea \\(X\\) en \\((\\Omega, \\mathcal{F}, P)\\) y sea \\(B \\in \\mathcal{F}\\) con \\(P(B) &gt; 0\\).\nSuponga que \\(\\mathbb{E}|X| &lt; \\infty\\).\n\\[\n\\mathbb{E}[X \\mid B] = \\frac{\\mathbb{E}[X \\cdot \\mathbf{1}_B]}{P(B)}\n\\]\nSean \\((B_i)_{i=1}^n\\) eventos en \\((\\Omega, \\mathcal{F}, P)\\) partición de \\(\\Omega\\):\n\\[\n\\mathbb{E}[X] = \\sum_{i=1}^n \\mathbb{E}[X \\mid B_i] \\cdot P(B_i)\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#propiedad-minimizadora-de-la-esperanza",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#propiedad-minimizadora-de-la-esperanza",
+    "title": "Vectores Aleatorios",
+    "section": "Propiedad minimizadora de la esperanza",
+    "text": "Propiedad minimizadora de la esperanza\nLa esperanza condicional \\(\\mathbb{E}[Y \\mid X]\\) suele ser interpretada como la mejor predicción que puede hacerse de la variable \\(Y\\) a partir de la variable \\(X\\).\nSuponga que se observa el valor de una v.a. \\(X\\) y luego, con base en el valor observado, se intenta predecir el valor de una segunda v.a. \\(Y\\).\nDenótese por \\(g(X)\\) el predictor; i.e., si se observa que \\(X = x\\), entonces \\(g(x)\\) es nuestra predicción para el valor de \\(Y\\).\nLa intención es escoger \\(g(X)\\) de manera que en cierta forma esté cerca de la variable \\(Y\\).\nPor supuesto, en general, hay distintas maneras en que se puede medir la cercanía de \\(g(X)\\) con \\(Y\\), pero pensemos que se desea utilizar como criterio la expresión:\n\\[\n\\mathbb{E}[(Y - g(X))^2]\n\\]\nPara esto se requiere asumir que \\(Y\\) y \\(g(X)\\) satisfacen ciertas condiciones en relación con sus segundos momentos.\nAsumiendo que tales condiciones se cumplen, no es difícil mostrar que:\n\\[\n\\mathbb{E}[(Y - g(X))^2] \\geq \\mathbb{E}[(Y - \\mathbb{E}[Y \\mid X])^2]\n\\]\nDe manera que, bajo esta noción de cercanía, se puede ver que \\(\\mathbb{E}[Y \\mid X]\\) es en efecto el mejor predictor de \\(Y\\) que puede hacerse a partir de \\(X\\).",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#revisando-la-normal-bivariada",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#revisando-la-normal-bivariada",
+    "title": "Vectores Aleatorios",
+    "section": "Revisando la normal bivariada",
+    "text": "Revisando la normal bivariada\nSean \\(Z_1, Z_2\\) dos v.a. indep. con distribución \\(\\mathcal{N}(0,1)\\) y sean \\(\\mu_X, \\mu_Y \\in \\mathbb{R}, \\sigma_X, \\sigma_Y \\in \\mathbb{R}^+, \\rho \\in [-1,1]\\).\nUsando la fórmula de cambio de variable se puede mostrar que si\n\\(X = \\sigma_X Z_1 + \\mu_X\\),\n\\(Y = \\mu_Y + \\sigma_Y(\\rho Z_1 + \\sqrt{1 - \\rho^2} Z_2)\\),\nentonces el vector \\((X,Y)\\) sigue una distribución normal bivariada donde:\n\n\\(\\mathbb{E}(X) = \\mu_X\\)\n\n\\(\\mathbb{E}(Y) = \\mu_Y\\)\n\n\\(\\text{Var}(X) = \\sigma_X^2\\)\n\n\\(\\text{Var}(Y) = \\sigma_Y^2\\)\n\n\\(\\text{Cov}(X,Y) = \\sigma_X \\sigma_Y \\rho\\)\n\nDe hecho, la anterior implicación es reversible en el sentido de que si el vector \\((X,Y)\\) sigue una distribución normal bivariada con \\(\\mathbb{E}(X) = \\mu_X\\), \\(\\mathbb{E}(Y) = \\mu_Y\\), \\(\\text{Var}(X) = \\sigma_X^2\\), \\(\\text{Var}(Y) = \\sigma_Y^2\\), \\(\\text{Cov}(X,Y) = \\sigma_X \\sigma_Y \\rho\\), entonces existen variables aleatorias \\(Z_1, Z_2\\) independientes con distribución \\(\\mathcal{N}(0,1)\\), tal que:\n\\[\nX = \\sigma_X Z_1 + \\mu_X,\\quad Y = \\mu_Y + \\sigma_Y (\\rho Z_1 + \\sqrt{1 - \\rho^2} Z_2)\n\\]\nAlgo muy conveniente de los ejemplos es que permite usar propiedades de esperanzas, varianzas y covarianzas para verificar que:\n\n\\(\\mathbb{E}(X) = \\mu_X\\)\n\\(\\mathbb{E}(Y) = \\mu_Y\\)\n\\(\\text{Var}(X) = \\sigma_X^2\\)\n\\(\\text{Var}(Y) = \\sigma_Y^2\\)\n\\(\\text{Cov}(X,Y) = \\sigma_X \\sigma_Y \\rho\\)\n\nSimilarmente, usando propiedades de las variables con distribución normal y de la esperanza condicional, puede verse que si \\((X,Y)\\) es un v.e. con distribución normal bivariada con parámetros \\(\\mu_X, \\mu_Y, \\sigma_X, \\sigma_Y, \\rho\\), entonces:\n\\[\n\\mathbb{E}[Y \\mid X = x] = \\mu_Y + \\rho \\sigma_Y \\frac{x - \\mu_X}{\\sigma_X}\n\\]\n\\[\n\\text{Var}[Y \\mid X = x] = (1 - \\rho^2) \\sigma_Y^2\n\\]\nNota: Un resultado similar aplica para \\(X \\mid Y = y\\).",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#funciones-importantes",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#funciones-importantes",
+    "title": "Vectores Aleatorios",
+    "section": "Funciones importantes",
+    "text": "Funciones importantes\nSea \\(\\mathbf{X} = (X_1, \\dots, X_n)\\) un vector aleatorio \\(n\\)–dimensional. Se utiliza \\(\\mathbf{t} \\cdot \\mathbf{X} = \\mathbf{t}^\\mathsf{T} \\mathbf{X}\\) en lugar de \\(tX\\):\n\n\n\n\n\n\nFunción Característica\n\n\n\n\\[\n\\varphi_{\\mathbf{X}}(\\mathbf{t}) = \\mathbb{E} \\left[ e^{i \\mathbf{t}^\\mathsf{T} \\mathbf{X}} \\right]\n= \\int_{\\mathbb{R}^n} e^{i \\mathbf{t}^\\mathsf{T} \\mathbf{x}} \\cdot f_{\\mathbf{X}}(\\mathbf{x}) \\, d\\mathbf{x}\n\\]\nEstá definida para todo \\(\\mathbf{t} \\in \\mathbb{R}^n\\).\n\n\n\n\n\n\n\n\nFunción Generadora de Momentos\n\n\n\n\\[\nM_{\\mathbf{X}}(\\mathbf{t}) = \\mathbb{E} \\left[ e^{\\mathbf{t}^\\mathsf{T} \\mathbf{X}} \\right]\n= \\int_{\\mathbb{R}^n} e^{\\mathbf{t}^\\mathsf{T} \\mathbf{x}} \\cdot f_{\\mathbf{X}}(\\mathbf{x}) \\, d\\mathbf{x}\n\\]\nVálida para todo \\(\\mathbf{t}\\) donde dicho valor esperado exista.\n\n\n\n\n\n\n\n\nFunción Generadora de Probabilidades\n\n\n\n\\[\nG_{\\mathbf{X}}(\\mathbf{t}) = \\mathbb{E} \\left[ \\mathbf{t}^{\\mathbf{X}} \\right]\n= \\int_{\\mathbb{R}^n} \\mathbf{t}^{\\mathbf{x}} \\cdot f_{\\mathbf{X}}(\\mathbf{x}) \\, d\\mathbf{x}\n\\]\nVálida para todo \\(\\mathbf{t}\\) donde dicho valor esperado exista.",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0721/vectores_aleatorios_CA0721.html#estadísticos-de-orden",
+    "href": "cursos/CA0721/vectores_aleatorios_CA0721.html#estadísticos-de-orden",
+    "title": "Vectores Aleatorios",
+    "section": "Estadísticos de orden",
+    "text": "Estadísticos de orden\nSean \\(X_1, X_2, \\dots, X_n\\) variables independientes absolutamente continuas e idénticamente distribuidas.\nEs claro que por definición:\n\\[\nX_{(1)} \\leq X_{(2)} \\leq X_{(3)} \\leq \\cdots \\leq X_{(n)}\n\\]\nDefinamos:\n\n\\(X_{(1)}\\) = el más pequeño de \\(X_1, X_2, \\dots, X_n\\)\n\\(X_{(2)}\\) = el segundo más pequeño\n\\(X_{(3)}\\) = el tercero más pequeño\n\\(\\;\\;\\vdots\\)\n\\(X_{(n)}\\) = el mayor\n\nSean \\(f\\) y \\(F\\) la función de densidad y distribución (común) de las variables \\(X_1, X_2, \\dots, X_n\\), y \\(X_{(1)}, X_{(2)}, \\dots, X_{(n)}\\) los estadísticos de orden. Sean \\(i, j \\in \\{1, 2, \\dots, n\\}\\):\n\nFunción de densidad conjunta\n\\[\nf_{X_{(1)}, \\dots, X_{(n)}}(x_1, \\dots, x_n) =\n\\begin{cases}\nn! \\prod\\limits_{j=1}^{n} f(x_j) & \\text{si } x_1 &lt; x_2 &lt; \\cdots &lt; x_n \\\\\n0 & \\text{en otro caso}\n\\end{cases}\n\\]\n\n\nFunción de densidad del \\(j\\)-ésimo orden\n\\[\nf_{X_{(j)}}(x) = \\binom{n-1}{j-1} F^{j-1}(x) \\cdot (1 - F(x))^{n-j} \\cdot f(x)\n\\]\n\n\nFunción de distribución de \\(X_{(j)}\\)\n\\[\nF_{X_{(j)}}(x) = \\sum_{k=j}^{n} \\binom{n}{k} F^k(x)(1 - F(x))^{n-k}\n\\]\n\nIntuición: \\(X_{(j)} &lt; x \\Leftrightarrow\\) al menos \\(j\\) de las variables son menores que \\(x\\)\n\n\n\nFunción de distribución conjunta de \\(X_{(i)}, X_{(j)}\\) con \\(i &lt; j\\)\n\\[\nf_{X_{(i)}, X_{(j)}}(x_i, x_j) =\n\\tbinom{n}{i-1, j-i-1, 1, n-j} F^{i-1}(x_i) (F(x_j) - F(x_i))^{j-i-1} (1 - F(x_j))^{n-j} f(x_i) f(x_j)\n\\]\n\nIntuición: Una variable igual a \\(x_i\\), otra a \\(x_j\\), \\(i-1\\) menores a \\(x_i\\), \\(n-j\\) mayores que \\(x_j\\), y \\(j-i-1\\) entre \\(x_i\\) y \\(x_j\\).\n\n\n\n\nRango de la muestra aleatoria\nSean \\(X_1, X_2, \\dots, X_n\\) v.a. independientes absolutamente continuas e idénticamente distribuidas con distribución uniforme \\(U(0,1)\\).\nSe define la variable del rango como:\n\\[\nV = X_{(n)} - X_{(1)} \\sim \\text{Beta}(n - 1, 2)\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Tema 5: Vectores Aleatorios"
     ]
   }
 ]

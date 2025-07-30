@@ -33,6 +33,8 @@ website:
           text: "Tema 3: Teoría General de la Probabilidad"
         - href: cursos/CA0721/variables_aleatorias_CA0721.qmd
           text: "Tema 4: Variables Aleatorias"
+        - href: cursos/CA0721/vectores_aleatorios_CA0721.qmd
+          text: "Tema 5: Vectores Aleatorios"
     - id: ca0306
       title: "CA0306: Contingencias de Vida I"
       contents:
