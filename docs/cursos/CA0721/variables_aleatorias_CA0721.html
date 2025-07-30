@@ -118,7 +118,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index_main.html"> 
+    <a class="nav-link" href="../../index_main.qmd"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
   <li class="nav-item">
@@ -225,7 +225,28 @@ window.Quarto = {
   <li><a href="#funciones-importantes" id="toc-funciones-importantes" class="nav-link" data-scroll-target="#funciones-importantes">Funciones importantes</a></li>
   <li><a href="#distribuciones-discretas-comunes" id="toc-distribuciones-discretas-comunes" class="nav-link" data-scroll-target="#distribuciones-discretas-comunes">Distribuciones discretas comunes</a></li>
   </ul></li>
-  <li><a href="#variables-aleatorias-discretas-1" id="toc-variables-aleatorias-discretas-1" class="nav-link" data-scroll-target="#variables-aleatorias-discretas-1">Variables aleatorias discretas</a></li>
+  <li><a href="#variables-aleatorias-continuas" id="toc-variables-aleatorias-continuas" class="nav-link" data-scroll-target="#variables-aleatorias-continuas">Variables aleatorias continuas</a>
+  <ul class="collapse">
+  <li><a href="#función-de-distribución-1" id="toc-función-de-distribución-1" class="nav-link" data-scroll-target="#función-de-distribución-1">Función de distribución</a></li>
+  <li><a href="#transformaciones-1" id="toc-transformaciones-1" class="nav-link" data-scroll-target="#transformaciones-1">Transformaciones</a></li>
+  <li><a href="#esperanza-1" id="toc-esperanza-1" class="nav-link" data-scroll-target="#esperanza-1">Esperanza</a></li>
+  <li><a href="#ley-del-estadístico-inconsciente-1" id="toc-ley-del-estadístico-inconsciente-1" class="nav-link" data-scroll-target="#ley-del-estadístico-inconsciente-1">Ley del estadístico inconsciente</a></li>
+  <li><a href="#momentos-y-varianza-1" id="toc-momentos-y-varianza-1" class="nav-link" data-scroll-target="#momentos-y-varianza-1">Momentos y Varianza</a></li>
+  <li><a href="#desviación-estándar-1" id="toc-desviación-estándar-1" class="nav-link" data-scroll-target="#desviación-estándar-1">Desviación estándar</a></li>
+  <li><a href="#fórmula-de-convolución-continua" id="toc-fórmula-de-convolución-continua" class="nav-link" data-scroll-target="#fórmula-de-convolución-continua">Fórmula de convolución continua</a></li>
+  <li><a href="#funciones-importantes-1" id="toc-funciones-importantes-1" class="nav-link" data-scroll-target="#funciones-importantes-1">Funciones importantes</a></li>
+  <li><a href="#distribuciones-continuas-comunes" id="toc-distribuciones-continuas-comunes" class="nav-link" data-scroll-target="#distribuciones-continuas-comunes">Distribuciones continuas comunes</a></li>
+  </ul></li>
+  <li><a href="#cuantiles" id="toc-cuantiles" class="nav-link" data-scroll-target="#cuantiles">Cuantiles</a></li>
+  <li><a href="#moda" id="toc-moda" class="nav-link" data-scroll-target="#moda">Moda</a></li>
+  <li><a href="#funciones-importantes-2" id="toc-funciones-importantes-2" class="nav-link" data-scroll-target="#funciones-importantes-2">Funciones importantes</a>
+  <ul class="collapse">
+  <li><a href="#caso-discreto" id="toc-caso-discreto" class="nav-link" data-scroll-target="#caso-discreto">Caso discreto</a></li>
+  <li><a href="#caso-continuo" id="toc-caso-continuo" class="nav-link" data-scroll-target="#caso-continuo">Caso continuo</a></li>
+  <li><a href="#propiedades-de-la-función-característica" id="toc-propiedades-de-la-función-característica" class="nav-link" data-scroll-target="#propiedades-de-la-función-característica">Propiedades de la función característica</a></li>
+  <li><a href="#propiedades-de-la-función-generadora-de-momentos" id="toc-propiedades-de-la-función-generadora-de-momentos" class="nav-link" data-scroll-target="#propiedades-de-la-función-generadora-de-momentos">Propiedades de la función generadora de momentos</a></li>
+  <li><a href="#propiedades-de-la-función-generadora-de-probabilidades" id="toc-propiedades-de-la-función-generadora-de-probabilidades" class="nav-link" data-scroll-target="#propiedades-de-la-función-generadora-de-probabilidades">Propiedades de la función generadora de probabilidades</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -480,7 +501,7 @@ P_Z(z) = \sum_{x \in \text{Im}(X)} P_X(x) P_Y(z - x)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Función característica
+Función Característica
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -495,7 +516,7 @@ Función característica
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Función generadora de momentos
+Función Generadora de Momentos
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -510,7 +531,7 @@ M_X(t) = \mathbb{E}[e^{tX}] = \sum_{n \in \text{Im}(X)} e^{tn} \cdot P[X = n]
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Función generadora de probabilidades
+Función Generadora de Probabilidades
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -645,10 +666,555 @@ Hipergeométrica
 </div>
 </section>
 </section>
-<section id="variables-aleatorias-discretas-1" class="level2">
-<h2 class="anchored" data-anchor-id="variables-aleatorias-discretas-1">Variables aleatorias discretas</h2>
+<section id="variables-aleatorias-continuas" class="level2">
+<h2 class="anchored" data-anchor-id="variables-aleatorias-continuas">Variables aleatorias continuas</h2>
+<p>Son aquellas para las cuales <span class="math inline">\(X[\Omega]\)</span> es un intervalo.</p>
+<section id="función-de-distribución-1" class="level3">
+<h3 class="anchored" data-anchor-id="función-de-distribución-1">Función de distribución</h3>
+<p>Las <em>variables aleatorias absolutamente continuas</em> son aquellas en las cuales existe una función <span class="math inline">\(f_X(x)\)</span> no negativa tal que:</p>
+<p><span class="math display">\[
+F_X(t) = Pr(X \leq t) = \int_{-\infty}^t f_X(u)\,du
+\]</span></p>
+<p>Donde:</p>
+<ul>
+<li><span class="math inline">\(F_X(t)\)</span> es la <em>función de distribución</em> de <span class="math inline">\(X\)</span>.</li>
+<li><span class="math inline">\(f_X(x)\)</span> es la <em>función de densidad de probabilidad</em> de <span class="math inline">\(X\)</span> (<em>p.d.f</em> de <span class="math inline">\(X\)</span>).</li>
+<li>Se cumple que <span class="math inline">\(Pr(X = a) = 0\)</span> para todo <span class="math inline">\(a \in \mathbb{R}\)</span>.</li>
+<li>Cuando <span class="math inline">\(f_X(x)\)</span> es continua, entonces <span class="math inline">\(\dfrac{d}{dx}F_X(x) = f_X(x)\)</span>.</li>
+<li>Donde <span class="math inline">\(F_X(x)\)</span> es derivable, <span class="math inline">\(\dfrac{d}{dx}F_X(x) = f_X(x)\)</span>.</li>
+</ul>
+</section>
+<section id="transformaciones-1" class="level3">
+<h3 class="anchored" data-anchor-id="transformaciones-1">Transformaciones</h3>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. absolutamente continua en un e.p. <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>.<br>
+Sea <span class="math inline">\(f_X(x)\)</span> su función de densidad.<br>
+Sea <span class="math inline">\(Y = g(X)\)</span> donde <span class="math inline">\(g\)</span> es una función estrictamente monótona.</p>
+<p>Defina:</p>
+<ul>
+<li><span class="math inline">\(\mathcal{X} = \{x : f_X(x) &gt; 0\}\)</span></li>
+<li><span class="math inline">\(\mathcal{Y} = \{y : y = g(x) \text{ para algún } x \in \mathcal{X}\}\)</span></li>
+</ul>
+<p>Si se cumple que:</p>
+<ul>
+<li><span class="math inline">\(f_X(x)\)</span> es continua en <span class="math inline">\(\mathcal{X}\)</span></li>
+<li><span class="math inline">\(g^{-1}(y)\)</span> tiene derivada continua en <span class="math inline">\(\mathcal{Y}\)</span></li>
+</ul>
+<p>entonces <span class="math inline">\(Y\)</span> es una v.a. absolutamente continua y</p>
+<p><span class="math display">\[
+f_Y(y) =
+\begin{cases}
+f_X\left(g^{-1}(y)\right) \cdot \left| \dfrac{d}{dy}g^{-1}(y) \right| &amp; \text{si } y \in \mathcal{Y} \\
+0 &amp; \text{si no}
+\end{cases}
+\]</span></p>
+<!-- > ^3 La distribución de Cauchy se dice que tiene colas pesadas por el hecho de que su función de densidad decrece a 0 en $\pm \infty$, pero a una tasa polinomial en lugar de exponencial. Con este tipo de distribuciones suele ocurrir que en cierto punto los momentos dejan de existir. -->
+</section>
+<section id="esperanza-1" class="level3">
+<h3 class="anchored" data-anchor-id="esperanza-1">Esperanza</h3>
+<ul>
+<li>Sea <span class="math inline">\(X\)</span> una v.a continua con f.d.p. <span class="math inline">\(f_X(x)\)</span>, se define la esperanza como:</li>
+</ul>
+<p><span class="math display">\[
+\mathbb{E}[X] = \int_{-\infty}^{+\infty} x \cdot f_X(x)\, dx
+\]</span></p>
+<p>Siempre y cuando esta integral sea absolutamente convergente.</p>
+</section>
+<section id="ley-del-estadístico-inconsciente-1" class="level3">
+<h3 class="anchored" data-anchor-id="ley-del-estadístico-inconsciente-1">Ley del estadístico inconsciente</h3>
+<p>Si <span class="math inline">\(g: \mathbb{R} \to \mathbb{R}\)</span> es continua, entonces:</p>
+<p><span class="math display">\[
+\mathbb{E}[g(X)] = \int_{-\infty}^{+\infty} g(x) \cdot f_X(x)\, dx
+\]</span></p>
+<p>Siempre y cuando esta integral converja absolutamente.</p>
+</section>
+<section id="momentos-y-varianza-1" class="level3">
+<h3 class="anchored" data-anchor-id="momentos-y-varianza-1">Momentos y Varianza</h3>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. discreta en un e.p <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> y sea <span class="math inline">\(n &gt; 0\)</span>:</p>
+<ul>
+<li>El <strong><span class="math inline">\(n\)</span>–ésimo momento</strong> de <span class="math inline">\(X\)</span> se define como <span class="math inline">\(\mathbb{E}[X^n]\)</span></li>
+<li>Si <span class="math inline">\(\mu = \mathbb{E}[X]\)</span>, el <span class="math inline">\(n\)</span>–ésimo momento centrado se define como:</li>
+</ul>
+<p><span class="math display">\[
+\mathbb{E}\left[(X - \mu)^n\right]
+\]</span></p>
+<ul>
+<li>El segundo momento centrado es particularmente importante:</li>
+</ul>
+<p><span class="math display">\[
+\sigma^2 = \text{Var}[X] = \mathbb{E} \left[ (X - \mathbb{E}[X])^2 \right] = \mathbb{E}[X^2] - \mathbb{E}[X]^2
+\]</span></p>
+<p>Siempre y cuando</p>
+<p><span class="math display">\[
+\int_{-\infty}^{+\infty} x^2 f_X(x)\, dx
+\]</span></p>
+<p>converja.</p>
+<section id="propiedades-de-la-varianza-1" class="level4">
+<h4 class="anchored" data-anchor-id="propiedades-de-la-varianza-1">Propiedades de la varianza</h4>
+<p>Sean <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> dos variables aleatorias y sea <span class="math inline">\(c\)</span> una constante, entonces:</p>
+<ol type="1">
+<li><p><span class="math inline">\(\operatorname{Var}(c) = 0\)</span></p></li>
+<li><p><span class="math inline">\(\operatorname{Var}(X + c) = \operatorname{Var}(X)\)</span></p></li>
+<li><p><span class="math inline">\(\operatorname{Var}(cX) = c^2 \cdot \operatorname{Var}(X)\)</span></p></li>
+<li><p>Si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son variables aleatorias independientes, entonces:</p></li>
+</ol>
+<p><span class="math display">\[
+\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)
+\]</span></p>
+</section>
+</section>
+<section id="desviación-estándar-1" class="level3">
+<h3 class="anchored" data-anchor-id="desviación-estándar-1">Desviación estándar</h3>
+<p><span class="math display">\[
+\sigma_X = \sqrt{\text{Var}[X]}
+\]</span></p>
+</section>
+<section id="fórmula-de-convolución-continua" class="level3">
+<h3 class="anchored" data-anchor-id="fórmula-de-convolución-continua">Fórmula de convolución continua</h3>
+<p>Sean <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> v.a. absolutamente continuas e independientes en un e.p. <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>.<br>
+Entonces <span class="math inline">\(Z = X + Y\)</span> es una v.a. absolutamente continua y</p>
+<p><span class="math display">\[
+f_{X+Y}(z) = \int_{-\infty}^{\infty} f_X(r) f_Y(z - r)\, dr
+\]</span></p>
+<p>Esta fórmula permite demostrar la relación:</p>
+<p><span class="math display">\[
+\varphi_{X+Y}(t) = \varphi_X(t) \cdot \varphi_Y(t) \quad \forall\, t \in \mathbb{R}
+\]</span></p>
+<p>donde <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son v.a. absolutamente continuas e independientes.</p>
+<blockquote class="blockquote">
+<p>^4La prueba del siguiente resultado involucra un poco de vectores aleatorios. No obstante, la fórmula puede ser fácilmente recordada por su similitud con la fórmula para el caso discreto.</p>
+</blockquote>
+</section>
+<section id="funciones-importantes-1" class="level3">
+<h3 class="anchored" data-anchor-id="funciones-importantes-1">Funciones importantes</h3>
+<p>Sea <span class="math inline">\(X\)</span> una v.a. absolutamente continua con función de densidad <span class="math inline">\(f_X(x)\)</span>:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Función Característica
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\varphi_X(t) = \mathbb{E}[e^{itX}] = \int_{-\infty}^{+\infty} e^{itx} \cdot f_X(x) \, dx
+\]</span></p>
+<p>Esta está definida para todo <span class="math inline">\(t \in \mathbb{R}\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Función Generadora de Momentos
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+M_X(t) = \mathbb{E}[e^{tX}] = \int_{-\infty}^{+\infty} e^{tx} \cdot f_X(x) \, dx
+\]</span></p>
+<p>Para todos aquellos valores de <span class="math inline">\(t\)</span> donde dicho valor esperado exista.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Función Generadora de Probabilidades
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+G_X(t) = \mathbb{E}[t^X] = \int_{-\infty}^{+\infty} t^x \cdot f_X(x) \, dx
+\]</span></p>
+<p>Para todos aquellos valores de <span class="math inline">\(t\)</span> donde dicho valor esperado exista.</p>
+</div>
+</div>
+</section>
+<section id="distribuciones-continuas-comunes" class="level3">
+<h3 class="anchored" data-anchor-id="distribuciones-continuas-comunes">Distribuciones continuas comunes</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Distribución uniforme">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Distribución uniforme
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[X \sim {U}[a, b]\]</span></p>
+<p>Su función de densidad viene dada por:</p>
+<p><span class="math display">\[
+f(x) =
+\begin{cases}
+\frac{1}{b - a} &amp; \text{si } x \in [a, b] \\\\
+0 &amp; \text{si } x \notin [a, b]
+\end{cases}
+\]</span></p>
+<p>Para este tipo de variable se cumple que:</p>
+<ul>
+<li><span class="math inline">\(\mathbb{E}[X] = \dfrac{a + b}{2}\)</span></li>
+<li><span class="math inline">\(\operatorname{Var}(X) = \dfrac{(b - a)^2}{12}\)</span></li>
+<li><span class="math inline">\(M_X(t) =
+\begin{cases}
+\dfrac{e^{tb} - e^{ta}}{t(b - a)} &amp; t \neq 0 \\\\
+1 &amp; t = 0
+\end{cases}\)</span></li>
+</ul>
+</div>
+</div>
+<section id="función-gamma" class="level4">
+<h4 class="anchored" data-anchor-id="función-gamma">Función Gamma</h4>
+<p>La función Gamma es una extensión del factorial para números reales (y complejos) positivos. Está definida por la integral impropia:</p>
+<p><span class="math display">\[
+\Gamma(\alpha) = \int_0^{+\infty} x^{\alpha - 1} e^{-x} \, dx \qquad \forall \ \alpha &gt; 0
+\]</span></p>
+<section id="propiedades-fundamentales" class="level5">
+<h5 class="anchored" data-anchor-id="propiedades-fundamentales">Propiedades fundamentales</h5>
+<ul>
+<li><p>Recurrencia: <span class="math display">\[
+\Gamma(a + 1) = a \cdot \Gamma(a) \qquad \text{para } a &gt; 0
+\]</span></p></li>
+<li><p>Enteros positivos: <span class="math display">\[
+\Gamma(n) = (n - 1)! \qquad \text{para } n \in \mathbb{N}^*
+\]</span></p></li>
+<li><p>Relación generalizada: <span class="math display">\[
+\Gamma(a + n) = \Gamma(a) \cdot \prod_{j = 1}^n (a + j - 1) \qquad \text{para } a &gt; 0, \ n \in \mathbb{N}
+\]</span></p></li>
+<li><p>Evaluación especial: <span class="math display">\[
+\Gamma\left(\frac{1}{2}\right) = 2 \int_0^{+\infty} e^{-x^2} \, dx = \sqrt{\pi}
+\]</span></p></li>
+</ul>
+</section>
+<section id="fórmula-de-reflexión-de-euler" class="level5">
+<h5 class="anchored" data-anchor-id="fórmula-de-reflexión-de-euler">Fórmula de reflexión de Euler</h5>
+<p>Aunque su demostración escapa al curso, existe la identidad conocida como fórmula de reflexión de Euler:</p>
+<p><span class="math display">\[
+\Gamma(z)\Gamma(1 - z) = \frac{\pi}{\sin(\pi z)} \qquad \text{para } z \in (0,1)
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Distribución Gamma">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Distribución Gamma
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[X \sim \Gamma(\alpha, \beta)\]</span></p>
+<p>Con parámetro de forma <span class="math inline">\(\alpha\)</span> y parámetro de escala <span class="math inline">\(\beta\)</span> (aquí <span class="math inline">\(\alpha &gt; 0\)</span> y <span class="math inline">\(\beta &gt; 0\)</span>).</p>
+<p><span class="math display">\[
+f(x) =
+\begin{cases}
+\dfrac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha - 1} e^{-\beta x} &amp; x &gt; 0 \\\\
+0 &amp; \text{si no}
+\end{cases}
+\]</span></p>
+<p>donde <span class="math inline">\(\Gamma(\alpha) = \displaystyle\int_0^{+\infty} x^{\alpha - 1} e^{-x} dx\)</span></p>
+<ul>
+<li><span class="math inline">\(\mathbb{E}[X] = \dfrac{\alpha}{\beta}\)</span></li>
+<li><span class="math inline">\(\operatorname{Var}(X) = \dfrac{\alpha}{\beta^2}\)</span></li>
+<li><span class="math inline">\(M_X(t) = \dfrac{\beta^\alpha}{(\beta - t)^\alpha}\)</span> para <span class="math inline">\(t &lt; \beta\)</span></li>
+</ul>
+</div>
+</div>
+<ul>
+<li><p>La <strong>distribución exponencial</strong> de parámetro <span class="math inline">\(\beta\)</span> es una <span class="math inline">\(\Gamma(1, \beta)\)</span>. Su función de densidad viene dada por<br>
+<span class="math display">\[
+\beta e^{-\beta x} \quad \text{para} \quad x \geq 0
+\]</span></p></li>
+<li><p>La <strong>distribución de Erlang</strong> corresponde a una <span class="math inline">\(\Gamma(n, \beta)\)</span> donde <span class="math inline">\(n \in \mathbb{N}\)</span>. Su función de densidad viene dada por<br>
+<span class="math display">\[
+\dfrac{(\beta x)^{n-1}}{(n - 1)!} \, \beta \, e^{-\beta x} \quad \text{para} \quad x &gt; 0
+\]</span></p></li>
+<li><p>La <strong>distribución Chi-cuadrado</strong> con <span class="math inline">\(n\)</span> grados de libertad ,, (<span class="math inline">\(\chi^2_n\)</span>) corresponde a una<br>
+<span class="math inline">\(\Gamma\left(\dfrac{n}{2}, \dfrac{1}{2}\right)\)</span> donde <span class="math inline">\(n \in \mathbb{N}\)</span>. Su función de densidad viene dada por<br>
+<span class="math display">\[
+\left(\dfrac{1}{2}\right)^{n/2} \dfrac{x^{n/2 - 1}}{\Gamma(n/2)} e^{-x/2} \quad \text{para} \quad x &gt; 0
+\]</span></p></li>
+</ul>
+</section>
+</section>
+<section id="función-beta" class="level4">
+<h4 class="anchored" data-anchor-id="función-beta">Función Beta</h4>
+<p>Sea la variable aleatoria <span class="math inline">\(X\)</span> con parámetros <span class="math inline">\(a, b\)</span> (donde <span class="math inline">\(a &gt; 0\)</span> y <span class="math inline">\(b &gt; 0\)</span>), se dice que <span class="math inline">\(X\)</span> sigue una <strong>distribución Beta</strong> si su función de densidad viene dada por</p>
+<p><span class="math display">\[
+f(x) =
+\begin{cases}
+\dfrac{1}{\beta(a, b)} x^{a - 1} (1 - x)^{b - 1} &amp; \text{si } 0 &lt; x &lt; 1 \\
+0 &amp; \text{si no}
+\end{cases}
+\]</span></p>
+<p>donde <span class="math display">\[
+\beta(a, b) = \int_0^1 x^{a - 1}(1 - x)^{b - 1} dx.
+\]</span></p>
+<p>En este caso se escribe <span class="math inline">\(X \sim \beta(a, b)\)</span>.</p>
+<p>La función beta <span class="math inline">\(\beta(a, b)\)</span> satisface:</p>
+<p><span class="math display">\[
+\beta(a, b) = \dfrac{\Gamma(a) \Gamma(b)}{\Gamma(a + b)}
+\]</span></p>
+<blockquote class="blockquote">
+<p><strong>Nota</strong>: No es difícil ver que la distribución <span class="math inline">\(\beta(1,1)\)</span> coincide con la distribución uniforme <span class="math inline">\(U([0,1])\)</span>.</p>
+</blockquote>
+<section id="otras-representaciones-de-la-función-beta" class="level5">
+<h5 class="anchored" data-anchor-id="otras-representaciones-de-la-función-beta">Otras representaciones de la función Beta</h5>
+<p>Aunque no es especialmente relevante para nuestros propósitos, en ocasiones es útil tener presente que para <span class="math inline">\(a &gt; 0\)</span> y <span class="math inline">\(b &gt; 0\)</span> se cumple que:</p>
+<ul>
+<li>Haciendo el cambio de variable <span class="math inline">\(x = \operatorname{sen}^2(\theta)\)</span> se obtiene:</li>
+</ul>
+<p><span class="math display">\[
+\dfrac{1}{2} \beta(a, b) = \int_0^{\pi/2} \operatorname{sen}^{2a-1}(\theta) \cos^{2b - 1}(\theta) \, d\theta
+\]</span></p>
+<ul>
+<li>Haciendo el cambio de variable <span class="math inline">\(x = \dfrac{z}{1 + z}\)</span> se obtiene:</li>
+</ul>
+<p><span class="math display">\[
+\beta(a, b) = \int_0^{+\infty} \dfrac{z^{a - 1}}{(1 + z)^{a + b}} \, dz
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Distribución Beta">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Distribución Beta
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[X \sim \text{Beta}(a, b)\]</span></p>
+<p>Con parámetros <span class="math inline">\(a, b\)</span> (aquí <span class="math inline">\(a &gt; 0\)</span> y <span class="math inline">\(b &gt; 0\)</span>).</p>
+<p><span class="math display">\[
+f(x) =
+\begin{cases}
+\dfrac{1}{\beta(a, b)} x^{a - 1} (1 - x)^{b - 1} &amp; 0 &lt; x &lt; 1 \\\\
+0 &amp; \text{si no}
+\end{cases}
+\]</span></p>
+<p>donde <span class="math inline">\(\beta(a, b) = \displaystyle\int_0^1 x^{a - 1}(1 - x)^{b - 1} dx\)</span></p>
+<ul>
+<li><span class="math inline">\(\mathbb{E}[X] = \dfrac{a}{a + b}\)</span></li>
+<li><span class="math inline">\(\operatorname{Var}(X) = \dfrac{ab}{(a + b)^2 (a + b + 1)}\)</span></li>
+<li><span class="math inline">\(M_X(t) = 1 + \displaystyle\sum_{n=1}^{\infty} \left( \prod_{r=0}^{n-1} \dfrac{a + r}{a + b + r} \right) \dfrac{t^n}{n!}\)</span></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Distribución Weibull">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Distribución Weibull
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[X \sim \text{Weibull}(\alpha, \lambda)\]</span></p>
+<p>Su función de densidad es:</p>
+<p><span class="math display">\[
+f(x) = \lambda \alpha (\lambda x)^{\alpha - 1} e^{-(\lambda x)^\alpha} \quad x &gt; 0
+\]</span></p>
+<p>Con <span class="math inline">\(\alpha, \lambda &gt; 0\)</span>, donde <span class="math inline">\(\alpha\)</span> es el parámetro de forma y <span class="math inline">\(\lambda\)</span> es el parámetro de escala de la distribución.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Distribución Normal">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Distribución Normal
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[X \sim \mathcal{N}(\mu, \sigma^2)\]</span></p>
+<p>Con parámetros <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^2\)</span> (aquí <span class="math inline">\(\mu &gt; 0\)</span> y <span class="math inline">\(\sigma^2 &gt; 0\)</span>).</p>
+<p>Su función de densidad viene dada por:</p>
+<p><span class="math display">\[
+f(x) = \dfrac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+\]</span></p>
+<p>Se cumple que:</p>
+<ul>
+<li><span class="math inline">\(\mathbb{E}[X] = \mu\)</span></li>
+<li><span class="math inline">\(\operatorname{Var}(X) = \sigma^2\)</span></li>
+<li><span class="math inline">\(M_X(t) = e^{t\mu + \frac{t^2 \sigma^2}{2}}\)</span></li>
+</ul>
+<p>La función de <strong>distribución normal estándar</strong> es un caso especial de la función donde <span class="math inline">\(\mu = 0\)</span> y <span class="math inline">\(\sigma = 1\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Distribución de Cauchy">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Distribución de Cauchy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[X \sim \text{Cauchy}(x_0, \gamma)\]</span></p>
+<p>Centrada en <span class="math inline">\(x_0\)</span> y con parámetro <span class="math inline">\(\gamma\)</span>.</p>
+<p>Su función de densidad viene dada por:</p>
+<p><span class="math display">\[
+f(x) = \dfrac{\gamma}{\pi \left((x - x_0)^2 + \gamma^2 \right)}
+\]</span></p>
+<p>Se cumple que:</p>
+<ul>
+<li><span class="math inline">\(\mathbb{E}[X]\)</span> <strong>no existe</strong></li>
+<li>La función generadora de momentos solo existe para <span class="math inline">\(t = 0\)</span></li>
+<li>Su función característica es:</li>
+</ul>
+<p><span class="math display">\[
+\varphi_X(t) = e^{itx_0 - \gamma \lvert t \rvert}
+\]</span></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="cuantiles" class="level2">
+<h2 class="anchored" data-anchor-id="cuantiles">Cuantiles</h2>
+<p>Sea <span class="math inline">\(p \in (0, 1]\)</span>.<br>
+El cuantil <span class="math inline">\(p\)</span> de una variable aleatoria <span class="math inline">\(X\)</span> es el valor <span class="math inline">\(c_p\)</span> más pequeño tal que:</p>
+<p><span class="math display">\[
+F_X(c_p) \geq p
+\]</span></p>
+<p>es decir, <span class="math inline">\(c_p\)</span> es el valor más pequeño donde la función de distribución acumula al menos una probabilidad <span class="math inline">\(p\)</span>.</p>
+<p><strong>El cuantil para <span class="math inline">\(p = 0.5\)</span> se llama mediana.</strong></p>
+</section>
+<section id="moda" class="level2">
+<h2 class="anchored" data-anchor-id="moda">Moda</h2>
+<p>La moda de <span class="math inline">\(X\)</span> es el valor <span class="math inline">\(x^*\)</span> donde la función de densidad o probabilidad alcanza su máximo.</p>
+<blockquote class="blockquote">
+<p><strong>Nota:</strong> En distribuciones absolutamente continuas, la moda puede no existir; en distribuciones discretas, la moda siempre existe.</p>
+</blockquote>
+</section>
+<section id="funciones-importantes-2" class="level2">
+<h2 class="anchored" data-anchor-id="funciones-importantes-2">Funciones importantes</h2>
+<p>Sean <span class="math inline">\(X, Y\)</span> dos variables aleatorias en un e.p <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> que toman valores en <span class="math inline">\(\mathbb{N} \cup \{0\}\)</span>.</p>
+<section id="caso-discreto" class="level3">
+<h3 class="anchored" data-anchor-id="caso-discreto">Caso discreto</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 66%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Función</th>
+<th>Expresión</th>
+<th>Condición de validez</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Característica</td>
+<td><span class="math display">\[\begin{align*} \varphi_X(t) &amp;= \mathbb{E}[e^{itX}] \\ &amp;= \sum_{n \in \text{Im}(X)} e^{itn} \cdot P[X = n] \end{align*}\]</span></td>
+<td>Definida para todo <span class="math inline">\(t \in \mathbb{R}\)</span></td>
+</tr>
+<tr class="even">
+<td>Generadora de Momentos (MGF)</td>
+<td><span class="math display">\[\begin{align*} M_X(t) &amp;= \mathbb{E}[e^{tX}] \\ &amp;= \sum_{n \in \text{Im}(X)} e^{tn} \cdot P[X = n] \end{align*}\]</span></td>
+<td>Válida para todo <span class="math inline">\(t\)</span> donde el valor esperado exista</td>
+</tr>
+<tr class="odd">
+<td>Generadora de Probabilidades (PGF)</td>
+<td><span class="math display">\[\begin{align*} G_X(t) &amp;= \mathbb{E}[t^X] \\ &amp;= \sum_{n \in \text{Im}(X)} t^n \cdot P[X = n] \end{align*}\]</span></td>
+<td>Válida para todo <span class="math inline">\(t\)</span> donde el valor esperado exista</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="caso-continuo" class="level3">
+<h3 class="anchored" data-anchor-id="caso-continuo">Caso continuo</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 62%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Función</th>
+<th>Expresión</th>
+<th>Condición de validez</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Característica</td>
+<td><span class="math display">\[\begin{align*} \varphi_X(t) &amp;= \mathbb{E}[e^{itX}] \\ &amp;= \int_{-\infty}^{+\infty} e^{itx} \cdot f_X(x) \, dx \end{align*}\]</span></td>
+<td>Definida para todo <span class="math inline">\(t \in \mathbb{R}\)</span></td>
+</tr>
+<tr class="even">
+<td>Generadora de Momentos (MGF)</td>
+<td><span class="math display">\[\begin{align*} M_X(t) &amp;= \mathbb{E}[e^{tX}] \\ &amp;= \int_{-\infty}^{+\infty} e^{tx} \cdot f_X(x) \, dx \end{align*}\]</span></td>
+<td>Válida para todo <span class="math inline">\(t\)</span> donde el valor esperado exista</td>
+</tr>
+<tr class="odd">
+<td>Generadora de Probabilidades (PGF)</td>
+<td><span class="math display">\[\begin{align*} G_X(t) &amp;= \mathbb{E}[t^X] \\ &amp;= \int_{-\infty}^{+\infty} t^x \cdot f_X(x) \, dx \end{align*}\]</span></td>
+<td>Válida para todo <span class="math inline">\(t\)</span> donde el valor esperado exista</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="propiedades-de-la-función-característica" class="level3">
+<h3 class="anchored" data-anchor-id="propiedades-de-la-función-característica">Propiedades de la función característica</h3>
+<ul>
+<li>La función característica de <span class="math inline">\(X\)</span> determina su distribución, y viceversa.</li>
+<li>Si <span class="math inline">\(n \in \mathbb{N}\)</span> y <span class="math inline">\(\mathbb{E}[|X|^n] &lt; \infty\)</span>, entonces existe <span class="math inline">\(\varphi_X^{(n)}(t)\)</span> y se cumple: <span class="math display">\[
+\mathbb{E}[X^n] = i^{-n} \cdot \varphi_X^{(n)}(0)
+\]</span></li>
+<li>También: <span class="math display">\[
+\varphi_X(t) = \sum_{k = 0}^{n} \dfrac{(it)^k}{k!} \mathbb{E}[X^k] + o(|t|^k)
+\]</span></li>
+</ul>
+</section>
+<section id="propiedades-de-la-función-generadora-de-momentos" class="level3">
+<h3 class="anchored" data-anchor-id="propiedades-de-la-función-generadora-de-momentos">Propiedades de la función generadora de momentos</h3>
+<ul>
+<li><p>Si existe <span class="math inline">\(M_X(t)\)</span> en un intervalo <span class="math inline">\(I = ] -s, s[\)</span> para algún <span class="math inline">\(s &gt; 0\)</span>, entonces:</p>
+<ul>
+<li><p><span class="math inline">\(\mathbb{E}[X^n] &lt; \infty \quad \forall t \in I\)</span></p></li>
+<li><p><span class="math inline">\(M_X(t) = \sum\limits_{n = 0}^{+\infty} \dfrac{\mathbb{E}[X^n]}{n!} t^n\)</span></p></li>
+<li><p>En particular, <span class="math inline">\(\mathbb{E}[X^n] = M_X^{(n)}(0)\)</span></p></li>
+</ul></li>
+<li><p>Si <span class="math inline">\(X, Y\)</span> son independientes <span class="math inline">\(\forall t\)</span>, entonces: <span class="math display">\[
+M_{X+Y}(t) = M_X(t) M_Y(t)
+\]</span></p></li>
+<li><p>Si <span class="math inline">\(M_X(t) = M_Y(t)\)</span> en un abierto que contiene a 0, entonces: <span class="math display">\[
+F_X(t) = F_Y(t)
+\]</span></p></li>
+</ul>
+</section>
+<section id="propiedades-de-la-función-generadora-de-probabilidades" class="level3">
+<h3 class="anchored" data-anchor-id="propiedades-de-la-función-generadora-de-probabilidades">Propiedades de la función generadora de probabilidades</h3>
+<ul>
+<li>Se cumple que <span class="math inline">\(\forall n \in \mathbb{N}\)</span>: <span class="math display">\[
+P[X = n] = \dfrac{G_X^{(n)}(0)}{n!}
+\]</span></li>
+<li>Si <span class="math inline">\(X, Y\)</span> son independientes <span class="math inline">\(\forall t\)</span>, entonces: <span class="math display">\[
+G_{X+Y}(t) = G_X(t) G_Y(t)
+\]</span></li>
+<li>Si <span class="math inline">\(G_X(t) = G_Y(t)\)</span> en un abierto que contiene a 0, entonces: <span class="math display">\[
+F_X(t) = F_Y(t)
+\]</span></li>
+<li>Si <span class="math inline">\(X\)</span> es tal que <span class="math inline">\(\exists \mathbb{E}[|X|^n]\)</span>, entonces: <span class="math display">\[
+G_X^{(n)}(X) = \mathbb{E}[X(X-1)(X-2)\cdots(X - n + 1)]
+\]</span></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

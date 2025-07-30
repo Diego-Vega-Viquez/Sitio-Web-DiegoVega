@@ -248,7 +248,7 @@ De hecho, una fórmula similar aplica para las funciones generadoras de momentos
 Sea $X$ una (v.a) discreta en un e.p $(\Omega, \mathcal{F}, P)$
 
 ::: {.callout-note appearance="default"}
-#### Función característica
+#### Función Característica
 $$
 \varphi_X(t) = \mathbb{E}[e^{itX}] = \sum_{n \in \text{Im}(X)} e^{itn} \cdot P[X = n]
 $$
@@ -256,7 +256,7 @@ Esta está definida para todo $t \in \mathbb{R}$.
 :::
 
 ::: {.callout-note appearance="default"}
-#### Función generadora de momentos
+#### Función Generadora de Momentos
 $$
 M_X(t) = \mathbb{E}[e^{tX}] = \sum_{n \in \text{Im}(X)} e^{tn} \cdot P[X = n]
 $$
@@ -264,7 +264,7 @@ Para todos aquellos valores de $t$ donde dicho valor esperado exista.
 :::
 
 ::: {.callout-note appearance="default"}
-#### Función generadora de probabilidades
+#### Función Generadora de Probabilidades
 $$
 G_X(t) = \mathbb{E}[t^X] = \sum_{n \in \text{Im}(X)} t^n \cdot P[X = n]
 $$
@@ -348,4 +348,477 @@ Una variable $X$ se llama **hipergeométrica** de parámetros $n$, $m$ y $r$ si 
 
 :::
 
-## Variables aleatorias discretas
+## Variables aleatorias continuas
+
+Son aquellas para las cuales $X[\Omega]$ es un intervalo.
+
+### Función de distribución
+
+Las *variables aleatorias absolutamente continuas* son aquellas en las cuales existe una función $f_X(x)$ no negativa tal que:
+
+$$
+F_X(t) = Pr(X \leq t) = \int_{-\infty}^t f_X(u)\,du
+$$
+
+Donde:
+
+- $F_X(t)$ es la *función de distribución* de $X$.
+- $f_X(x)$ es la *función de densidad de probabilidad* de $X$ (*p.d.f* de $X$).
+- Se cumple que $Pr(X = a) = 0$ para todo $a \in \mathbb{R}$.
+- Cuando $f_X(x)$ es continua, entonces $\dfrac{d}{dx}F_X(x) = f_X(x)$.
+- Donde $F_X(x)$ es derivable, $\dfrac{d}{dx}F_X(x) = f_X(x)$.
+
+### Transformaciones
+
+Sea $X$ una v.a. absolutamente continua en un e.p. $(\Omega, \mathcal{F}, P)$.  
+Sea $f_X(x)$ su función de densidad.  
+Sea $Y = g(X)$ donde $g$ es una función estrictamente monótona.
+
+Defina:
+
+- $\mathcal{X} = \{x : f_X(x) > 0\}$
+- $\mathcal{Y} = \{y : y = g(x) \text{ para algún } x \in \mathcal{X}\}$
+
+Si se cumple que:
+
+- $f_X(x)$ es continua en $\mathcal{X}$
+- $g^{-1}(y)$ tiene derivada continua en $\mathcal{Y}$
+
+entonces $Y$ es una v.a. absolutamente continua y
+
+$$
+f_Y(y) =
+\begin{cases}
+f_X\left(g^{-1}(y)\right) \cdot \left| \dfrac{d}{dy}g^{-1}(y) \right| & \text{si } y \in \mathcal{Y} \\
+0 & \text{si no}
+\end{cases}
+$$
+
+<!-- > ^3 La distribución de Cauchy se dice que tiene colas pesadas por el hecho de que su función de densidad decrece a 0 en $\pm \infty$, pero a una tasa polinomial en lugar de exponencial. Con este tipo de distribuciones suele ocurrir que en cierto punto los momentos dejan de existir. -->
+
+### Esperanza
+
+- Sea $X$ una v.a continua con f.d.p. $f_X(x)$, se define la esperanza como:
+
+$$
+\mathbb{E}[X] = \int_{-\infty}^{+\infty} x \cdot f_X(x)\, dx
+$$
+
+Siempre y cuando esta integral sea absolutamente convergente.
+
+### Ley del estadístico inconsciente
+
+Si $g: \mathbb{R} \to \mathbb{R}$ es continua, entonces:
+
+$$
+\mathbb{E}[g(X)] = \int_{-\infty}^{+\infty} g(x) \cdot f_X(x)\, dx
+$$
+
+Siempre y cuando esta integral converja absolutamente.
+
+### Momentos y Varianza
+
+Sea $X$ una v.a. discreta en un e.p $(\Omega, \mathcal{F}, P)$ y sea $n > 0$:
+
+- El **$n$–ésimo momento** de $X$ se define como $\mathbb{E}[X^n]$
+- Si $\mu = \mathbb{E}[X]$, el $n$–ésimo momento centrado se define como:
+
+$$
+\mathbb{E}\left[(X - \mu)^n\right]
+$$
+
+- El segundo momento centrado es particularmente importante: 
+
+$$
+\sigma^2 = \text{Var}[X] = \mathbb{E} \left[ (X - \mathbb{E}[X])^2 \right] = \mathbb{E}[X^2] - \mathbb{E}[X]^2
+$$
+
+Siempre y cuando
+
+$$
+\int_{-\infty}^{+\infty} x^2 f_X(x)\, dx
+$$
+
+converja.
+
+#### Propiedades de la varianza
+
+Sean $X$ e $Y$ dos variables aleatorias y sea $c$ una constante, entonces:
+
+1. $\operatorname{Var}(c) = 0$
+
+2. $\operatorname{Var}(X + c) = \operatorname{Var}(X)$
+
+3. $\operatorname{Var}(cX) = c^2 \cdot \operatorname{Var}(X)$
+
+4. Si $X$ e $Y$ son variables aleatorias independientes, entonces:
+
+$$
+\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)
+$$
+
+### Desviación estándar
+
+$$
+\sigma_X = \sqrt{\text{Var}[X]}
+$$
+
+### Fórmula de convolución continua
+
+Sean $X$, $Y$ v.a. absolutamente continuas e independientes en un e.p. $(\Omega, \mathcal{F}, P)$.  
+Entonces $Z = X + Y$ es una v.a. absolutamente continua y
+
+$$
+f_{X+Y}(z) = \int_{-\infty}^{\infty} f_X(r) f_Y(z - r)\, dr
+$$
+
+Esta fórmula permite demostrar la relación:
+
+$$
+\varphi_{X+Y}(t) = \varphi_X(t) \cdot \varphi_Y(t) \quad \forall\, t \in \mathbb{R}
+$$
+
+donde $X$ y $Y$ son v.a. absolutamente continuas e independientes.
+
+> ^4La prueba del siguiente resultado involucra un poco de vectores aleatorios. No obstante, la fórmula puede ser fácilmente recordada por su similitud con la fórmula para el caso discreto.
+
+### Funciones importantes
+
+Sea $X$ una v.a. absolutamente continua con función de densidad $f_X(x)$:
+
+::: {.callout-note appearance="default"}
+#### Función Característica
+$$
+\varphi_X(t) = \mathbb{E}[e^{itX}] = \int_{-\infty}^{+\infty} e^{itx} \cdot f_X(x) \, dx
+$$
+
+Esta está definida para todo $t \in \mathbb{R}$.
+:::
+
+::: {.callout-note appearance="default"}
+#### Función Generadora de Momentos
+$$
+M_X(t) = \mathbb{E}[e^{tX}] = \int_{-\infty}^{+\infty} e^{tx} \cdot f_X(x) \, dx
+$$
+
+Para todos aquellos valores de $t$ donde dicho valor esperado exista.
+:::
+
+::: {.callout-note appearance="default"}
+#### Función Generadora de Probabilidades
+$$
+G_X(t) = \mathbb{E}[t^X] = \int_{-\infty}^{+\infty} t^x \cdot f_X(x) \, dx
+$$
+
+Para todos aquellos valores de $t$ donde dicho valor esperado exista.
+:::
+
+### Distribuciones continuas comunes
+
+::: {.callout-note title="Distribución uniforme"}
+$$X \sim {U}[a, b]$$
+
+Su función de densidad viene dada por:
+
+$$
+f(x) =
+\begin{cases}
+\frac{1}{b - a} & \text{si } x \in [a, b] \\\\
+0 & \text{si } x \notin [a, b]
+\end{cases}
+$$
+
+Para este tipo de variable se cumple que:
+
+- $\mathbb{E}[X] = \dfrac{a + b}{2}$
+- $\operatorname{Var}(X) = \dfrac{(b - a)^2}{12}$
+- $M_X(t) =
+\begin{cases}
+\dfrac{e^{tb} - e^{ta}}{t(b - a)} & t \neq 0 \\\\
+1 & t = 0
+\end{cases}$
+:::
+
+#### Función Gamma
+
+La función Gamma es una extensión del factorial para números reales (y complejos) positivos. Está definida por la integral impropia:
+
+$$
+\Gamma(\alpha) = \int_0^{+\infty} x^{\alpha - 1} e^{-x} \, dx \qquad \forall \ \alpha > 0
+$$
+
+##### Propiedades fundamentales
+
+- Recurrencia:
+  $$
+  \Gamma(a + 1) = a \cdot \Gamma(a) \qquad \text{para } a > 0
+  $$
+
+- Enteros positivos:
+  $$
+  \Gamma(n) = (n - 1)! \qquad \text{para } n \in \mathbb{N}^*
+  $$
+
+- Relación generalizada:
+  $$
+  \Gamma(a + n) = \Gamma(a) \cdot \prod_{j = 1}^n (a + j - 1) \qquad \text{para } a > 0, \ n \in \mathbb{N}
+  $$
+
+- Evaluación especial:
+  $$
+  \Gamma\left(\frac{1}{2}\right) = 2 \int_0^{+\infty} e^{-x^2} \, dx = \sqrt{\pi}
+  $$
+
+##### Fórmula de reflexión de Euler
+
+Aunque su demostración escapa al curso, existe la identidad conocida como fórmula de reflexión de Euler:
+
+$$
+\Gamma(z)\Gamma(1 - z) = \frac{\pi}{\sin(\pi z)} \qquad \text{para } z \in (0,1)
+$$
+
+::: {.callout-note title="Distribución Gamma"}
+$$X \sim \Gamma(\alpha, \beta)$$
+
+Con parámetro de forma $\alpha$ y parámetro de escala $\beta$ (aquí $\alpha > 0$ y $\beta > 0$).
+
+$$
+f(x) =
+\begin{cases}
+\dfrac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha - 1} e^{-\beta x} & x > 0 \\\\
+0 & \text{si no}
+\end{cases}
+$$
+
+donde $\Gamma(\alpha) = \displaystyle\int_0^{+\infty} x^{\alpha - 1} e^{-x} dx$
+
+- $\mathbb{E}[X] = \dfrac{\alpha}{\beta}$
+- $\operatorname{Var}(X) = \dfrac{\alpha}{\beta^2}$
+- $M_X(t) = \dfrac{\beta^\alpha}{(\beta - t)^\alpha}$ para $t < \beta$
+:::
+
+- La **distribución exponencial** de parámetro $\beta$ es una $\Gamma(1, \beta)$. Su función de densidad viene dada por  
+  $$
+  \beta e^{-\beta x} \quad \text{para} \quad x \geq 0
+  $$
+
+- La **distribución de Erlang** corresponde a una $\Gamma(n, \beta)$ donde $n \in \mathbb{N}$. Su función de densidad viene dada por  
+  $$
+  \dfrac{(\beta x)^{n-1}}{(n - 1)!} \, \beta \, e^{-\beta x} \quad \text{para} \quad x > 0
+  $$
+
+- La **distribución Chi-cuadrado** con $n$ grados de libertad \,\, ($\chi^2_n$) corresponde a una  
+  $\Gamma\left(\dfrac{n}{2}, \dfrac{1}{2}\right)$ donde $n \in \mathbb{N}$. Su función de densidad viene dada por  
+  $$
+  \left(\dfrac{1}{2}\right)^{n/2} \dfrac{x^{n/2 - 1}}{\Gamma(n/2)} e^{-x/2} \quad \text{para} \quad x > 0
+  $$
+
+#### Función Beta
+
+Sea la variable aleatoria $X$ con parámetros $a, b$ (donde $a > 0$ y $b > 0$), se dice que $X$ sigue una **distribución Beta** si su función de densidad viene dada por
+
+$$
+f(x) = 
+\begin{cases}
+\dfrac{1}{\beta(a, b)} x^{a - 1} (1 - x)^{b - 1} & \text{si } 0 < x < 1 \\
+0 & \text{si no}
+\end{cases}
+$$
+
+donde
+$$
+\beta(a, b) = \int_0^1 x^{a - 1}(1 - x)^{b - 1} dx.
+$$
+
+En este caso se escribe $X \sim \beta(a, b)$.
+
+La función beta $\beta(a, b)$ satisface:
+
+$$
+\beta(a, b) = \dfrac{\Gamma(a) \Gamma(b)}{\Gamma(a + b)}
+$$
+
+> **Nota**: No es difícil ver que la distribución $\beta(1,1)$ coincide con la distribución uniforme $U([0,1])$.
+
+
+##### Otras representaciones de la función Beta
+
+Aunque no es especialmente relevante para nuestros propósitos, en ocasiones es útil tener presente que para $a > 0$ y $b > 0$ se cumple que:
+
+- Haciendo el cambio de variable $x = \operatorname{sen}^2(\theta)$ se obtiene:
+
+$$
+\dfrac{1}{2} \beta(a, b) = \int_0^{\pi/2} \operatorname{sen}^{2a-1}(\theta) \cos^{2b - 1}(\theta) \, d\theta
+$$
+
+- Haciendo el cambio de variable $x = \dfrac{z}{1 + z}$ se obtiene:
+
+$$
+\beta(a, b) = \int_0^{+\infty} \dfrac{z^{a - 1}}{(1 + z)^{a + b}} \, dz
+$$
+
+::: {.callout-note title="Distribución Beta"}
+$$X \sim \text{Beta}(a, b)$$
+
+Con parámetros $a, b$ (aquí $a > 0$ y $b > 0$).
+
+$$
+f(x) =
+\begin{cases}
+\dfrac{1}{\beta(a, b)} x^{a - 1} (1 - x)^{b - 1} & 0 < x < 1 \\\\
+0 & \text{si no}
+\end{cases}
+$$
+
+donde $\beta(a, b) = \displaystyle\int_0^1 x^{a - 1}(1 - x)^{b - 1} dx$
+
+- $\mathbb{E}[X] = \dfrac{a}{a + b}$
+- $\operatorname{Var}(X) = \dfrac{ab}{(a + b)^2 (a + b + 1)}$
+- $M_X(t) = 1 + \displaystyle\sum_{n=1}^{\infty} \left( \prod_{r=0}^{n-1} \dfrac{a + r}{a + b + r} \right) \dfrac{t^n}{n!}$
+:::
+
+::: {.callout-note title="Distribución Weibull"}
+$$X \sim \text{Weibull}(\alpha, \lambda)$$
+
+Su función de densidad es:
+
+$$
+f(x) = \lambda \alpha (\lambda x)^{\alpha - 1} e^{-(\lambda x)^\alpha} \quad x > 0
+$$
+
+Con $\alpha, \lambda > 0$, donde $\alpha$ es el parámetro de forma y $\lambda$ es el parámetro de escala de la distribución.
+:::
+
+::: {.callout-note title="Distribución Normal"}
+$$X \sim \mathcal{N}(\mu, \sigma^2)$$
+
+Con parámetros $\mu$, $\sigma^2$ (aquí $\mu > 0$ y $\sigma^2 > 0$).
+
+Su función de densidad viene dada por:
+
+$$
+f(x) = \dfrac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+$$
+
+Se cumple que:
+
+- $\mathbb{E}[X] = \mu$
+- $\operatorname{Var}(X) = \sigma^2$
+- $M_X(t) = e^{t\mu + \frac{t^2 \sigma^2}{2}}$
+
+La función de **distribución normal estándar** es un caso especial de la función donde $\mu = 0$ y $\sigma = 1$.
+:::
+
+::: {.callout-note title="Distribución de Cauchy"}
+$$X \sim \text{Cauchy}(x_0, \gamma)$$
+
+Centrada en $x_0$ y con parámetro $\gamma$.
+
+Su función de densidad viene dada por:
+
+$$
+f(x) = \dfrac{\gamma}{\pi \left((x - x_0)^2 + \gamma^2 \right)}
+$$
+
+Se cumple que:
+
+- $\mathbb{E}[X]$ **no existe**
+- La función generadora de momentos solo existe para $t = 0$
+- Su función característica es:
+
+$$
+\varphi_X(t) = e^{itx_0 - \gamma \lvert t \rvert}
+$$
+:::
+
+
+
+## Cuantiles
+
+Sea $p \in (0, 1]$.  
+El cuantil $p$ de una variable aleatoria $X$ es el valor $c_p$ más pequeño tal que:
+
+$$
+F_X(c_p) \geq p
+$$
+
+es decir, $c_p$ es el valor más pequeño donde la función de distribución acumula al menos una probabilidad $p$.
+
+**El cuantil para $p = 0.5$ se llama mediana.**
+
+## Moda
+
+La moda de $X$ es el valor $x^*$ donde la función de densidad o probabilidad alcanza su máximo.
+
+> **Nota:** En distribuciones absolutamente continuas, la moda puede no existir; en distribuciones discretas, la moda siempre existe.
+
+## Funciones importantes
+
+Sean $X, Y$ dos variables aleatorias en un e.p $(\Omega, \mathcal{F}, P)$ que toman valores en $\mathbb{N} \cup \{0\}$.
+
+### Caso discreto
+
+| Función                       | Expresión                                                                                                                                                                         | Condición de validez                                      |
+|------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
+| Característica               | $$\begin{align*} \varphi_X(t) &= \mathbb{E}[e^{itX}] \\ &= \sum_{n \in \text{Im}(X)} e^{itn} \cdot P[X = n] \end{align*}$$                                                        | Definida para todo $t \in \mathbb{R}$                     |
+| Generadora de Momentos (MGF) | $$\begin{align*} M_X(t) &= \mathbb{E}[e^{tX}] \\ &= \sum_{n \in \text{Im}(X)} e^{tn} \cdot P[X = n] \end{align*}$$                                                                  | Válida para todo $t$ donde el valor esperado exista       |
+| Generadora de Probabilidades (PGF) | $$\begin{align*} G_X(t) &= \mathbb{E}[t^X] \\ &= \sum_{n \in \text{Im}(X)} t^n \cdot P[X = n] \end{align*}$$                                                            | Válida para todo $t$ donde el valor esperado exista       |
+
+### Caso continuo
+
+| Función                       | Expresión                                                                                                                                             | Condición de validez                                      |
+|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
+| Característica               | $$\begin{align*} \varphi_X(t) &= \mathbb{E}[e^{itX}] \\ &= \int_{-\infty}^{+\infty} e^{itx} \cdot f_X(x) \, dx \end{align*}$$                      | Definida para todo $t \in \mathbb{R}$                     |
+| Generadora de Momentos (MGF) | $$\begin{align*} M_X(t) &= \mathbb{E}[e^{tX}] \\ &= \int_{-\infty}^{+\infty} e^{tx} \cdot f_X(x) \, dx \end{align*}$$                                | Válida para todo $t$ donde el valor esperado exista       |
+| Generadora de Probabilidades (PGF) | $$\begin{align*} G_X(t) &= \mathbb{E}[t^X] \\ &= \int_{-\infty}^{+\infty} t^x \cdot f_X(x) \, dx \end{align*}$$                                | Válida para todo $t$ donde el valor esperado exista       |
+
+### Propiedades de la función característica
+
+- La función característica de $X$ determina su distribución, y viceversa.
+- Si $n \in \mathbb{N}$ y $\mathbb{E}[|X|^n] < \infty$, entonces existe $\varphi_X^{(n)}(t)$ y se cumple:
+  $$
+  \mathbb{E}[X^n] = i^{-n} \cdot \varphi_X^{(n)}(0)
+  $$
+- También:
+  $$
+  \varphi_X(t) = \sum_{k = 0}^{n} \dfrac{(it)^k}{k!} \mathbb{E}[X^k] + o(|t|^k)
+  $$
+
+### Propiedades de la función generadora de momentos
+
+- Si existe $M_X(t)$ en un intervalo $I = ] -s, s[$ para algún $s > 0$, entonces:
+
+  - $\mathbb{E}[X^n] < \infty \quad \forall t \in I$
+  
+  - $M_X(t) = \sum\limits_{n = 0}^{+\infty} \dfrac{\mathbb{E}[X^n]}{n!} t^n$
+  
+  - En particular, $\mathbb{E}[X^n] = M_X^{(n)}(0)$
+  
+- Si $X, Y$ son independientes $\forall t$, entonces:
+  $$
+  M_{X+Y}(t) = M_X(t) M_Y(t)
+  $$
+  
+- Si $M_X(t) = M_Y(t)$ en un abierto que contiene a 0, entonces:
+  $$
+  F_X(t) = F_Y(t)
+  $$
+
+### Propiedades de la función generadora de probabilidades
+
+- Se cumple que $\forall n \in \mathbb{N}$:
+  $$
+  P[X = n] = \dfrac{G_X^{(n)}(0)}{n!}
+  $$
+- Si $X, Y$ son independientes $\forall t$, entonces:
+  $$
+  G_{X+Y}(t) = G_X(t) G_Y(t)
+  $$
+- Si $G_X(t) = G_Y(t)$ en un abierto que contiene a 0, entonces:
+  $$
+  F_X(t) = F_Y(t)
+  $$
+- Si $X$ es tal que $\exists \mathbb{E}[|X|^n]$, entonces:
+  $$
+  G_X^{(n)}(X) = \mathbb{E}[X(X-1)(X-2)\cdots(X - n + 1)]
+  $$
