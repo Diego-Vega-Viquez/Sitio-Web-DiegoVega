@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.3.11)  20 JUL 2025 15:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.3.11)  8 AUG 2025 13:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Curriculum/CV.tex"
-(/Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Curriculum/CV.tex
+**"/Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Sitio Web DiegoVega/Curriculum/CV.tex"
+(/Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Sitio Web DiegoVega/Curriculum/CV.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (moderncv.cls
@@ -515,14 +515,14 @@ Package rerunfilecheck Info: File `CV.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  13267 strings out of 473530
- 224713 string characters out of 5703698
+ 224973 string characters out of 5703698
  754068 words of memory out of 5000000
  36200 multiletter control sequences out of 15000+600000
  622491 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,13n,93p,1108b,539s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,13n,93p,1128b,539s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ts1.enc}{/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc}</Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmro10.pfb></Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmss10.pfb></Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmss12.pfb></Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmss17.pfb></Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmss8.pfb></Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmssbx10.pfb></Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsso10.pfb></Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsso12.pfb></Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/lm/lmsso17.pfb></Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/marvosym/marvosym.pfb>
-Output written on CV.pdf (2 pages, 230648 bytes).
+Output written on CV.pdf (2 pages, 229355 bytes).
 PDF statistics:
  99 PDF objects out of 1000 (max. 8388607)
  8 named destinations out of 1000 (max. 500000)

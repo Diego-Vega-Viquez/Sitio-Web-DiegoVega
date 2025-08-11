@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1753047436.97502 "/Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Curriculum/CV.tex" "CV.pdf" "CV" 1753047437.6786 0
+["pdflatex"] 1754679824.28869 "/Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Sitio Web DiegoVega/Curriculum/CV.tex" "CV.pdf" "CV" 1754679824.94922 0
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1753047436.15952 81275 019e41c07de0831308f5bb9dbdf592d3 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1741752666.73075 12046841 77e3d7e20fdbd74f57f05a05c4b738f1 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc" 1741752045.95817 2375 baa924870cfb487815765f9094cf3728 ""
@@ -111,10 +111,10 @@
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xargs/xargs.sty" 1753047432.0726 12403 a11204384274e5980f17ec9564088fa4 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty" 1741752050.34516 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xkeyval/xkeyval.sty" 1741752050.39254 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "/Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Curriculum/CV.tex" 1753068518 7556 7785e870fd606e6e6f5a45e35b80dedf ""
-  "CV.aux" 1753047437.55657 701 262292e509ce80c9ab32528d9fcdc2b2 "pdflatex"
-  "CV.out" 1753047437.55693 619 2894a5708d10b219fe85a815e484750e "pdflatex"
-  "CV.tex" 1753068518 7556 7785e870fd606e6e6f5a45e35b80dedf ""
+  "/Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Sitio Web DiegoVega/Curriculum/CV.tex" 1754679823.65693 7186 6603a24e08f52625e0b53672c4353a4e ""
+  "CV.aux" 1754679824.8228 701 262292e509ce80c9ab32528d9fcdc2b2 "pdflatex"
+  "CV.out" 1754679824.82313 619 2894a5708d10b219fe85a815e484750e "pdflatex"
+  "CV.tex" 1754679823.65693 7186 6603a24e08f52625e0b53672c4353a4e ""
   "moderncv.cls" 1753068518 17249 124074b0a3329675b3f41dd1b88403d1 ""
   "moderncvcolorblue.sty" 1753068518 1008 81d85f2fad060c2f7b374363b6bb7415 ""
   "moderncvcompatibility.sty" 1753068518 3397 6646c8798a6ebba586650d124c645c99 ""

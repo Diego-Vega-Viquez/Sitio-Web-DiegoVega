@@ -1,0 +1,301 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{diegocon}
+
+\geometry{
+    left=2.5cm,
+    right=2.5cm,
+    top=2cm,
+    bottom=2cm
+}
+
+\renewcommand{\arraystretch}{1.75}
+
+\title{Documentación del paquete \texttt{diegocon} en \LaTeX}
+\author{Diego Alberto Vega Víquez}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\clearpage
+\begingroup
+\begin{spacing}{1.25} % Aquí defines el interlineado
+\fontsize{12pt}{15pt}\selectfont
+
+\tableofcontents
+
+\end{spacing}
+\endgroup
+\clearpage 
+
+\section{Resumen de Comandos de Simbología Actuarial}
+
+\subsection{Anualidades Ciertas}
+
+\begin{tabularx}{\textwidth}{@{}l c X@{}}
+    \toprule
+        \textbf{Qué es} & \textbf{Símbolo} & \textbf{Código \LaTeX} \\
+        \midrule
+        Anualidad anticipada                      & \( \annduenc{n} \)                   & \texttt{\textbackslash annduenc\{n\}} \\
+        Anualidad inmediata                       & \( \annimmnc{n} \)                   & \texttt{\textbackslash annimmnc\{n\}} \\
+        Anualidad continua                        & \( \annconnc{n} \)                   & \texttt{\textbackslash annconnc\{n\}} \\
+        Anualidad \( m \)-ésima anticipada        & \( \annmeduenc{n}{m} \)              & \texttt{\textbackslash annmeduenc\{n\}\{m\}} \\
+        Anualidad \( m \)-ésima inmediata         & \( \annmeimmnc{n}{m} \)              & \texttt{\textbackslash annmeimmnc\{n\}\{m\}} \\
+    \bottomrule
+\end{tabularx}
+
+\subsection{Símbolos de Probabilidades y Funciones de Supervivencia}
+
+\begin{tabularx}{\textwidth}{@{}l c X@{}}
+    \toprule
+        \textbf{Qué es} & \textbf{Símbolo} & \textbf{Código \LaTeX} \\
+    \midrule
+        Probabilidad de fallecimiento           & \( \tqx{1}{x} \)     & \texttt{\textbackslash tqx\{1\}\{x\}} \\
+        \textcolor{white}{....}{}               & \( \tqx{n}{x} \)     & \texttt{\textbackslash tqx\{n\}\{x\}} \\
+        Probabilidad de supervivencia           & \( \tpx{1}{x} \)     & \texttt{\textbackslash tpx\{1\}\{x\}} \\
+        \textcolor{white}{....}{}               & \( \tpx{n}{x} \)     & \texttt{\textbackslash tpx\{n\}\{x\}} \\
+        Número esperado de fallecimientos       & \( \tdx{1}{x} \)     & \texttt{\textbackslash tdx\{1\}\{x\}} \\
+        \textcolor{white}{....}{}               & \( \tdx{n}{x} \)     & \texttt{\textbackslash tdx\{n\}\{x\}} \\
+        Tiempo vivido entre edades              & \( \tLx{1}{x} \)     & \texttt{\textbackslash tLx\{1\}\{x\}} \\
+        \textcolor{white}{....}{}               & \( \tLx{n}{x} \)     & \texttt{\textbackslash tLx\{n\}\{x\}} \\
+        Probabilidad compuesta de fallecimiento & \( \tuqx{u}{1}{x} \) & \texttt{\textbackslash tuqx\{u\}\{1\}\{x\}} \\
+        \textcolor{white}{....}{}               & \( \tuqx{u}{n}{x} \) & \texttt{\textbackslash tuqx\{u\}\{n\}\{x\}} \\
+    \bottomrule
+\end{tabularx}
+
+\subsection{Seguros de Vida}
+
+\begin{tabularx}{\textwidth}{@{}l c X@{}}
+    \toprule
+        \textbf{Qué es} & \textbf{Símbolo} & \textbf{Código \LaTeX} \\
+    \midrule
+        Seguro temporal discreto           & \( \termins{x}{n} \)        & \texttt{\textbackslash termins\{x\}\{n\}} \\
+        \textcolor{white}{....}{}          & \( \termins[2]{x}{n} \)     & \texttt{\textbackslash termins[2]\{x\}\{n\}} \\
+        Seguro temporal continuo           & \( \terminsc{x}{n} \)       & \texttt{\textbackslash terminsc\{x\}\{n\}} \\
+        \textcolor{white}{....}{}          & \( \terminsc[2]{x}{n} \)    & \texttt{\textbackslash terminsc[2]\{x\}\{n\}} \\
+        Seguro dotal                       & \( \insend{x}{n} \)         & \texttt{\textbackslash insend\{x\}\{n\}} \\
+        \textcolor{white}{....}{}          & \( \insend[2]{x}{n} \)      & \texttt{\textbackslash insend[2]\{x\}\{n\}} \\
+        Seguro dotal complementado         & \( \insendc{x}{n} \)        & \texttt{\textbackslash insendc\{x\}\{n\}} \\
+        \textcolor{white}{....}{}          & \( \insendc[2]{x}{n} \)     & \texttt{\textbackslash insendc[2]\{x\}\{n\}} \\
+        Seguro dotal puro                  & \( \pureend{x}{n} \)        & \texttt{\textbackslash pureend\{x\}\{n\}} \\
+        \textcolor{white}{....}{}          & \( \pureend[2]{x}{n} \)     & \texttt{\textbackslash pureend[2]\{x\}\{n\}} \\
+        Seguro dotal puro complementado    & \( \pureendc{x}{n} \)       & \texttt{\textbackslash pureendc\{x\}\{n\}} \\
+        Seguro vida completa               & \( \wholelife{x} \)         & \texttt{\textbackslash wholelife\{x\}} \\
+        \textcolor{white}{....}{}          & \( \wholelife[2]{x} \)      & \texttt{\textbackslash wholelife[2]\{x\}} \\
+        Seguro vida completa complementado & \( \wholelifec{x} \)        & \texttt{\textbackslash wholelifec\{x\}} \\
+        \textcolor{white}{....}{}          & \( \wholelifec[2]{x} \)     & \texttt{\textbackslash wholelifec[2]\{x\}} \\
+        Seguro Diferido Temporal discreto  & \( \indif[2]{u}{x}{n} \)    & \texttt{\textbackslash endif[2]\{u\}\{x\}\{n\}} \\
+        Seguro Diferido Temporal continuo  & \( \indifc{u}{x}{n} \)      & \texttt{\textbackslash endifc\{u\}\{x\}\{n\}} \\
+        Seguro Diferido Completo discreto  & \( \indifwhole{u}{x} \)     & \texttt{\textbackslash indifwhole\{u\}\{x\}} \\
+        Seguro Diferido Completo continuo  & \( \indifwholec[2]{u}{x} \) & \texttt{\textbackslash indifwholec[2]\{u\}\{x\}} \\
+    \bottomrule
+\end{tabularx}
+
+\subsection{Anualidades}
+\begin{tabularx}{\textwidth}{@{}l c X@{}}
+\toprule
+    \textbf{Qué es} & \textbf{Símbolo} & \textbf{Código \LaTeX} \\
+\midrule
+    Anualidad vitalicia anticipada                  & \( \wholeanndue{x} \)                  & \texttt{\textbackslash wholeanndue\{x\}} \\
+    Anualidad prorrateada anticipada vitalicia      & \( \wholeannprdue{x}{m} \)             & \texttt{\textbackslash wholeannprdue\{x\}\{m\}} \\
+    Anualidad vitalicia continua                    & \( \wholeanncon{x} \)                  & \texttt{\textbackslash wholeanncon\{x\}} \\
+    Anualidad vitalicia vencida/inmediata           & \( \wholeannimm{x} \)                  & \texttt{\textbackslash wholeannimm\{x\}} \\
+    Anualidad vitalicia \( m \)-ésima anticipada    & \( \wholeannmedue{x}{m} \)             & \texttt{\textbackslash wholeannmedue\{x\}\{m\}} \\
+    Anualidad vitalicia \( m \)-ésima inmediata     & \( \wholeannmeimm{x}{m} \)             & \texttt{\textbackslash wholeannmeimm\{x\}\{m\}} \\
+    Anualidad prorrateada inmediata vitalicia       & \( \wholeannprimm{x}{m} \)             & \texttt{\textbackslash wholeannprimm\{x\}\{m\}} \\
+    Anualidad vitalicia diferida anticipada         & \( \wholeanndifedue{u}{x} \)           & \texttt{\textbackslash wholeanndifedue\{u\}\{x\}} \\
+    Anualidad vitalicia diferida continua           & \( \wholeanndifecon{u}{x} \)           & \texttt{\textbackslash wholeanndifecon\{u\}\{x\}} \\
+    Anualidad vitalicia diferida vencida/inmediata  & \( \wholeanndifeimm{u}{x} \)           & \texttt{\textbackslash wholeanndifeimm\{u\}\{x\}} \\
+\midrule
+    Anualidad temporal anticipada                   & \( \anndue{x}{n} \)                    & \texttt{\textbackslash anndue\{x\}\{n\}} \\
+    Anualidad prorrateada anticipada temporal       & \( \annprdue{x}{n}{m} \)               & \texttt{\textbackslash annprdue\{x\}\{n\}\{m\}} \\
+    Anualidad temporal continua                     & \( \anncon{x}{n} \)                    & \texttt{\textbackslash anncon\{x\}\{n\}} \\
+    Anualidad temporal vencida/inmediata            & \( \annimm{x}{n} \)                    & \texttt{\textbackslash annimm\{x\}\{n\}} \\
+    Anualidad temporal \( m \)-ésima anticipada     & \( \annmedue{x}{n}{m} \)               & \texttt{\textbackslash annmedue\{x\}\{n\}\{m\}} \\
+    Anualidad temporal \( m \)-ésima inmediata      & \( \annmeimm{x}{n}{m} \)               & \texttt{\textbackslash annmeimm\{x\}\{n\}\{m\}} \\
+    Anualidad prorrateada inmediata temporal        & \( \annprimm{x}{n}{m} \)               & \texttt{\textbackslash annprimm\{x\}\{n\}\{m\}} \\
+    Anualidad temporal diferida anticipada          & \( \anndifedue{u}{x}{n} \)             & \texttt{\textbackslash anndifedue\{u\}\{x\}\{n\}} \\
+    Anualidad temporal diferida continua            & \( \anndifecon{u}{x}{n} \)             & \texttt{\textbackslash anndifecon\{u\}\{x\}\{n\}} \\
+    Anualidad temporal diferida vencida/inmediata   & \( \anndifeimm{u}{x}{n} \)             & \texttt{\textbackslash anndifeimm\{u\}\{x\}\{n\}} \\
+    Anualidad garantizada con vencimiento de $n$ años & \( \anngaran{x}{n} \)                & \texttt{\textbackslash anngaran\{x\}\{n\}} \\
+\bottomrule
+\end{tabularx}
+
+\subsection{Primas de Beneficio}
+
+\begin{tabularx}{\textwidth}{@{}l c X@{}}
+    \toprule
+        \textbf{Qué es} & \textbf{Símbolo} & \textbf{Código \LaTeX} \\
+    \midrule
+        Prima vida entera (discreta)               & \( \Pwholelife{x} \)              & \texttt{\textbackslash Pwholelife\{x\}} \\
+        \textcolor{white}{....}{}                  & \( \Pwholelife[h]{x} \)           & \texttt{\textbackslash Pwholelife[h]\{x\}} \\
+        Prima temporal \(n\) años (discreta)       & \( \Ptermins{x}{n} \)             & \texttt{\textbackslash Ptermins\{x\}\{n\}} \\
+        Prima dotal \(n\) años (discreta)          & \( \Pinsend{x}{n} \)              & \texttt{\textbackslash Pinsend\{x\}\{n\}} \\
+        Prima dotal pura (discreta)                & \( \Ppureend{x}{n} \)             & \texttt{\textbackslash Ppureend\{x\}\{n\}} \\
+        \textcolor{white}{....}{}                  & \( \Ppureend[h]{x}{n} \)          & \texttt{\textbackslash Ppureend[h]\{x\}\{n\}} \\
+        Prima vida entera diferida anticipada      & \( \Pwholeanndifedue{x}{u} \)     & \texttt{\textbackslash Pwholeanndifedue\{x\}\{u\}} \\
+        %
+        Prima vida entera (continua)               & \( \Pwholelifec{x} \)             & \texttt{\textbackslash Pwholelifec\{x\}} \\
+        Prima temporal \(n\) años (continua)       & \( \Pterminsc{x}{n} \)            & \texttt{\textbackslash Pterminsc\{x\}\{n\}} \\
+        Prima dotal \(n\) años (continua)          & \( \Pinsendc{x}{n} \)             & \texttt{\textbackslash Pinsendc\{x\}\{n\}} \\
+        Prima dotal pura (continua)                & \( \Ppureendc{x}{n} \)            & \texttt{\textbackslash Ppureendc\{x\}\{n\}} \\
+        Prima vida entera diferida anticipada (c)  & \( \Pwholeanndifeconc{u}{x} \)    & \texttt{\textbackslash Pwholeanndifeconc\{u\}\{x\}} \\
+    \midrule
+        \multicolumn{3}{@{}l}{\textbf{Fraccionarias Verdaderas}} \\
+    \midrule
+        Prima vida entera \(m\)-fracc. (discreta)         & \( \Pwholelifem[h]{x}{m} \)       & \texttt{\textbackslash Pwholelifem[h]\{x\}\{m\}} \\
+        Prima temporal \(n\) años \(m\)-fracc. (discreta) & \( \Pterminsm{x}{n}{m} \)         & \texttt{\textbackslash Pterminsm\{x\}\{n\}\{m\}} \\
+        Prima dotal \(n\) años \(m\)-fracc. (discreta)    & \( \Pinsendm{x}{n}{m} \)          & \texttt{\textbackslash Pinsendm\{x\}\{n\}\{m\}} \\
+        %
+        Prima vida entera \(m\)-fracc. (continua)         & \( \Pwholelifecm{x}{m} \)         & \texttt{\textbackslash Pwholelifecm\{x\}\{m\}} \\
+        Prima temporal \(n\) años \(m\)-fracc. (continua) & \( \Pterminscm{x}{n}{m} \)        & \texttt{\textbackslash Pterminscm\{x\}\{n\}\{m\}} \\
+        Prima dotal \(n\) años \(m\)-fracc. (continua)    & \( \Pinsendcm{x}{n}{m} \)         & \texttt{\textbackslash Pinsendcm\{x\}\{n\}\{m\}} \\
+    \midrule
+        \multicolumn{3}{@{}l}{\textbf{Prorrateadas}} \\
+    \midrule
+        Seguro de vida entera (discreto) & $\Pwholelifep{x}{m}$ & \texttt{\textbackslash Pwholelifep\{x\}\{m\}} \\
+        Seguro temporal $n$ años (discreto) & $\Pterminsp{x}{n}{m}$ & \texttt{\textbackslash Pterminsp\{x\}\{n\}\{m\}} \\
+        Seguro dotal $n$ años (discreto) & $\Pinsendp{x}{n}{m}$ & \texttt{\textbackslash Pinsendp\{x\}\{n\}\{m\}} \\
+        Seguro de vida entera (continuo) & $\Pwholelifecp{x}{m}$ & \texttt{\textbackslash Pwholelifecp\{x\}\{m\}} \\
+        Seguro temporal $n$ años (continuo) & $\Pterminscp{x}{n}{m}$ & \texttt{\textbackslash Pterminscp\{x\}\{n\}\{m\}} \\
+        Seguro dotal $n$ años (continuo) & $\Pinsendcp{x}{n}{m}$ & \texttt{\textbackslash Pinsendcp\{x\}\{n\}\{m\}} \\
+    \bottomrule
+\end{tabularx}
+
+\subsection{Reservas de Beneficio}
+
+\begin{tabularx}{\textwidth}{@{}l c X@{}}
+    \toprule
+        \textbf{Qué es} & \textbf{Símbolo} & \textbf{Código \LaTeX} \\
+    \midrule
+        Reserva vida entera (discreta)              & \( \Vwholelife{k}{x} \)              & \texttt{\textbackslash Vwholelife\{k\}\{x\}} \\
+        Reserva temporal \(n\) años (discreta)      & \( \Vtermins{k}{x}{n} \)             & \texttt{\textbackslash Vtermins\{k\}\{x\}\{n\}} \\
+        Reserva dotal \(n\) años (discreta)         & \( \Vinsend{k}{x}{n} \)              & \texttt{\textbackslash Vinsend\{k\}\{x\}\{n\}} \\
+        Reserva dotal pura (discreta)               & \( \Vpureend{k}{x}{n} \)             & \texttt{\textbackslash Vpureend\{k\}\{x\}\{n\}} \\
+        Reserva vida entera con \(h\) pagos         & \( \Vwholelifeh[h]{k}{x} \)          & \texttt{\textbackslash Vwholelifeh[h]\{k\}\{x\}} \\
+        Reserva dotal \(n\) años con \(h\) pagos     & \( \Vinsendh[h]{k}{x}{n} \)          & \texttt{\textbackslash Vinsendh[h]\{k\}\{x\}\{n\}} \\
+        Reserva anualidad vitalicia diferida        & \( \Vwholeanndife{k}{n}{x} \)        & \texttt{\textbackslash Vwholeanndife\{k\}\{n\}\{x\}} \\
+    \midrule
+        Reserva vida entera (continua)              & \( \Vwholelifec{t}{x} \)             & \texttt{\textbackslash Vwholelifec\{t\}\{x\}} \\
+        Reserva temporal \(n\) años (continua)      & \( \Vterminsc{t}{x}{n} \)            & \texttt{\textbackslash Vterminsc\{t\}\{x\}\{n\}} \\
+        Reserva dotal \(n\) años (continua)         & \( \Vinsendc{t}{x}{n} \)             & \texttt{\textbackslash Vinsendc\{t\}\{x\}\{n\}} \\
+        Reserva dotal pura (continua)               & \( \Vpureendc{t}{x}{n} \)            & \texttt{\textbackslash Vpureendc\{t\}\{x\}\{n\}} \\
+        Reserva vida entera con \(h\) pagos         & \( \Vwholelifehc[h]{t}{x} \)         & \texttt{\textbackslash Vwholelifehc[h]\{t\}\{x\}} \\
+        Reserva dotal \(n\) años con \(h\) pagos     & \( \Vinsendhc[h]{t}{x}{n} \)         & \texttt{\textbackslash Vinsendhc[h]\{t\}\{x\}\{n\}} \\
+        Reserva anualidad vitalicia diferida (c)    & \( \Vwholeanndifecon{t}{n}{x} \)     & \texttt{\textbackslash Vwholeanndifecon\{t\}\{n\}\{x\}} \\
+    \bottomrule
+\end{tabularx}
+
+\subsection{Otros Símbolos}
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\textwidth}{@{}l c X@{}}
+\toprule
+    \textbf{Qué es} & \textbf{Símbolo} & \textbf{Código \LaTeX} \\
+\midrule
+    Comparación de dos valores                         & \( \lccomptwo{A}{x}{y}{z} \)        & \texttt{\textbackslash lccomptwo\{A\}\{x\}\{y\}\{z\}} \\
+    Comparación de tres valores                        & \( \lccompthree{A}{x}{y}{z}{w} \)   & \texttt{\textbackslash lccompthree\{A\}\{x\}\{y\}\{z\}\{w\}} \\
+    Definición de estadístico de sobrevivencia         & \( \defsurstat{t}{x}{n} \)          & \texttt{\textbackslash defsurstat\{t\}\{x\}\{n\}} \\
+    Función de supervivencia                           & \( \surstat{S}{x}{n} \)             & \texttt{\textbackslash surstat\{S\}\{x\}\{n\}} \\
+    Función de supervivencia (definida)                & \( \defsurstat{S}{x}{n} \)          & \texttt{\textbackslash defsurstat\{S\}\{x\}\{n\}} \\
+    Notación compuesta con dos grupos inferiores       & \( \lccomptwo{P}{h}{x}{n} \)        & \texttt{\textbackslash lccomptwo\{P\}\{h\}\{x\}\{n\}} \\
+    Notación compuesta con tres grupos inferiores      & \( \lccompthree{P}{h}{x}{y}{n} \)   & \texttt{\textbackslash lccompthree\{P\}\{h\}\{x\}\{y\}\{n\}} \\
+    Notación inferior con doble subíndice              & \( \lcsecond{P}{x}{n} \)            & \texttt{\textbackslash lcsecond\{P\}\{x\}\{n\}} \\
+    Notación inferior con superíndice centrado         & \( \lcfirst{P}{x}{n} \)             & \texttt{\textbackslash lcfirst\{P\}\{x\}\{n\}} \\
+    Símbolo con techo                                  & \( \lcroof{x} \)                    & \texttt{\textbackslash lcroof\{x\}} \\
+    Estadístico de sobrevivencia                       & \( \surstat{S(t)}{t}{n} \)          & \texttt{\textbackslash surstat\{S(t)\}\{t\}\{n\}} \\
+    Término ajustado                                   & \( \lctermadj{A}{x}{n} \)           & \texttt{\textbackslash lctermadj\{A\}\{x\}\{n\}} \\
+    Yo que se 1                                        & \( \lcterm{P}{x}{n} \)              & \texttt{\textbackslash lcterm\{P\}\{x\}\{n\}} \\
+    Yo que se 2                                        & \( \lcend{P}{x}{n} \)               & \texttt{\textbackslash lcend\{P\}\{x\}\{n\}} \\
+\bottomrule
+\end{tabularx}
+
+\section{Conjuntos Numéricos}
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\textwidth}{@{}l c X@{}}
+    \toprule
+        Descripción          & Símbolo         & Código \LaTeX                                  \\
+    \midrule
+        Números enteros      & $\Z$            & \texttt{\textbackslash Z}                      \\
+        Números racionales   & $\Q$            & \texttt{\textbackslash Q}                      \\
+        Números irracionales & $\I$            & \texttt{\textbackslash I}                      \\
+        Números reales       & $\R$            & \texttt{\textbackslash R}                      \\
+        Números complejos    & $\C$            & \texttt{\textbackslash C}                      \\
+        Cuerpo genérico      & $\F$            & \texttt{\textbackslash F}                      \\
+        Números naturales    & $\N$            & \texttt{\textbackslash N}                      \\
+    \bottomrule
+\end{tabularx}
+
+\section{Probabilidad}
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\textwidth}{@{}l c X@{}}
+    \toprule
+        Descripción & Símbolo                               & Código \LaTeX \\
+    \midrule
+        Varianza                                & $\var{X}$                     & \texttt{\textbackslash var\{X\}} \\
+        Esperanza matemática                    & $\E{X}$                       & \texttt{\textbackslash E\{X\}} \\
+        Varianza (símbolo $\mathbb{V}$)         & $\V{X}$                       & \texttt{\textbackslash V\{X\}} \\
+        Probabilidad                            & $\P{A}$                       & \texttt{\textbackslash P\{A\}} \\
+        Covarianza                              & $\cov{X}{Y}$                  & \texttt{\textbackslash cov\{X\}\{Y\}} \\
+        Esperanza condicional                   & $\Econd{X}{Y}$                & \texttt{\textbackslash Econd\{X\}\{Y\}} \\
+        Varianza condicional                    & $\varcond{X}{Y}$              & \texttt{\textbackslash varcond\{X\}\{Y\}} \\
+        Probabilidad condicional                 & $\Pcond{A}{B}$                 & \texttt{\textbackslash Pcond\{A\}\{B\}} \\
+        Función indicadora                      & $\indicadora{\cuad{0,1}}$              & \texttt{\textbackslash indicadora\{\textbackslash cuad\{0,1\}\}} \\
+    \bottomrule
+\end{tabularx}
+
+\section{Convergencia de Variables Aleatorias}
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\textwidth}{@{}l c X@{}}
+    \toprule
+        Descripción & Símbolo         & Código \LaTeX \\
+    \midrule
+        Convergencia casi segura       & $\cs$       & \texttt{\textbackslash cs} \\
+        Convergencia en probabilidad   & $\cp$       & \texttt{\textbackslash cp} \\
+        Convergencia en $L^p$          & $\clp$      & \texttt{\textbackslash clp} \\
+        Convergencia en $L^{k}$        & $\cl{k}$    & \texttt{\textbackslash cl\{k\}} \\
+        Convergencia en distribución   & $\cd$       & \texttt{\textbackslash cd} \\
+    \bottomrule
+\end{tabularx}
+
+\section{Estadística}
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\textwidth}{@{}l c X@{}}
+    \toprule
+        Descripción & Símbolo & Código \LaTeX \\
+    \midrule
+         Símbolo de muestra de tamaño 9   & $\muestra[9]$ & \texttt{\textbackslash muestra[9]} \\
+         Símbolo de muestra de tamaño $n$ & $\muestra$ & \texttt{\textbackslash muestra} \\
+    \bottomrule
+\end{tabularx}
+
+\section{Misceláneos}
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\textwidth}{@{}l c X@{}}
+    \toprule
+        Descripción & Símbolo & Código \LaTeX \\
+    \midrule
+         & $\restr{A}$ & \texttt{\textbackslash restr\{A\}} \\
+         & $\comillas{texto}$ & \texttt{\textbackslash comillas\{texto\}} \\
+         & $\prts{x+1}$ & \texttt{\textbackslash prts\{x+1\}} \\
+         & $\corch{a,b}$ & \texttt{\textbackslash corch\{a,b\}} \\
+         & $\cuad{z}$ & \texttt{\textbackslash cuad\{z\}} \\
+         & $\abs{x}$ & \texttt{\textbackslash abs\{x\}} \\
+         & $\Abs{ a }$ & \texttt{\textbackslash Abs\{a\}} \\
+         & $\piso{y}$ & \texttt{\textbackslash piso\{y\}} \\
+         & $\techo{y}$ & \texttt{\textbackslash techo\{y\}} \\
+         & \implica & \texttt{\textbackslash implica} \\
+         & \va & \texttt{\textbackslash va} \\
+    \bottomrule
+\end{tabularx}
+
+\end{document}

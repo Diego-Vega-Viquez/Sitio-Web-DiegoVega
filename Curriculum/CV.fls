@@ -1,6 +1,6 @@
-PWD /Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Curriculum
+PWD /Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Sitio Web DiegoVega/Curriculum
 INPUT /Users/diegovegav/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt
-INPUT /Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Curriculum/CV.tex
+INPUT /Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Sitio Web DiegoVega/Curriculum/CV.tex
 OUTPUT CV.log
 INPUT ./moderncv.cls
 INPUT moderncv.cls
