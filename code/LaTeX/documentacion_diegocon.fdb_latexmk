@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1754891370.27991 "/Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Sitio Web DiegoVega/code/LaTeX/documentacion_diegocon.tex" "documentacion_diegocon.pdf" "documentacion_diegocon" 1754891371.13692 0
+["pdflatex"] 1754891748.12094 "/Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Sitio Web DiegoVega/code/LaTeX/documentacion_diegocon.tex" "documentacion_diegocon.pdf" "documentacion_diegocon" 1754891748.8841 0
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1753047436.15952 81275 019e41c07de0831308f5bb9dbdf592d3 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/rsfs/rsfs10.tfm" 1741752734.69924 688 37338d6ab346c2f1466b29e195316aa4 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/data/fonts/tfm/public/rsfs/rsfs5.tfm" 1741752735.72873 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -207,11 +207,11 @@
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/tex/latex/trimspaces/trimspaces.sty" 1741752050.16094 1380 971a51b00a14503ddf754cab24c3f209 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/tex/latex/url/url.sty" 1741752050.32373 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/Users/diegovegav/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty" 1741752050.34516 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "/Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Sitio Web DiegoVega/code/LaTeX/documentacion_diegocon.tex" 1754891368.59989 21157 f42e39979d380890a3469d14dc0366c2 ""
+  "/Users/diegovegav/Library/CloudStorage/GoogleDrive-diegovv13@gmail.com/Mi unidad/Diego/Personal/Sitio Web DiegoVega/code/LaTeX/documentacion_diegocon.tex" 1754891746.11842 21159 eb3fbc527cb5a44ff807eef1ca9a89e8 ""
   "diegocon.sty" 1754891108.35036 17488 91d5d3b790d90f9dccc12df46d528293 ""
-  "documentacion_diegocon.aux" 1754891370.99777 5932 04fea06f0b905fb91ba0fd6fe9da7762 "pdflatex"
-  "documentacion_diegocon.tex" 1754891368.59989 21157 f42e39979d380890a3469d14dc0366c2 ""
-  "documentacion_diegocon.toc" 1754891370.99939 1127 44c9b9113e00ae5ee85b398f98cf4029 "pdflatex"
+  "documentacion_diegocon.aux" 1754891748.75075 5932 04fea06f0b905fb91ba0fd6fe9da7762 "pdflatex"
+  "documentacion_diegocon.tex" 1754891746.11842 21159 eb3fbc527cb5a44ff807eef1ca9a89e8 ""
+  "documentacion_diegocon.toc" 1754891748.7524 1127 44c9b9113e00ae5ee85b398f98cf4029 "pdflatex"
   (generated)
   "documentacion_diegocon.aux"
   "documentacion_diegocon.log"
