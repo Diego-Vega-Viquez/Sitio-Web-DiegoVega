@@ -708,5 +708,48 @@
       "Inicio",
       "Anexo"
     ]
+  },
+  {
+    "objectID": "cursos/CA0721/Index_CA0307.html",
+    "href": "cursos/CA0721/Index_CA0307.html",
+    "title": "CA0721: Probabilidad",
+    "section": "",
+    "text": "Bienvenido a los apuntes del curso CA0721."
+  },
+  {
+    "objectID": "cursos/CA0721/Index_CA0307.html#temas",
+    "href": "cursos/CA0721/Index_CA0307.html#temas",
+    "title": "CA0721: Probabilidad",
+    "section": "Temas",
+    "text": "Temas\n\nTema 1: Preliminares\nTema 2: Introducción a la Probabilidad\nTema 3: Teoría General de la Probabilidad\nTema 4: Variables Aleatorias\nTema 5: Vectores Aleatorios\nAnexo"
+  },
+  {
+    "objectID": "cursos/CA0307/index_CA0307.html",
+    "href": "cursos/CA0307/index_CA0307.html",
+    "title": "CA0307: Estadística Actuarial II",
+    "section": "",
+    "text": "Bienvenido a los apuntes del curso CA0307.",
+    "crumbs": [
+      "Inicio",
+      "Página principal del curso"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0307/index_CA0307.html#temas",
+    "href": "cursos/CA0307/index_CA0307.html#temas",
+    "title": "CA0307: Estadística Actuarial II",
+    "section": "Temas",
+    "text": "Temas\n\nTema 1: Preliminares",
+    "crumbs": [
+      "Inicio",
+      "Página principal del curso"
+    ]
+  },
+  {
+    "objectID": "cursos/CA0307/antecedentes_CA0307.html",
+    "href": "cursos/CA0307/antecedentes_CA0307.html",
+    "title": "antecedentes_CA0307",
+    "section": "",
+    "text": "Antecedentes\nantecedente 1"
   }
 ]

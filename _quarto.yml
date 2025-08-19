@@ -18,6 +18,8 @@ website:
             href: cursos/CA0721/index_CA0721.qmd
           - text: "CA0306: Contingencias de Vida I"
             href: cursos/CA0306/index_CA0306.qmd
+          - text: "CA0307: Estadística Actuarial II"
+            href: cursos/CA0307/index_CA0307.qmd
 
   sidebar:
     - id: ca0721
@@ -44,6 +46,11 @@ website:
           text: "Página principal del curso"
         - href: cursos/CA0721/distribuciones_sobrevivencia_CA0306.qmd
           text: "Tema 1: Distribuciones de Sobrevivencia"
+    - id: ca0307
+      title: "CA0307: Estadística Actarial II"
+      contents:
+        - href: cursos/CA0307/index_CA0307.qmd
+          text: "Página principal del curso"
       
 
 
